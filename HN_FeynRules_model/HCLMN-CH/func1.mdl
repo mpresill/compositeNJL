@@ -1,0 +1,271 @@
+HCMN
+ Constraints
+  Name         |> Expression                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <|
+%*slhaFound    |1+access("vars1.lha", 0)                                                                                       %Check whether LHA file is present.
+%*rdSLHA       |if(slhaFound,slhaRead("vars1.lha", 0),-1)                                                                      %Read LHA file.
+%cabi          |if(slhaFound,if(slhaValExists("CKMBLOCK",1,1),slhaVal("CKMBLOCK",0,1,1),cabiDef),cabiDef)                      %Cabibbo angle                                     
+%aEWM1         |if(slhaFound,if(slhaValExists("SMINPUTS",1,1),slhaVal("SMINPUTS",0,1,1),aEWM1Def),aEWM1Def)                    %Inverse of the EW coupling constant at the Z pole 
+%Gf            |if(slhaFound,if(slhaValExists("SMINPUTS",1,2),slhaVal("SMINPUTS",0,1,2),GfDef),GfDef)                          %Fermi constant                                    
+%aS            |if(slhaFound,if(slhaValExists("SMINPUTS",1,3),slhaVal("SMINPUTS",0,1,3),aSDef),aSDef)                          %Strong coupling constant at the Z pole            
+%ymb           |if(slhaFound,if(slhaValExists("YUKAWA",1,5),slhaVal("YUKAWA",0,1,5),ymbDef),ymbDef)                            %Bottom Yukawa mass                                
+%ymt           |if(slhaFound,if(slhaValExists("YUKAWA",1,6),slhaVal("YUKAWA",0,1,6),ymtDef),ymtDef)                            %Top Yukawa mass                                   
+%ymtau         |if(slhaFound,if(slhaValExists("YUKAWA",1,15),slhaVal("YUKAWA",0,1,15),ymtauDef),ymtauDef)                      %Tau Yukawa mass                                   
+%f3u           |if(slhaFound,if(slhaValExists("FRBlock",1,1),slhaVal("FRBlock",0,1,1),f3uDef),f3uDef)                          %Ustar dimensionless coupling                      
+%f3d           |if(slhaFound,if(slhaValExists("FRBlock",1,2),slhaVal("FRBlock",0,1,2),f3dDef),f3dDef)                          %Dstar dimensionless coupling                      
+%f3e           |if(slhaFound,if(slhaValExists("FRBlock",1,3),slhaVal("FRBlock",0,1,3),f3eDef),f3eDef)                          %Estar dimensionless coupling                      
+%lc            |if(slhaFound,if(slhaValExists("FRBlock",1,4),slhaVal("FRBlock",0,1,4),lcDef),lcDef)                            %Compositeness scale                               
+%MUU           |if(slhaFound,if(slhaValExists("FRBlock",1,5),slhaVal("FRBlock",0,1,5),MUUDef),MUUDef)                          %Mass of excited states                            
+%ML            |if(slhaFound,if(slhaValExists("FRBlock",1,6),slhaVal("FRBlock",0,1,6),MLDef),MLDef)                            %Mass of excited states                            
+%MZ            |if(slhaFound,if(slhaValExists("MASS",1,23),slhaVal("MASS",0,1,23),MZDef),MZDef)                                %Mass of G0.                                       
+%MTA           |if(slhaFound,if(slhaValExists("MASS",1,15),slhaVal("MASS",0,1,15),MTADef),MTADef)                              %Mass of ta.                                       
+%MT            |if(slhaFound,if(slhaValExists("MASS",1,6),slhaVal("MASS",0,1,6),MTDef),MTDef)                                  %Mass of t.                                        
+%MB            |if(slhaFound,if(slhaValExists("MASS",1,5),slhaVal("MASS",0,1,5),MBDef),MBDef)                                  %Mass of b.                                        
+%MH            |if(slhaFound,if(slhaValExists("MASS",1,25),slhaVal("MASS",0,1,25),MHDef),MHDef)                                %Mass of H.                                        
+%MUs           |if(slhaFound,if(slhaValExists("MASS",1,4000002),slhaVal("MASS",0,1,4000002),MUsDef),MUsDef)                    %Mass of Us.                                       
+%MCs           |if(slhaFound,if(slhaValExists("MASS",1,4000004),slhaVal("MASS",0,1,4000004),MCsDef),MCsDef)                    %Mass of Cs.                                       
+%MTs           |if(slhaFound,if(slhaValExists("MASS",1,4000006),slhaVal("MASS",0,1,4000006),MTsDef),MTsDef)                    %Mass of Ts.                                       
+%MDs           |if(slhaFound,if(slhaValExists("MASS",1,4000008),slhaVal("MASS",0,1,4000008),MDsDef),MDsDef)                    %Mass of Ds.                                       
+%MSs           |if(slhaFound,if(slhaValExists("MASS",1,4000010),slhaVal("MASS",0,1,4000010),MSsDef),MSsDef)                    %Mass of Ss.                                       
+%MBs           |if(slhaFound,if(slhaValExists("MASS",1,4000011),slhaVal("MASS",0,1,4000011),MBsDef),MBsDef)                    %Mass of Bs.                                       
+%MEs           |if(slhaFound,if(slhaValExists("MASS",1,4000018),slhaVal("MASS",0,1,4000018),MEsDef),MEsDef)                    %Mass of Es.                                       
+%MMus          |if(slhaFound,if(slhaValExists("MASS",1,4000020),slhaVal("MASS",0,1,4000020),MMusDef),MMusDef)                  %Mass of Mus.                                      
+%MTaus         |if(slhaFound,if(slhaValExists("MASS",1,4000022),slhaVal("MASS",0,1,4000022),MTausDef),MTausDef)                %Mass of Taus.                                     
+%WZ            |if(slhaFound,if(1+slhaDecayExists(23),slhaWidth(23),WZDef),WZDef)                                              %Width of G0.                                      
+%WW            |if(slhaFound,if(1+slhaDecayExists(24),slhaWidth(24),WWDef),WWDef)                                              %Width of GP.                                      
+%WT            |if(slhaFound,if(1+slhaDecayExists(6),slhaWidth(6),WTDef),WTDef)                                                %Width of t.                                       
+%WH            |if(slhaFound,if(1+slhaDecayExists(25),slhaWidth(25),WHDef),WHDef)                                              %Width of H.                                       
+%WUs           |if(slhaFound,if(1+slhaDecayExists(4000002),slhaWidth(4000002),WUsDef),WUsDef)                                  %Width of Us.                                      
+%WCs           |if(slhaFound,if(1+slhaDecayExists(4000004),slhaWidth(4000004),WCsDef),WCsDef)                                  %Width of Cs.                                      
+%WTs           |if(slhaFound,if(1+slhaDecayExists(4000006),slhaWidth(4000006),WTsDef),WTsDef)                                  %Width of Ts.                                      
+%WDs           |if(slhaFound,if(1+slhaDecayExists(4000008),slhaWidth(4000008),WDsDef),WDsDef)                                  %Width of Ds.                                      
+%WSs           |if(slhaFound,if(1+slhaDecayExists(4000010),slhaWidth(4000010),WSsDef),WSsDef)                                  %Width of Ss.                                      
+%WBs           |if(slhaFound,if(1+slhaDecayExists(4000011),slhaWidth(4000011),WBsDef),WBsDef)                                  %Width of Bs.                                      
+%WN1Es         |if(slhaFound,if(1+slhaDecayExists(4000012),slhaWidth(4000012),WN1EsDef),WN1EsDef)                              %Width of N1Es.                                    
+%WN1Mus        |if(slhaFound,if(1+slhaDecayExists(4000014),slhaWidth(4000014),WN1MusDef),WN1MusDef)                            %Width of N1Mus.                                   
+%WN1Taus       |if(slhaFound,if(1+slhaDecayExists(4000016),slhaWidth(4000016),WN1TausDef),WN1TausDef)                          %Width of N1Taus.                                  
+%WN2Es         |if(slhaFound,if(1+slhaDecayExists(4000013),slhaWidth(4000013),WN2EsDef),WN2EsDef)                              %Width of N2Es.                                    
+%WN2Mus        |if(slhaFound,if(1+slhaDecayExists(4000015),slhaWidth(4000015),WN2MusDef),WN2MusDef)                            %Width of N2Mus.                                   
+%WN2Taus       |if(slhaFound,if(1+slhaDecayExists(4000017),slhaWidth(4000017),WN2TausDef),WN2TausDef)                          %Width of N2Taus.                                  
+%WEs           |if(slhaFound,if(1+slhaDecayExists(4000018),slhaWidth(4000018),WEsDef),WEsDef)                                  %Width of Es.                                      
+%WMus          |if(slhaFound,if(1+slhaDecayExists(4000020),slhaWidth(4000020),WMusDef),WMusDef)                                %Width of Mus.                                     
+%WTaus         |if(slhaFound,if(1+slhaDecayExists(4000022),slhaWidth(4000022),WTausDef),WTausDef)                              %Width of Taus.                                    
+CKM1x1         |cos(cabi)                                                                                                      % CKM-Matrix ( CKM1x1 )                             
+CKM1x2         |sin(cabi)                                                                                                      % CKM-Matrix ( CKM1x2 )                             
+CKM2x1         |-sin(cabi)                                                                                                     % CKM-Matrix ( CKM2x1 )                             
+CKM2x2         |cos(cabi)                                                                                                      % CKM-Matrix ( CKM2x2 )                             
+M1s            |fabs(ML/2.-pow(pow(ML,2)+4*pow(MUU,2),0.5)/2.)                                                                 % Mass of excited mass eigenstates                  
+M2s            |fabs(ML/2.+pow(pow(ML,2)+4*pow(MUU,2),0.5)/2.)                                                                 % Mass of excited mass eigenstates                  
+Maux           |lc                                                                                                             % Mass of auxiliary boson                           
+Mauxo          |lc                                                                                                             % Mass of auxiliary neutral boson                   
+ONE1x1         |1                                                                                                              % All-one-matrix ( ONE1x1 )                         
+ONE1x2         |1                                                                                                              % All-one-matrix ( ONE1x2 )                         
+ONE1x3         |1                                                                                                              % All-one-matrix ( ONE1x3 )                         
+ONE2x1         |1                                                                                                              % All-one-matrix ( ONE2x1 )                         
+ONE2x2         |1                                                                                                              % All-one-matrix ( ONE2x2 )                         
+ONE2x3         |1                                                                                                              % All-one-matrix ( ONE2x3 )                         
+ONE3x1         |1                                                                                                              % All-one-matrix ( ONE3x1 )                         
+ONE3x2         |1                                                                                                              % All-one-matrix ( ONE3x2 )                         
+ONE3x3         |1                                                                                                              % All-one-matrix ( ONE3x3 )                         
+THETA          |-atan(2*MUU*pow(ML,-1))/2.                                                                                     % Excited states mixing angle                       
+aEW            |pow(aEWM1,-1)                                                                                                  % Electroweak coupling contant                      
+gstar          |2*pow(Pi,0.5)                                                                                                  % Contact interaction coupling                      
+MW             |pow(pow(MZ,2)/2.+pow(-(aEW*Pi*pow(2,-0.5)*pow(Gf,-1)*pow(MZ,2))+pow(MZ,4)/4.,0.5),0.5)                         % W mass                                            
+EE             |2*pow(aEW,0.5)*pow(Pi,0.5)                                                                                     % Electric coupling constant                        
+sw2            |1-pow(MW,2)*pow(MZ,-2)                                                                                         % Squared Sin of the Weinberg angle                 
+cw             |pow(1-sw2,0.5)                                                                                                 % Cosine of the Weinberg angle                      
+sw             |pow(sw2,0.5)                                                                                                   % Sine of the Weinberg angle                        
+g1             |EE*pow(cw,-1)                                                                                                  % U(1)Y coupling constant at the Z pole             
+gw             |EE*pow(sw,-1)                                                                                                  % Weak coupling constant at the Z pole              
+vev            |2*MW*sw*pow(EE,-1)                                                                                             % Higgs vacuum expectation value                    
+lam            |(pow(MH,2)*pow(vev,-2))/2.                                                                                     % Higgs quartic coupling                            
+yb             |ymb*pow(2,0.5)*pow(vev,-1)                                                                                     % Down-type Yukawa couplings ( yb )                 
+yt             |ymt*pow(2,0.5)*pow(vev,-1)                                                                                     % Up-type Yukawa couplings ( yt )                   
+ytau           |ymtau*pow(2,0.5)*pow(vev,-1)                                                                                   % Lepton Yukawa couplings ( ytau )                  
+muH            |pow(lam*pow(vev,2),0.5)                                                                                        % Coefficient of the quadratic piece of the Higgs po
+x1x0           |-6*lam                                                                                                         % H    H    H    H     coupling.
+x2x0           |-6*lam*vev                                                                                                     % H    H    H     coupling.
+x3x0           |1                                                                                                              % g.C  g.c  g     coupling.
+x4x0           |1                                                                                                              % g    g    g     coupling.
+x5x            |-pow(2,-0.5)                                                                                                   % g    g    g        coupling.
+x6x0           |-(yb*pow(2,-0.5))                                                                                              % H    b~   b     coupling.
+x7x0           |-(ytau*pow(2,-0.5))                                                                                            % H    ta+  ta-   coupling.
+x8x0           |-(yt*pow(2,-0.5))                                                                                              % H    t~   t     coupling.
+x9x0           |-1                                                                                                             % a    W+   W-    coupling.
+x10x0          |pow(sw,-2)/2.                                                                                                  % H    H    W+   W-    coupling.
+x11x0          |(vev*pow(sw,-2))/2.                                                                                            % H    W+   W-    coupling.
+x12x0          |-1                                                                                                             % a    a    W+   W-    coupling.
+x13x0          |-(cw*pow(sw,-1))                                                                                               % W+   W-   Z     coupling.
+x14x0          |pow(sw,-2)                                                                                                     % W+   W+   W-   W-    coupling.
+x15x0          |cw*pow(sw,-1)                                                                                                  % a    W+   W-   Z     coupling.
+x16x0          |(pow(cw,-2)*pow(sw,-2)*pow(pow(cw,2)+pow(sw,2),2))/2.                                                          % H    H    Z    Z     coupling.
+x17x0          |(vev*pow(cw,-2)*pow(sw,-2)*pow(pow(cw,2)+pow(sw,2),2))/2.                                                      % H    Z    Z     coupling.
+x18x0          |-(pow(cw,2)*pow(sw,-2))                                                                                        % W+   W-   Z    Z     coupling.
+x19x0          |-gstar/2.                                                                                                      % Auxo e+   e-    coupling.
+x20x0          |-gstar/2.                                                                                                      % Auxo mu+  mu-   coupling.
+x21x0          |-gstar/2.                                                                                                      % Auxo ta+  ta-   coupling.
+x22x0          |-(gstar*cos(THETA))/2.                                                                                         % Aux- e+   N1Es  coupling.
+x23x0          |-(gstar*cos(THETA))/2.                                                                                         % Aux- mu+  N1Mus coupling.
+x24x0          |-(gstar*cos(THETA))/2.                                                                                         % Aux- ta+  N1Tau coupling.
+x25x0          |-gstar/2.                                                                                                      % Aux- e+   ve    coupling.
+x26x0          |-gstar/2.                                                                                                      % Aux- mu+  vm    coupling.
+x27x0          |-gstar/2.                                                                                                      % Aux- ta+  vt    coupling.
+x28x0          |(gstar*cos(THETA))/2.                                                                                          % Aux+ N1Es e-    coupling.
+x29x0          |(gstar*cos(THETA))/2.                                                                                          % Aux+ N1Musmu-   coupling.
+x30x0          |(gstar*cos(THETA))/2.                                                                                          % Aux+ N1Tauta-   coupling.
+x31x0          |(gstar*cos(THETA))/2.                                                                                          % Auxo N1Es ve    coupling.
+x32x0          |(gstar*cos(THETA))/2.                                                                                          % Auxo N1Musvm    coupling.
+x33x0          |(gstar*cos(THETA))/2.                                                                                          % Auxo N1Tauvt    coupling.
+x34x0          |-gstar/2.                                                                                                      % Aux+ ve~  e-    coupling.
+x35x0          |-gstar/2.                                                                                                      % Aux+ vm~  mu-   coupling.
+x36x0          |-gstar/2.                                                                                                      % Aux+ vt~  ta-   coupling.
+x37x0          |-(gstar*cos(THETA))/2.                                                                                         % Auxo ve~  N1Es  coupling.
+x38x0          |-(gstar*cos(THETA))/2.                                                                                         % Auxo vm~  N1Mus coupling.
+x39x0          |-(gstar*cos(THETA))/2.                                                                                         % Auxo vt~  N1Tau coupling.
+x40x0          |-gstar/2.                                                                                                      % Auxo ve~  ve    coupling.
+x41x0          |-gstar/2.                                                                                                      % Auxo vm~  vm    coupling.
+x42x0          |-gstar/2.                                                                                                      % Auxo vt~  vt    coupling.
+x43x0          |-(gstar*ONE1x1)/2.                                                                                             % Auxo d~   d     coupling.
+x44x0          |-(gstar*ONE1x2)/2.                                                                                             % Auxo d~   s     coupling.
+x45x0          |-(gstar*ONE1x3)/2.                                                                                             % Auxo d~   b     coupling.
+x46x0          |-(gstar*ONE2x1)/2.                                                                                             % Auxo s~   d     coupling.
+x47x0          |-(gstar*ONE2x2)/2.                                                                                             % Auxo s~   s     coupling.
+x48x0          |-(gstar*ONE2x3)/2.                                                                                             % Auxo s~   b     coupling.
+x49x0          |-(gstar*ONE3x1)/2.                                                                                             % Auxo b~   d     coupling.
+x50x0          |-(gstar*ONE3x2)/2.                                                                                             % Auxo b~   s     coupling.
+x51x0          |-(gstar*ONE3x3)/2.                                                                                             % Auxo b~   b     coupling.
+x52x0          |-(gstar*ONE1x1)/2.                                                                                             % Aux- d~   u     coupling.
+x53x0          |-(gstar*ONE1x2)/2.                                                                                             % Aux- d~   c     coupling.
+x54x0          |-(gstar*ONE1x3)/2.                                                                                             % Aux- d~   t     coupling.
+x55x0          |-(gstar*ONE2x1)/2.                                                                                             % Aux- s~   u     coupling.
+x56x0          |-(gstar*ONE2x2)/2.                                                                                             % Aux- s~   c     coupling.
+x57x0          |-(gstar*ONE2x3)/2.                                                                                             % Aux- s~   t     coupling.
+x58x0          |-(gstar*ONE3x1)/2.                                                                                             % Aux- b~   u     coupling.
+x59x0          |-(gstar*ONE3x2)/2.                                                                                             % Aux- b~   c     coupling.
+x60x0          |-(gstar*ONE3x3)/2.                                                                                             % Aux- b~   t     coupling.
+x61x0          |-(gstar*ONE1x1)/2.                                                                                             % Aux+ u~   d     coupling.
+x62x0          |-(gstar*ONE1x2)/2.                                                                                             % Aux+ u~   s     coupling.
+x63x0          |-(gstar*ONE1x3)/2.                                                                                             % Aux+ u~   b     coupling.
+x64x0          |-(gstar*ONE2x1)/2.                                                                                             % Aux+ c~   d     coupling.
+x65x0          |-(gstar*ONE2x2)/2.                                                                                             % Aux+ c~   s     coupling.
+x66x0          |-(gstar*ONE2x3)/2.                                                                                             % Aux+ c~   b     coupling.
+x67x0          |-(gstar*ONE3x1)/2.                                                                                             % Aux+ t~   d     coupling.
+x68x0          |-(gstar*ONE3x2)/2.                                                                                             % Aux+ t~   s     coupling.
+x69x0          |-(gstar*ONE3x3)/2.                                                                                             % Aux+ t~   b     coupling.
+x70x0          |-(gstar*ONE1x1)/2.                                                                                             % Auxo u~   u     coupling.
+x71x0          |-(gstar*ONE1x2)/2.                                                                                             % Auxo u~   c     coupling.
+x72x0          |-(gstar*ONE1x3)/2.                                                                                             % Auxo u~   t     coupling.
+x73x0          |-(gstar*ONE2x1)/2.                                                                                             % Auxo c~   u     coupling.
+x74x0          |-(gstar*ONE2x2)/2.                                                                                             % Auxo c~   c     coupling.
+x75x0          |-(gstar*ONE2x3)/2.                                                                                             % Auxo c~   t     coupling.
+x76x0          |-(gstar*ONE3x1)/2.                                                                                             % Auxo t~   u     coupling.
+x77x0          |-(gstar*ONE3x2)/2.                                                                                             % Auxo t~   c     coupling.
+x78x0          |-(gstar*ONE3x3)/2.                                                                                             % Auxo t~   t     coupling.
+x79x0          |-(gstar*sin(THETA))/2.                                                                                         % Aux- e+   N2Es  coupling.
+x80x0          |-(gstar*sin(THETA))/2.                                                                                         % Aux- mu+  N2Mus coupling.
+x81x0          |-(gstar*sin(THETA))/2.                                                                                         % Aux- ta+  N2Tau coupling.
+x82x0          |-(gstar*sin(THETA))/2.                                                                                         % Aux+ N2Es e-    coupling.
+x83x0          |-(gstar*sin(THETA))/2.                                                                                         % Aux+ N2Musmu-   coupling.
+x84x0          |-(gstar*sin(THETA))/2.                                                                                         % Aux+ N2Tauta-   coupling.
+x85x0          |-(gstar*sin(THETA))/2.                                                                                         % Auxo N2Es ve    coupling.
+x86x0          |-(gstar*sin(THETA))/2.                                                                                         % Auxo N2Musvm    coupling.
+x87x0          |-(gstar*sin(THETA))/2.                                                                                         % Auxo N2Tauvt    coupling.
+x88x0          |-(gstar*sin(THETA))/2.                                                                                         % Auxo ve~  N2Es  coupling.
+x89x0          |-(gstar*sin(THETA))/2.                                                                                         % Auxo vm~  N2Mus coupling.
+x90x0          |-(gstar*sin(THETA))/2.                                                                                         % Auxo vt~  N2Tau coupling.
+x91x0          |-1                                                                                                             % a    e+   e-    coupling.
+x92x0          |-1                                                                                                             % a    mu+  mu-   coupling.
+x93x0          |-1                                                                                                             % a    ta+  ta-   coupling.
+x94x0          |0.6666666666666666                                                                                             % a    u~   u     coupling.
+x95x0          |0.6666666666666666                                                                                             % a    c~   c     coupling.
+x96x0          |0.6666666666666666                                                                                             % a    t~   t     coupling.
+x97x0          |-0.3333333333333333                                                                                            % a    d~   d     coupling.
+x98x0          |-0.3333333333333333                                                                                            % a    s~   s     coupling.
+x99x0          |-0.3333333333333333                                                                                            % a    b~   b     coupling.
+x100x0         |1                                                                                                              % g    u~   u     coupling.
+x101x0         |1                                                                                                              % g    c~   c     coupling.
+x102x0         |1                                                                                                              % g    t~   t     coupling.
+x103x0         |1                                                                                                              % g    d~   d     coupling.
+x104x0         |1                                                                                                              % g    s~   s     coupling.
+x105x0         |1                                                                                                              % g    b~   b     coupling.
+x106x0         |-(CKM1x1*pow(2,-0.5)*pow(sw,-1))/2.                                                                            % W+   u~   d     coupling.
+x107x0         |-(CKM1x2*pow(2,-0.5)*pow(sw,-1))/2.                                                                            % W+   u~   s     coupling.
+x108x0         |-(CKM2x1*pow(2,-0.5)*pow(sw,-1))/2.                                                                            % W+   c~   d     coupling.
+x109x0         |-(CKM2x2*pow(2,-0.5)*pow(sw,-1))/2.                                                                            % W+   c~   s     coupling.
+x110x0         |-(pow(2,-0.5)*pow(sw,-1))/2.                                                                                   % W+   t~   b     coupling.
+x111x0         |-(CKM1x1*pow(2,-0.5)*pow(sw,-1))/2.                                                                            % W-   d~   u     coupling.
+x112x0         |-(CKM2x1*pow(2,-0.5)*pow(sw,-1))/2.                                                                            % W-   d~   c     coupling.
+x113x0         |-(CKM1x2*pow(2,-0.5)*pow(sw,-1))/2.                                                                            % W-   s~   u     coupling.
+x114x0         |-(CKM2x2*pow(2,-0.5)*pow(sw,-1))/2.                                                                            % W-   s~   c     coupling.
+x115x0         |-(pow(2,-0.5)*pow(sw,-1))/2.                                                                                   % W-   b~   t     coupling.
+x116x0         |-(pow(2,-0.5)*pow(sw,-1))/2.                                                                                   % W+   ve~  e-    coupling.
+x117x0         |-(pow(2,-0.5)*pow(sw,-1))/2.                                                                                   % W+   vm~  mu-   coupling.
+x118x0         |-(pow(2,-0.5)*pow(sw,-1))/2.                                                                                   % W+   vt~  ta-   coupling.
+x119x0         |-(pow(2,-0.5)*pow(sw,-1))/2.                                                                                   % W-   e+   ve    coupling.
+x120x0         |-(pow(2,-0.5)*pow(sw,-1))/2.                                                                                   % W-   mu+  vm    coupling.
+x121x0         |-(pow(2,-0.5)*pow(sw,-1))/2.                                                                                   % W-   ta+  vt    coupling.
+x122x0         |-(pow(cw,-1)*pow(sw,-1))/12.                                                                                   % Z    u~   u     coupling.
+x122x1         |-3*pow(cw,2)+5*pow(sw,2)                                                                                       % Z    u~   u        coupling.
+x122x2         |3*(pow(cw,2)+pow(sw,2))                                                                                        % Z    u~   u        coupling.
+x123x0         |-(pow(cw,-1)*pow(sw,-1))/12.                                                                                   % Z    c~   c     coupling.
+x123x1         |-3*pow(cw,2)+5*pow(sw,2)                                                                                       % Z    c~   c        coupling.
+x123x2         |3*(pow(cw,2)+pow(sw,2))                                                                                        % Z    c~   c        coupling.
+x124x0         |-(pow(cw,-1)*pow(sw,-1))/12.                                                                                   % Z    t~   t     coupling.
+x124x1         |-3*pow(cw,2)+5*pow(sw,2)                                                                                       % Z    t~   t        coupling.
+x124x2         |3*(pow(cw,2)+pow(sw,2))                                                                                        % Z    t~   t        coupling.
+x125x0         |(pow(cw,-1)*pow(sw,-1))/12.                                                                                    % Z    d~   d     coupling.
+x125x1         |-3*pow(cw,2)+pow(sw,2)                                                                                         % Z    d~   d        coupling.
+x125x2         |3*(pow(cw,2)+pow(sw,2))                                                                                        % Z    d~   d        coupling.
+x126x0         |(pow(cw,-1)*pow(sw,-1))/12.                                                                                    % Z    s~   s     coupling.
+x126x1         |-3*pow(cw,2)+pow(sw,2)                                                                                         % Z    s~   s        coupling.
+x126x2         |3*(pow(cw,2)+pow(sw,2))                                                                                        % Z    s~   s        coupling.
+x127x0         |(pow(cw,-1)*pow(sw,-1))/12.                                                                                    % Z    b~   b     coupling.
+x127x1         |-3*pow(cw,2)+pow(sw,2)                                                                                         % Z    b~   b        coupling.
+x127x2         |3*(pow(cw,2)+pow(sw,2))                                                                                        % Z    b~   b        coupling.
+x128x0         |-(pow(cw,-1)*pow(sw,-1)*(pow(cw,2)+pow(sw,2)))/4.                                                              % Z    ve~  ve    coupling.
+x129x0         |-(pow(cw,-1)*pow(sw,-1)*(pow(cw,2)+pow(sw,2)))/4.                                                              % Z    vm~  vm    coupling.
+x130x0         |-(pow(cw,-1)*pow(sw,-1)*(pow(cw,2)+pow(sw,2)))/4.                                                              % Z    vt~  vt    coupling.
+x131x0         |(pow(cw,-1)*pow(sw,-1))/4.                                                                                     % Z    e+   e-    coupling.
+x131x1         |-pow(cw,2)+3*pow(sw,2)                                                                                         % Z    e+   e-       coupling.
+x131x2         |pow(cw,2)+pow(sw,2)                                                                                            % Z    e+   e-       coupling.
+x132x0         |(pow(cw,-1)*pow(sw,-1))/4.                                                                                     % Z    mu+  mu-   coupling.
+x132x1         |-pow(cw,2)+3*pow(sw,2)                                                                                         % Z    mu+  mu-      coupling.
+x132x2         |pow(cw,2)+pow(sw,2)                                                                                            % Z    mu+  mu-      coupling.
+x133x0         |(pow(cw,-1)*pow(sw,-1))/4.                                                                                     % Z    ta+  ta-   coupling.
+x133x1         |-pow(cw,2)+3*pow(sw,2)                                                                                         % Z    ta+  ta-      coupling.
+x133x2         |pow(cw,2)+pow(sw,2)                                                                                            % Z    ta+  ta-      coupling.
+x134x0         |-(f3e*cos(THETA)*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1))/4.                                                         % W+   N2Es e-    coupling.
+x135x0         |-(f3e*cos(THETA)*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1))/4.                                                         % W+   N2Musmu-   coupling.
+x136x0         |-(f3e*cos(THETA)*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1))/4.                                                         % W+   N2Tauta-   coupling.
+x137x0         |(f3e*cos(THETA)*pow(lc,-1)*pow(sw,-1))/8.                                                                      % a    N2Es ve    coupling.
+x138x0         |(f3e*cos(THETA)*pow(lc,-1)*pow(sw,-1))/8.                                                                      % a    N2Musvm    coupling.
+x139x0         |(f3e*cos(THETA)*pow(lc,-1)*pow(sw,-1))/8.                                                                      % a    N2Tauvt    coupling.
+x140x0         |-(f3e*cos(THETA)*pow(cw,-1)*pow(lc,-1))/8.                                                                     % Z    N2Es ve    coupling.
+x141x0         |-(f3e*cos(THETA)*pow(cw,-1)*pow(lc,-1))/8.                                                                     % Z    N2Musvm    coupling.
+x142x0         |-(f3e*cos(THETA)*pow(cw,-1)*pow(lc,-1))/8.                                                                     % Z    N2Tauvt    coupling.
+x143x0         |(f3e*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1)*sin(THETA))/4.                                                          % W+   N1Es e-    coupling.
+x144x0         |(f3e*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1)*sin(THETA))/4.                                                          % W+   N1Musmu-   coupling.
+x145x0         |(f3e*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1)*sin(THETA))/4.                                                          % W+   N1Tauta-   coupling.
+x146x0         |-(f3e*pow(lc,-1)*pow(sw,-1)*sin(THETA))/8.                                                                     % a    N1Es ve    coupling.
+x147x0         |-(f3e*pow(lc,-1)*pow(sw,-1)*sin(THETA))/8.                                                                     % a    N1Musvm    coupling.
+x148x0         |-(f3e*pow(lc,-1)*pow(sw,-1)*sin(THETA))/8.                                                                     % a    N1Tauvt    coupling.
+x149x0         |(f3e*pow(cw,-1)*pow(lc,-1)*sin(THETA))/8.                                                                      % Z    N1Es ve    coupling.
+x150x0         |(f3e*pow(cw,-1)*pow(lc,-1)*sin(THETA))/8.                                                                      % Z    N1Musvm    coupling.
+x151x0         |(f3e*pow(cw,-1)*pow(lc,-1)*sin(THETA))/8.                                                                      % Z    N1Tauvt    coupling.
+x152x0         |(f3e*cos(THETA)*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1))/4.                                                          % W-   e+   N2Es  coupling.
+x153x0         |(f3e*cos(THETA)*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1))/4.                                                          % W-   mu+  N2Mus coupling.
+x154x0         |(f3e*cos(THETA)*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1))/4.                                                          % W-   ta+  N2Tau coupling.
+x155x0         |-(f3e*cos(THETA)*pow(lc,-1)*pow(sw,-1))/8.                                                                     % a    ve~  N2Es  coupling.
+x156x0         |-(f3e*cos(THETA)*pow(lc,-1)*pow(sw,-1))/8.                                                                     % a    vm~  N2Mus coupling.
+x157x0         |-(f3e*cos(THETA)*pow(lc,-1)*pow(sw,-1))/8.                                                                     % a    vt~  N2Tau coupling.
+x158x0         |(f3e*cos(THETA)*pow(cw,-1)*pow(lc,-1))/8.                                                                      % Z    ve~  N2Es  coupling.
+x159x0         |(f3e*cos(THETA)*pow(cw,-1)*pow(lc,-1))/8.                                                                      % Z    vm~  N2Mus coupling.
+x160x0         |(f3e*cos(THETA)*pow(cw,-1)*pow(lc,-1))/8.                                                                      % Z    vt~  N2Tau coupling.
+x161x0         |(f3e*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1)*sin(THETA))/4.                                                          % W-   e+   N1Es  coupling.
+x162x0         |(f3e*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1)*sin(THETA))/4.                                                          % W-   mu+  N1Mus coupling.
+x163x0         |(f3e*pow(2,-0.5)*pow(lc,-1)*pow(sw,-1)*sin(THETA))/4.                                                          % W-   ta+  N1Tau coupling.
+x164x0         |-(f3e*pow(lc,-1)*pow(sw,-1)*sin(THETA))/8.                                                                     % a    ve~  N1Es  coupling.
+x165x0         |-(f3e*pow(lc,-1)*pow(sw,-1)*sin(THETA))/8.                                                                     % a    vm~  N1Mus coupling.
+x166x0         |-(f3e*pow(lc,-1)*pow(sw,-1)*sin(THETA))/8.                                                                     % a    vt~  N1Tau coupling.
+x167x0         |(f3e*pow(cw,-1)*pow(lc,-1)*sin(THETA))/8.                                                                      % Z    ve~  N1Es  coupling.
+x168x0         |(f3e*pow(cw,-1)*pow(lc,-1)*sin(THETA))/8.                                                                      % Z    vm~  N1Mus coupling.
+x169x0         |(f3e*pow(cw,-1)*pow(lc,-1)*sin(THETA))/8.                                                                      % Z    vt~  N1Tau coupling.

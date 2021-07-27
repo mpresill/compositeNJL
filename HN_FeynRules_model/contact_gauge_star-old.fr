@@ -1,0 +1,261 @@
+(* ************************** *)
+(* *****  Information   ***** *)
+(* ************************** *)
+
+M$ModelName = "NMjuly";
+
+M$Information = {
+             Authors        -> {"O. Panella", "M. Presilla"},
+             Version        -> {"2.0"},
+             Date           -> {"24/07/2016"},
+             Instituttions  -> {"INFN, Sezione di Perugia"},
+             Emails         -> {"orlando.panella@pg.infn.it"}
+};
+
+
+(*************************************)
+(********** Index definition *********)
+(*************************************)
+IndexRange[ Index[Generation] ] = Range[3];
+IndexRange[ Index[Colour] ] = NoUnfold[Range[3]];
+
+IndexStyle[Colour, i];
+IndexStyle[Generation, f];
+
+
+(* ************************** *)
+(* *** Interaction orders *** *)
+(* ***  (as used by mg5)  *** *)
+(* ************************** *)
+
+M$InteractionOrderHierarchy = {
+  {QCD, 1},
+  {NP, 1},
+  {QED, 2}
+};
+
+(***************************)
+(***** Parameter list ******) 
+(***************************)
+M$Parameters = {
+
+  (* External Parameters  *)
+
+f3u == { 
+        ParameterType -> External,
+        Value -> 1.0,
+        InteractionOrder -> {QED, 1},
+        Description -> "Ustar dimensionless coupling"},
+f3d == { 
+        ParameterType -> External,
+        Value -> 1.0,
+        InteractionOrder -> {QED, 1},
+        Description -> "Dstar dimensionless coupling"},
+f3e == { 
+        ParameterType -> External,
+        Value -> 1.0,
+        InteractionOrder -> {QED, 1},
+        Description -> "Estar dimensionless coupling"},
+lc == { 
+        ParameterType -> External,
+        Value -> 5000.0,
+        Description -> "Compositeness scale"},
+
+
+MUU == { 
+        ParameterType -> External,
+        Value -> 5000.0,
+        Description -> "Mass of excited states"},
+
+
+
+ML == {
+        ParameterType -> External,
+        Value -> 500.0,
+        Description -> "Mass of excited states"},
+
+
+
+
+
+	  	
+(* Internal Parameters *)
+ 
+
+M1s == {
+        ParameterType -> Internal,
+        Value -> Abs[ML/2-1/2*Sqrt[ML^2+4*MUU^2]],
+        Description -> "Mass of excited mass eigenstates"},
+
+
+
+M2s == {
+        ParameterType -> Internal,
+        Value -> Abs[ML/2+1/2*Sqrt[ML^2+4*MUU^2]],
+        Description -> "Mass of excited mass eigenstates"},
+
+
+
+
+THETA == {
+	   ParameterType -> Internal,
+        Value -> ArcTan[-(2*MUU)/(ML)]/2,
+        Description -> "Excited states mixing angle"},
+
+
+ ONE == { 
+    ParameterType -> Internal,
+    Indices       -> {Index[Generation], Index[Generation]},
+    ComplexParameter -> False,
+    Value         -> {ONE[1,1] -> 1,  ONE[1,2] -> 1, ONE[1,3] -> 1,
+                      ONE[2,1] -> 1,  ONE[2,2] -> 1, ONE[2,3] -> 1,
+                      ONE[3,1] -> 1,  ONE[3,2] -> 1, ONE[3,3] -> 1},
+    Description -> "All-one-matrix"},
+
+gstar == { 
+        ParameterType -> Internal,
+        Value ->(10000*Sqrt[4 Pi])/lc,
+        InteractionOrder -> {NP, 1},
+        Description -> "Contact interaction coupling"}
+
+
+};
+
+
+
+
+
+(**********************************)
+(***** Particle classes list ******)
+(**********************************)
+M$ClassesDescription = {
+  F[5] == {
+        ClassMembers -> {Us,Cs,Ts},
+        ClassName -> Ustar,
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation], Index[Colour]},
+	Mass -> {Mstar, {MUs,1000},{MCs,1000},{MTs,1000}},
+        Width -> {{WUs, 30},{WCs, 30},{WTs, 30}},
+	QuantumNumbers -> {Q -> +5/3},
+	PropagatorLabel -> {"U*"},
+	PropagatorType -> Straight,
+	PropagatorArrow -> Forward,
+        PDG -> {4000002,4000004,4000006}, 
+        FullName -> {"u*-quark","c*-quark","t*-quark"}
+},
+  F[6] == {
+        ClassMembers -> {Ds,Ss,Bs},
+        ClassName -> Dstar,
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation], Index[Colour]},
+	Mass -> {Mstar, {MDs,1000},{MSs,1000},{MBs,1000}},
+        Width -> {{WDs, 30},{WSs, 30},{WBs, 30}},
+	QuantumNumbers -> {Q -> -4/3},
+	PropagatorLabel -> {"D*"},
+	PropagatorType -> Straight,
+	PropagatorArrow -> Forward,
+        PDG -> {4000008,4000010,4000011}, 
+        FullName -> {"d*-quark","c*-quark","b*-quark"}
+},
+
+
+F[7] == {
+        ClassMembers -> {N1Es,N1Mus,N1Taus},
+        ClassName -> Nu1star,
+        FlavorIndex -> Generation,
+	SelfConjugate -> True,
+	Indices -> {Index[Generation]},
+	Mass -> {M1star, {M1s,Internal},{M1s,Internal},{M1s,Internal}},
+        Width -> {{WN1Es, 30},{WN1Mus, 30},{WN1Taus, 30}},
+	PropagatorLabel -> {"Nu1*"},
+	PropagatorType -> Straight,
+	PropagatorArrow -> Forward,
+        PDG -> {4000012,4000014,4000016}, 
+        FullName -> {"Nu1E*","Nu1Mu*","Nu1Tau*"}
+},
+F[8] == {
+        ClassMembers -> {N2Es,N2Mus,N2Taus},
+        ClassName -> Nu2star,
+        FlavorIndex -> Generation,
+	SelfConjugate -> True,
+	Indices -> {Index[Generation]},
+	Mass -> {M2star, {M2s,Internal},{M2s,Internal},{M2s,Internal}},
+        Width -> {{WN2Es, 30},{WN2Mus, 30},{WN2Taus, 30}},
+	PropagatorLabel -> {"Nu2*"},
+	PropagatorType -> Straight,
+	PropagatorArrow -> Forward,
+        PDG -> {4000013,4000015,4000017}, 
+        FullName -> {"Nu2E*","Nu2Mu*","Nu2Tau*"}
+},
+
+F[9] == {
+        ClassMembers -> {Es,Mus,Taus},
+        ClassName -> Estar,
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation]},
+	Mass -> {Mstar, {MEs,1000},{MMus,1000},{MTaus,1000}},
+        Width -> {{WEs, 30},{WMus, 30},{WTaus, 30}},
+	QuantumNumbers -> {Q -> -2, LeptonNumber -> 1},
+	PropagatorLabel -> {"E*"},
+	PropagatorType -> Straight,
+	PropagatorArrow -> Forward,
+        PDG -> {4000018,4000020,4000022}, 
+        FullName -> {"E*-lepton","Mu*-lepton","Tau*-lepton"}
+},
+
+(****Unphysical Gauge Bosons for Contact Interactions****)
+V[13] == {
+    ClassName        -> Aux,
+    SelfConjugate    -> False,
+    Mass             -> {MAux, 10000},
+    Width            -> {WAux,0},
+    ParticleName     ->"Aux+",
+    AntiParticleName -> "Aux-",
+    QuantumNumbers   -> {Q -> 1},
+    FullName         -> "Auxiliary"
+  },
+
+V[14] == { 
+    ClassName       -> Auxo, 
+    SelfConjugate   -> True,
+    Mass            -> {MAuxo, 10000},
+    Width           -> {WAuxo, 0},
+    ParticleName    -> "Auxo", 
+    PropagatorLabel -> "Auxo",
+    FullName        -> "AuxiliaryO"
+  }
+
+};
+
+
+
+(* ************************** *)
+(* *****   Lagrangian   ***** *)
+(* ************************** *)
+(*******kinetic term***********)
+Lstarkin :=  I Ustarbar.Ga[mu].del[Ustar, mu] -   Mstar[f] Ustarbar[s, f, c].Ustar[s, f, c] +   I Dstarbar.Ga[mu].del[Dstar, mu] -   Mstar[f] Dstarbar[s, f, c].Dstar[s, f, c] +   I Estarbar.Ga[mu].del[Estar, mu] - 
+  Mstar[f] Estarbar[s, f].Estar[s, f] +   I/2 Nu1starbar.Ga[mu].del[Nu1star, mu] -   1/2 M1star[f] Nu1starbar[s, f].Nu1star[s, f] +   I/2 Nu2starbar.Ga[mu].del[Nu2star, mu] -   1/2 M2star[f] Nu2starbar[s, f].Nu2star[s, f];
+
+
+
+
+(******Gauge interaction******)
+Lgaugeint := ((f3u gw)/( 2 lc)  I Ustarbar.(Ga[mu].Ga[nu] - Ga[nu].Ga[mu]).ProjM.uq + (f3d gw)/( 2 lc) I dqbar.(Ga[mu].Ga[nu] - Ga[nu].Ga[mu]).ProjP.Dstar + ( f3e gw)/( 2 lc) I lbar.(Ga[mu].Ga[nu] - Ga[nu].Ga[mu]).ProjP.Estar + (f3e gw)/(2  Sqrt[2] lc) (Sin[THETA] Nu1starbar.(Ga[mu].Ga[nu] - Ga[nu].Ga[mu]).ProjM.l) del[W[mu], nu] + (f3e gw)/(2  Sqrt[2] lc) I (Cos[THETA] Nu2starbar.(Ga[mu].Ga[nu] - Ga[nu].Ga[mu]).ProjM.l) del[W[mu], nu] - (f3e gw)/( 4 cw lc) (  Sin[THETA] Nu1starbar.(Ga[mu].Ga[nu] - Ga[nu].Ga[mu]).ProjM.vl) del[B[mu], nu] - (f3e gw)/(4 cw lc) I (Cos[THETA] Nu2starbar.(Ga[mu].Ga[nu] - Ga[nu].Ga[mu]).ProjM.vl) del[B[mu], nu]);
+
+
+
+(********charged contact interaction*****)
+LcontintCH := gstar Aux[mu] (uqbar.ProjM[mu].ONE.dq)  -(gstar I Cos[THETA] Sqrt[2] )   Aux[mu] (Nu1starbar.ProjM[mu].l) + (gstar Sin[THETA] Sqrt[2] ) Aux[mu] (Nu2starbar.ProjM[mu].l) + gstar Aux[mu] (vlbar.ProjM[mu].l)+gstar  HC[Aux[mu]] (dqbar.ProjM[mu].ONE.uq)  +(gstar I Cos[THETA] Sqrt[2] ) HC[Aux[mu]] (lbar.ProjM[mu].Nu1star) + (gstar Sin[THETA] Sqrt[2] ) HC[Aux[mu]] (lbar.ProjM[mu].Nu2star) + gstar HC[Aux[mu]] (lbar.ProjM[mu].vl);
+
+
+
+(******neutral contact interaction******)
+LcontintN := gstar (dqbar.Ga[mu].ProjM.ONE.dq) Auxo[mu] + gstar (uqbar.Ga[mu].ProjM.ONE.uq) Auxo[mu] + gstar (lbar.Ga[mu].ProjM.l) Auxo[mu];
+LcontintNM := - (gstar I Cos[THETA] Sqrt[2] ) (Nu1starbar.Ga[mu].ProjM.vl) Auxo[mu] + (gstar Sin[THETA] Sqrt[2] ) (Nu2starbar.Ga[mu].ProjM.vl) Auxo[mu] + gstar (vlbar.Ga[mu].ProjM.vl) Auxo[mu];
+
+
+
+Lqstar:=Lstarkin+Lgaugeint+HC[Lgaugeint]+LcontintCH+LcontintN+LcontintNM+HC[LcontintNM];

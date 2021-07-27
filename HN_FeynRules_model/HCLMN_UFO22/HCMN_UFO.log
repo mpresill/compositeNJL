@@ -1,0 +1,149 @@
+# This file was automatically created by FeynRules 2.3.29
+# Mathematica version: 11.1.1 for Mac OS X x86 (64-bit) (April 27, 2017)
+# Date: Fri 22 Dec 2017 10:56:02
+
+
+# 
+# This is the logfile for the model HCMN
+
+# Authors: O. Panella, M. Presilla
+# Model version: 3.0
+# Checking the Quantum numbers
+   * Electric charge defined.
+# Checking the Lagrangians
+   * All Lagrangians are ok.
+#
+# Particle definitions
+#
+
+   * No particles removed. All particles correspond to GenInt setup.
+
+# Automatically assigned PDG numbers
+   * Assigned PDG number 9000001 to particle ghA
+   * Assigned PDG number 9000002 to particle ghZ
+   * Assigned PDG number 9000003 to particle ghWp
+   * Assigned PDG number 9000004 to particle ghWm
+   * Assigned PDG number 9000005 to particle Aux+
+   * Assigned PDG number 9000006 to particle Auxo
+
+
+# Compulsory PDG codes:
+   * Class SM leptons complete.
+   * Class SM neutrinos complete.
+   * Class SM quarks complete.
+   * Class SM gauge bosons complete.
+#
+# Parameter definitions
+#
+
+   * All parameters are ok.
+
+
+# Vertices
+   * Calling FeynmanRules for 6 Lagrangians.
+   * Number of classes vertices: 59
+   * Number of flavored vertices: 169
+   * Saved vertices in InterfaceRun[ 1 ].
+   * Checked QNumber conservation.
+      - Quantum number GhostNumber conserved in all vertices.
+      - Quantum number LeptonNumber NOT conserved in the following vertices
+          {Auxbar, ebar, N1Es}
+          {Auxbar, mubar, N1Mus}
+          {Auxbar, tabar, N1Taus}
+          {Aux, N1Es, e}
+          {Aux, N1Mus, mu}
+          {Aux, N1Taus, ta}
+          {Auxo, N1Es, ve}
+          {Auxo, N1Mus, vm}
+          {Auxo, N1Taus, vt}
+          {Auxo, vebar, N1Es}
+          {Auxo, vmbar, N1Mus}
+          {Auxo, vtbar, N1Taus}
+          {Auxbar, ebar, N2Es}
+          {Auxbar, mubar, N2Mus}
+          {Auxbar, tabar, N2Taus}
+          {Aux, N2Es, e}
+          {Aux, N2Mus, mu}
+          {Aux, N2Taus, ta}
+          {Auxo, N2Es, ve}
+          {Auxo, N2Mus, vm}
+          {Auxo, N2Taus, vt}
+          {Auxo, vebar, N2Es}
+          {Auxo, vmbar, N2Mus}
+          {Auxo, vtbar, N2Taus}
+          {W, N2Es, e}
+          {W, N2Mus, mu}
+          {W, N2Taus, ta}
+          {A, N2Es, ve}
+          {A, N2Mus, vm}
+          {A, N2Taus, vt}
+          {Z, N2Es, ve}
+          {Z, N2Mus, vm}
+          {Z, N2Taus, vt}
+          {W, N1Es, e}
+          {W, N1Mus, mu}
+          {W, N1Taus, ta}
+          {A, N1Es, ve}
+          {A, N1Mus, vm}
+          {A, N1Taus, vt}
+          {Z, N1Es, ve}
+          {Z, N1Mus, vm}
+          {Z, N1Taus, vt}
+          {Wbar, ebar, N2Es}
+          {Wbar, mubar, N2Mus}
+          {Wbar, tabar, N2Taus}
+          {A, vebar, N2Es}
+          {A, vmbar, N2Mus}
+          {A, vtbar, N2Taus}
+          {Z, vebar, N2Es}
+          {Z, vmbar, N2Mus}
+          {Z, vtbar, N2Taus}
+          {Wbar, ebar, N1Es}
+          {Wbar, mubar, N1Mus}
+          {Wbar, tabar, N1Taus}
+          {A, vebar, N1Es}
+          {A, vmbar, N1Mus}
+          {A, vtbar, N1Taus}
+          {Z, vebar, N1Es}
+          {Z, vmbar, N1Mus}
+          {Z, vtbar, N1Taus}
+      - Quantum number Q conserved in all vertices.
+      - Quantum number Y conserved in all vertices.
+   * particles.py written.
+   * parameters.py written.
+#
+# Vertex definitions
+#
+
+   * 169 vertices written.
+   * vertices.py written.
+#
+# Lorentz structure definitions
+#
+
+   * 20 lorentz structures written.
+   * lorentz.py written.
+#
+# Coupling definitions
+#
+
+   * 67 couplings written.
+   * couplings.py written.
+#
+# Coupling order definitions
+#
+
+   * 0 couplings orders written.
+   * coupling_orders.py written.
+#
+# Decay definitions
+#
+
+   * 14 decays written.
+   * decay.py not written
+#
+# CTCoupling definitions
+#
+
+   * 0 CTcouplings written.
+   * CT_couplings.py written.

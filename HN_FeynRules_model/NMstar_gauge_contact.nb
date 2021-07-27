@@ -1,0 +1,4549 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    173215,       4541]
+NotebookOptionsPosition[    145072,       3978]
+NotebookOutlinePosition[    145535,       3996]
+CellTagsIndexPosition[    145492,       3993]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$FeynRulesPath", "=", " ", 
+   RowBox[{
+   "SetDirectory", "[", "\"\<~/Documents/feynrules-current\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "FeynRules`"}], "\n", 
+ RowBox[{
+  RowBox[{"FRPalette", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"$FeynRulesPath", "<>", " ", "\"\</Models/HCLMN\>\""}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"LoadModel", "[", 
+   RowBox[{"\"\<SM.fr\>\"", ",", "\"\<contact_gauge_star.fr\>\""}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"LoadRestriction", "[", 
+  RowBox[{"\"\<Cabibbo.rst\>\"", ",", "\"\<Massless.rst\>\""}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ModelInformation", "[", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CheckHermiticity", "[", "Lqstar", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FeynmanRules", "[", "Lqstar", "]"}], ";"}], "\[IndentingNewLine]",
+   "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"ATTENZIONE", ":", " ", 
+     RowBox[{
+     "per", " ", "Calchep", " ", "usare", " ", "la", " ", "gauge", " ", "di", 
+      " ", "Feynman"}]}], ",", " ", 
+    RowBox[{"mentre", " ", "per", " ", "Madgraph", " ", "no"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FeynmanGauge", "=", "False"}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"calchep", "\[Rule]", "FeynmanGauge"}], "=", "true"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"WriteCHOutput", "[", 
+    RowBox[{
+    "LGauge", ",", "LFermions", ",", "LHiggs", ",", "LYukawa", ",", "LGhost", 
+     ",", "Lqstar"}], "]"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"madgraph", "\[Rule]", "FeynmanGauge"}], "=", "false"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"WriteUFO", "[", 
+    RowBox[{
+    "LGauge", ",", "LFermions", ",", "LHiggs", ",", "LYukawa", ",", "LGhost", 
+     ",", "Lqstar"}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4994945099322577`*^9, 3.499494554038378*^9}, {
+   3.499494586046846*^9, 3.499494713258976*^9}, {3.499494764477941*^9, 
+   3.499494827391961*^9}, {3.4994948678609056`*^9, 3.499494917845337*^9}, {
+   3.499494952442121*^9, 3.4994949693931513`*^9}, 3.499502223126083*^9, {
+   3.499504633699316*^9, 3.499504636143024*^9}, {3.499504678771317*^9, 
+   3.499504716652214*^9}, {3.4995048135898123`*^9, 3.499504851864793*^9}, {
+   3.49950489315196*^9, 3.499504962147545*^9}, {3.499505048890707*^9, 
+   3.499505102780334*^9}, {3.499511200575078*^9, 3.499511225102847*^9}, {
+   3.499511335832356*^9, 3.4995113921801662`*^9}, {3.499511426405097*^9, 
+   3.4995114274687757`*^9}, {3.499512447991609*^9, 3.499512485820883*^9}, {
+   3.499512515825653*^9, 3.499512538161108*^9}, {3.499512635237276*^9, 
+   3.499512652915071*^9}, {3.4995128575910177`*^9, 3.499512890811305*^9}, {
+   3.4995129691450233`*^9, 3.4995129970763807`*^9}, {3.4995131220205593`*^9, 
+   3.4995131224266987`*^9}, {3.4995131997972803`*^9, 3.499513204631569*^9}, {
+   3.499513438873877*^9, 3.4995134507997303`*^9}, {3.499513573593248*^9, 
+   3.4995135926692944`*^9}, {3.499513654620144*^9, 3.49951368485777*^9}, {
+   3.4995138310018377`*^9, 3.4995138336800613`*^9}, {3.4995140222066317`*^9, 
+   3.499514025193399*^9}, {3.4995140570938053`*^9, 3.4995140590555973`*^9}, {
+   3.499514198591578*^9, 3.499514201755765*^9}, {3.4995142625358553`*^9, 
+   3.4995142882271338`*^9}, {3.499514418160965*^9, 3.4995144565306053`*^9}, {
+   3.499514503348525*^9, 3.49951452736479*^9}, {3.4995150066539793`*^9, 
+   3.499515007124094*^9}, {3.499515269832881*^9, 3.4995152891994333`*^9}, 
+   3.4995160253681726`*^9, {3.499516972714464*^9, 3.499517002417696*^9}, {
+   3.499517672470644*^9, 3.4995176968125553`*^9}, {3.499519035711174*^9, 
+   3.499519081183097*^9}, {3.499519175920375*^9, 3.499519177414094*^9}, {
+   3.499519213675333*^9, 3.499519219490671*^9}, {3.499519313858549*^9, 
+   3.499519326962254*^9}, 3.4995193902713842`*^9, {3.499519438095022*^9, 
+   3.49951948953393*^9}, {3.499523408674942*^9, 3.4995234329247723`*^9}, {
+   3.4995237990036507`*^9, 3.4995238032966623`*^9}, {3.499523867317945*^9, 
+   3.499523873963224*^9}, {3.49952459369151*^9, 3.499524657394775*^9}, {
+   3.4995248640338917`*^9, 3.4995249217536907`*^9}, {3.499525242609517*^9, 
+   3.4995252462471647`*^9}, {3.4995259230952597`*^9, 3.499525928212943*^9}, {
+   3.499525969150711*^9, 3.499525972395101*^9}, {3.4995265359793243`*^9, 
+   3.499526569338039*^9}, {3.499526620441169*^9, 3.499526662101741*^9}, {
+   3.4995266966177464`*^9, 3.499526736853697*^9}, 3.4995267711281347`*^9, {
+   3.499526816828723*^9, 3.4995268288424377`*^9}, {3.499527282788805*^9, 
+   3.4995273846837378`*^9}, {3.499527903080021*^9, 3.499527906774721*^9}, {
+   3.499675806431404*^9, 3.499675807811282*^9}, {3.499676215416986*^9, 
+   3.499676217711616*^9}, {3.499689073379394*^9, 3.4996890744100847`*^9}, {
+   3.49969587340606*^9, 3.49969587710191*^9}, {3.499696474823289*^9, 
+   3.499696490133066*^9}, {3.499698973602065*^9, 3.499698975823126*^9}, {
+   3.49969906551483*^9, 3.499699069361565*^9}, {3.506690329722118*^9, 
+   3.506690330389874*^9}, 3.506690761280223*^9, {3.506690957613708*^9, 
+   3.5066909605346947`*^9}, {3.506694933330016*^9, 3.5066949356558447`*^9}, {
+   3.506752149811714*^9, 3.506752154781878*^9}, {3.506753544129583*^9, 
+   3.5067535891135273`*^9}, {3.506753707800714*^9, 3.506753708807371*^9}, {
+   3.506780145382419*^9, 3.506780178920413*^9}, 3.5067803354446087`*^9, {
+   3.5086614695749807`*^9, 3.5086614850527887`*^9}, {3.5098901853153753`*^9, 
+   3.509890185777025*^9}, {3.509890500681253*^9, 3.50989052267034*^9}, {
+   3.509890558427312*^9, 3.509890621621739*^9}, {3.509890655054763*^9, 
+   3.509890712843647*^9}, {3.509891104001236*^9, 3.5098911383365602`*^9}, {
+   3.509891169378544*^9, 3.5098911768009777`*^9}, 3.50989152867726*^9, {
+   3.510031840463476*^9, 3.5100318803388233`*^9}, {3.5134944060926647`*^9, 
+   3.513494423105338*^9}, {3.513494457053516*^9, 3.513494548770783*^9}, {
+   3.5134946535822287`*^9, 3.5134946547867613`*^9}, {3.513494699725295*^9, 
+   3.513494719212056*^9}, {3.5134948572687893`*^9, 3.513494858345148*^9}, {
+   3.513569479014172*^9, 3.5135694956811323`*^9}, {3.5135696199367323`*^9, 
+   3.513569629238274*^9}, {3.564312100494936*^9, 3.564312104311936*^9}, {
+   3.564319814632878*^9, 3.564319847337511*^9}, {3.564322710069502*^9, 
+   3.564322741879312*^9}, {3.564322816939048*^9, 3.564322832218119*^9}, {
+   3.564322944116253*^9, 3.564322963012197*^9}, {3.564322993409123*^9, 
+   3.564323018969995*^9}, {3.564323056849916*^9, 3.564323108708721*^9}, {
+   3.564323145763058*^9, 3.564323175287315*^9}, {3.564323245230013*^9, 
+   3.564323260085713*^9}, {3.564323490140448*^9, 3.56432359779279*^9}, {
+   3.564323733142998*^9, 3.564323886232961*^9}, {3.564323924797543*^9, 
+   3.564323945328929*^9}, {3.564324153237271*^9, 3.56432417348345*^9}, {
+   3.564324305781411*^9, 3.564324345395676*^9}, {3.564324411398752*^9, 
+   3.564324421764249*^9}, {3.564324467273585*^9, 3.564324501330559*^9}, {
+   3.564324930597819*^9, 3.564324939537784*^9}, {3.564325921263917*^9, 
+   3.564325922344944*^9}, 3.56432607896966*^9, {3.5643813138187*^9, 
+   3.564381315501557*^9}, {3.606455997188711*^9, 3.606456026088864*^9}, {
+   3.621155085131873*^9, 3.621155386859777*^9}, {3.621155522969045*^9, 
+   3.621155596476738*^9}, {3.621155851754899*^9, 3.621155903876013*^9}, {
+   3.621155964088458*^9, 3.621156029778054*^9}, {3.6714331677240467`*^9, 
+   3.671433180819774*^9}, {3.6714332123180313`*^9, 3.671433232424999*^9}, 
+   3.6714332680624065`*^9, {3.671433306312632*^9, 3.671433336747328*^9}, {
+   3.671433379013457*^9, 3.6714333829149895`*^9}, {3.671433861347895*^9, 
+   3.671433899702097*^9}, {3.6714340607995424`*^9, 3.6714341206632075`*^9}, {
+   3.6714341785016174`*^9, 3.6714342721946745`*^9}, {3.6714380900936885`*^9, 
+   3.6714381405257306`*^9}, {3.6714381855024796`*^9, 3.671438196793849*^9}, {
+   3.67144523744536*^9, 3.67144524673378*^9}, {3.6714452786903424`*^9, 
+   3.671445295048671*^9}, {3.6714453304114037`*^9, 3.6714453370409327`*^9}, 
+   3.6714456223136764`*^9, {3.6714456897069983`*^9, 3.6714457090626383`*^9}, {
+   3.6714461803629637`*^9, 3.671446230388497*^9}, {3.671446292849619*^9, 
+   3.67144634450144*^9}, {3.6714465478608985`*^9, 3.6714465655724745`*^9}, {
+   3.6715374865907335`*^9, 3.671537515260355*^9}, {3.6718748432440796`*^9, 
+   3.671874846695166*^9}, {3.6718752599777403`*^9, 3.6718752616801014`*^9}, {
+   3.6724892909998727`*^9, 3.6724893910335054`*^9}, {3.6724894386904244`*^9, 
+   3.672489440624604*^9}, {3.672489472321972*^9, 3.672489480585308*^9}, {
+   3.6724895570059023`*^9, 3.6724895837646985`*^9}, {3.6724916454305096`*^9, 
+   3.672491691626559*^9}, {3.6725487502428803`*^9, 3.6725487573069963`*^9}, {
+   3.672549343291206*^9, 3.672549439157182*^9}, {3.6725494748832555`*^9, 
+   3.672549569446656*^9}, {3.67254971916672*^9, 3.6725497194948606`*^9}, {
+   3.672549782838829*^9, 3.672549782916952*^9}, {3.672549977414856*^9, 
+   3.6725499816994715`*^9}, {3.6725500311033306`*^9, 3.672550035307082*^9}, {
+   3.672573102334855*^9, 3.6725731029196253`*^9}, {3.6725735137238755`*^9, 
+   3.6725735144489117`*^9}, {3.672730870537966*^9, 3.6727309035235615`*^9}, {
+   3.672736805156292*^9, 3.6727368152306633`*^9}, {3.6745403888412037`*^9, 
+   3.674540402015532*^9}, {3.6745405994628143`*^9, 3.6745406037850103`*^9}, {
+   3.674544498275461*^9, 3.674544532059291*^9}, {3.674914207808743*^9, 
+   3.6749142264130497`*^9}, {3.674914431411948*^9, 3.6749144986641207`*^9}, {
+   3.676810542156897*^9, 3.676810558422802*^9}, {3.676810591590229*^9, 
+   3.676810614749427*^9}, {3.6768110140386467`*^9, 3.676811037208887*^9}, {
+   3.676811103200777*^9, 3.67681116514823*^9}, {3.676811245452124*^9, 
+   3.676811253590746*^9}, 3.676811286394932*^9, {3.676811319484144*^9, 
+   3.676811406083312*^9}, {3.6768114760962687`*^9, 3.676811503413124*^9}, {
+   3.676811641967332*^9, 3.676811652009657*^9}, {3.676811687451441*^9, 
+   3.6768116938570137`*^9}, {3.676811792074999*^9, 3.676811852188987*^9}, {
+   3.676812841669496*^9, 3.67681288808323*^9}, 3.676814940486812*^9, {
+   3.676815497773696*^9, 3.67681559474319*^9}, {3.676818316456335*^9, 
+   3.676818323685122*^9}, {3.67686962943611*^9, 3.6768696962784033`*^9}, {
+   3.676870514402595*^9, 3.676870516359311*^9}, {3.677215606898602*^9, 
+   3.677215653380508*^9}, 3.685363419476645*^9, {3.685364740847104*^9, 
+   3.685364745867131*^9}, {3.685365826966222*^9, 3.685365948038134*^9}, 
+   3.685366044653543*^9, {3.6853660865729227`*^9, 3.685366232473947*^9}, {
+   3.685367548644867*^9, 3.685367612027474*^9}, {3.685463221908525*^9, 
+   3.6854632958258963`*^9}, {3.685463499148575*^9, 3.685463504573121*^9}, {
+   3.685628230693224*^9, 3.685628238096627*^9}, {3.685628268857848*^9, 
+   3.685628277594801*^9}, {3.688535216658298*^9, 3.688535266850856*^9}, {
+   3.688535344311254*^9, 3.688535420791149*^9}, {3.688707579248581*^9, 
+   3.6887075836494102`*^9}, {3.688711972421999*^9, 3.6887120233317623`*^9}, {
+   3.6887120852599688`*^9, 3.688712156202636*^9}, {3.68871220069158*^9, 
+   3.688712211220832*^9}, {3.688712255610011*^9, 3.688712329031747*^9}, {
+   3.688712363825716*^9, 3.688712422854315*^9}, {3.6887125187068863`*^9, 
+   3.688712603625927*^9}, {3.688712801042617*^9, 3.68871282661659*^9}, {
+   3.6887128678751383`*^9, 3.68871287402492*^9}, {3.688712956735559*^9, 
+   3.688712977692367*^9}, {3.6887166991567783`*^9, 3.688716931281546*^9}, {
+   3.688742640212377*^9, 3.688742657511261*^9}, {3.6887497090859337`*^9, 
+   3.688749756930459*^9}, {3.689596803197503*^9, 3.6895968193536863`*^9}, {
+   3.690133631740635*^9, 3.690133645450075*^9}, {3.690383997599407*^9, 
+   3.6903840375635967`*^9}, {3.690384435824828*^9, 3.690384573271708*^9}, {
+   3.690384613668487*^9, 3.690384749913518*^9}, {3.6903848002399597`*^9, 
+   3.690384820812668*^9}, {3.6903851495070267`*^9, 3.690385173958943*^9}, 
+   3.690385224971681*^9, {3.692469740183299*^9, 3.6924697521220407`*^9}, {
+   3.69253516974615*^9, 3.692535184032749*^9}, {3.6925356249628696`*^9, 
+   3.692535625413651*^9}, {3.69254026698446*^9, 3.692540289881366*^9}, {
+   3.6925955900571613`*^9, 3.692595634279868*^9}, {3.692617690354879*^9, 
+   3.69261771563319*^9}, 3.6928866421123857`*^9, {3.7094697981413803`*^9, 
+   3.7094697989393587`*^9}, {3.709472925110323*^9, 3.7094729265846252`*^9}, {
+   3.7158687975572767`*^9, 3.715868812830151*^9}, {3.715868989202353*^9, 
+   3.715868991457468*^9}, 3.715869025956037*^9, {3.7229256351522284`*^9, 
+   3.722925657999292*^9}, {3.722935477436522*^9, 3.722935491142806*^9}, 
+   3.7289136035566053`*^9},ExpressionUUID->"046d0d15-3b18-4386-839d-\
+c29a985b25e7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\" - FeynRules - \"\>"], "Print",
+ CellChangeTimes->{
+  3.723883458445559*^9},ExpressionUUID->"62e0d4b5-2632-4d44-b991-\
+799de568ecf9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Version: \"\>", "\[InvisibleSpace]", "\<\"2.3.29\"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"\<\" (\"\>", " ", "\<\"06 July 2017\"\>"}], 
+   "\[InvisibleSpace]", "\<\").\"\>"}],
+  SequenceForm["Version: ", "2.3.29", " (" "06 July 2017", ")."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883458449851*^9},ExpressionUUID->"00b374fd-5468-4339-9cfc-\
+c5ae8170816c"],
+
+Cell[BoxData["\<\"Authors: A. Alloul, N. Christensen, C. Degrande, C. Duhr, \
+B. Fuks\"\>"], "Print",
+ CellChangeTimes->{
+  3.7238834584579687`*^9},ExpressionUUID->"533c6410-db91-4a51-940a-\
+2453b173fbad"],
+
+Cell[BoxData["\<\" \"\>"], "Print",
+ CellChangeTimes->{
+  3.723883458461*^9},ExpressionUUID->"97e14b29-8a5e-4b25-a161-e60add3132c8"],
+
+Cell[BoxData["\<\"Please cite:\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883458464402*^9},ExpressionUUID->"160c5468-8747-48da-b679-\
+865b98f73888"],
+
+Cell[BoxData["\<\"    - Comput.Phys.Commun.185:2250-2300,2014 \
+(arXiv:1310.1921);\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883458469095*^9},ExpressionUUID->"347cfd0c-8544-40d8-924a-\
+a935f73d1c5e"],
+
+Cell[BoxData["\<\"    - Comput.Phys.Commun.180:1614-1641,2009 \
+(arXiv:0806.4194).\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883458474596*^9},ExpressionUUID->"417844ef-1903-418a-a637-\
+6c201d43084f"],
+
+Cell[BoxData["\<\" \"\>"], "Print",
+ CellChangeTimes->{
+  3.723883458479712*^9},ExpressionUUID->"396c3745-d6b3-4b09-98bd-\
+2b80b6a1c204"],
+
+Cell[BoxData["\<\"http://feynrules.phys.ucl.ac.be\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883458485264*^9},ExpressionUUID->"6d85baeb-78fc-404a-8ab8-\
+e9e1b0d0ebde"],
+
+Cell[BoxData["\<\" \"\>"], "Print",
+ CellChangeTimes->{
+  3.723883458490287*^9},ExpressionUUID->"09bf0e4a-e49c-4e0d-823a-\
+fd8a3a99da42"],
+
+Cell[BoxData["\<\"The FeynRules palette can be opened using the command \
+FRPalette[].\"\>"], "Print",
+ CellChangeTimes->{
+  3.7238834584954844`*^9},ExpressionUUID->"54868250-d64e-4ede-89c7-\
+bfeeb8e93309"],
+
+Cell[BoxData["\<\"Merging model-files...\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883461109765*^9},ExpressionUUID->"e1232c35-ec13-4c77-95ed-\
+4cd32808b40c"],
+
+Cell[BoxData["\<\"This model implementation was created by\"\>"], "Print",
+ CellChangeTimes->{
+  3.7238834611249247`*^9},ExpressionUUID->"a459038d-ff3d-41b7-871b-\
+4c16429c86c7"],
+
+Cell[BoxData["\<\"O. Panella\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883461140555*^9},ExpressionUUID->"502e559e-ce75-4d96-841d-\
+af1f38e02947"],
+
+Cell[BoxData["\<\"M. Presilla\"\>"], "Print",
+ CellChangeTimes->{
+  3.7238834611435003`*^9},ExpressionUUID->"d3052e4d-db65-4500-aeb7-\
+3840fa30a770"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Model Version: \"\>", "\[InvisibleSpace]", "\<\"3.0\"\>"}],
+  SequenceForm["Model Version: ", "3.0"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388346114708*^9},ExpressionUUID->"cc1cb238-6940-4d43-b9b5-46b6892615f7"],
+
+Cell[BoxData["\<\"For more information, type ModelInformation[].\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.723883461150387*^9},ExpressionUUID->"8c442d16-5f1c-451d-bc6a-\
+cb81c4d9af2b"],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883461153501*^9},ExpressionUUID->"89517006-2d0d-4e51-80ca-\
+58dcae7893fe"],
+
+Cell[BoxData["\<\"   - Loading particle classes.\"\>"], "Print",
+ CellChangeTimes->{
+  3.7238834611572733`*^9},ExpressionUUID->"19301bb5-d558-49ae-b436-\
+9dfd514e951a"],
+
+Cell[BoxData["\<\"   - Loading gauge group classes.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883461385499*^9},ExpressionUUID->"a96d25f2-8af6-4dd9-b3c7-\
+77ca922d7d24"],
+
+Cell[BoxData["\<\"   - Loading parameter classes.\"\>"], "Print",
+ CellChangeTimes->{
+  3.7238834613976*^9},ExpressionUUID->"ce3ed11c-4618-4366-97de-dace36536696"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\nModel \"\>", "\[InvisibleSpace]", "\<\"HCMN-18\"\>", 
+   "\[InvisibleSpace]", "\<\" loaded.\"\>"}],
+  SequenceForm["\nModel ", "HCMN-18", " loaded."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883461514935*^9},ExpressionUUID->"3a7021f4-2975-4fa0-a9ef-\
+09a1368d72d0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loading restrictions from \"\>", 
+   "\[InvisibleSpace]", "\<\"Cabibbo.rst\"\>", 
+   "\[InvisibleSpace]", "\<\" : \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[PRIVATE`FR$restrictionCounter, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "6"}],
+  SequenceForm["Loading restrictions from ", "Cabibbo.rst", " : ", 
+   Dynamic[PRIVATE`FR$restrictionCounter], " / ", 6],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238834620677347`*^9},ExpressionUUID->"1e34005d-a79d-47a2-8995-\
+dfbcae70743f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loading restrictions from \"\>", 
+   "\[InvisibleSpace]", "\<\"Massless.rst\"\>", 
+   "\[InvisibleSpace]", "\<\" : \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[PRIVATE`FR$restrictionCounter, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "18"}],
+  SequenceForm["Loading restrictions from ", "Massless.rst", " : ", 
+   Dynamic[PRIVATE`FR$restrictionCounter], " / ", 18],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883462252673*^9},ExpressionUUID->"2b6473cd-1924-4e5d-81ac-\
+86dc974c139d"],
+
+Cell[BoxData["\<\"Restrictions loaded.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883462419806*^9},ExpressionUUID->"66777924-b82a-459d-acf3-\
+bbf8ea346623"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Model name: \"\>", "\[InvisibleSpace]", "\<\"HCMN-18\"\>"}],
+  SequenceForm["Model name: ", "HCMN-18"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883462445922*^9},ExpressionUUID->"6393f4e7-1f9a-4a15-9956-\
+ae0377fe42c1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Model version: \"\>", "\[InvisibleSpace]", "\<\"3.0\"\>"}],
+  SequenceForm["Model version: ", "3.0"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883462456827*^9},ExpressionUUID->"a619b223-c46d-41c4-a69e-\
+5801f03d6bc1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Date: \"\>", "\[InvisibleSpace]", "\<\"2/01/2018\"\>"}],
+  SequenceForm["Date: ", "2/01/2018"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883462460206*^9},ExpressionUUID->"703db3a0-85ba-40cb-a516-\
+ecee43213e9b"],
+
+Cell[BoxData["\<\"Authors: \"\>"], "Print",
+ CellChangeTimes->{
+  3.7238834624630136`*^9},ExpressionUUID->"ebdb72bb-6c22-4d2d-bbaa-\
+0131c80ebb4e"],
+
+Cell[BoxData["\<\"   O. Panella\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883462465968*^9},ExpressionUUID->"4de61c53-8842-4d9b-9695-\
+4d11d90719be"],
+
+Cell[BoxData["\<\"   M. Presilla\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883462469359*^9},ExpressionUUID->"55d29d5f-fcc6-4bca-ab7f-\
+b3718acf831a"],
+
+Cell[BoxData["\<\"Emails: \"\>"], "Print",
+ CellChangeTimes->{
+  3.7238834624725018`*^9},ExpressionUUID->"a08bca92-aa46-4c6a-bf4b-\
+d84f4510034a"],
+
+Cell[BoxData["\<\"   matteo.presilla@pd.infn.it\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883462475903*^9},ExpressionUUID->"c529f9b1-1f8e-4d81-8fb4-\
+68a611d6b1fc"],
+
+Cell[BoxData["\<\"   orlando.panella@pg.infn.it\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883462478798*^9},ExpressionUUID->"4b538b4f-c637-47ad-8ead-\
+c85829425f34"],
+
+Cell[BoxData["\<\"Checking for hermiticity by calculating the Feynman rules \
+contained in L-HC[L].\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883462806703*^9},ExpressionUUID->"2ed89755-e986-4fd4-af69-\
+edb8cb25c164"],
+
+Cell[BoxData["\<\"If the lagrangian is hermitian, then the number of vertices \
+should be zero.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883462809654*^9},ExpressionUUID->"ae5a955e-572a-42e2-8b25-\
+eac6cb845d9f"],
+
+Cell[BoxData[
+ StyleBox["\<\"Starting Feynman rule calculation.\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0.5, 0],
+  FrontFaceColor->RGBColor[1, 0.5, 0],
+  BackFaceColor->RGBColor[1, 0.5, 0],
+  GraphicsColor->RGBColor[1, 0.5, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0.5, 0]]], "Print",
+ CellChangeTimes->{
+  3.723883479743569*^9},ExpressionUUID->"4058dc76-ea88-48f9-80d4-\
+578b87e50ef5"],
+
+Cell[BoxData["\<\"Expanding the Lagrangian...\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883479755381*^9},ExpressionUUID->"333edfee-105c-4768-99d5-\
+df37bb170f47"],
+
+Cell[BoxData["\<\"Collecting the different structures that enter the \
+vertex.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883480168413*^9},ExpressionUUID->"b07eb295-6d89-45b7-a7d1-\
+361efbb860f1"],
+
+Cell[BoxData["\<\"No vertices found.\"\>"], "Print",
+ CellChangeTimes->{
+  3.7238834801808147`*^9},ExpressionUUID->"b20a22bb-c2f5-4df7-a33a-\
+1a3e664135a2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"0", "\[InvisibleSpace]", "\<\" vertices obtained.\"\>"}],
+  SequenceForm[0, " vertices obtained."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883480184073*^9},ExpressionUUID->"cf750dfe-60f0-4ce1-9baf-\
+d99bced64172"],
+
+Cell[BoxData["\<\"The lagrangian is hermitian.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883480187203*^9},ExpressionUUID->"8258dd1d-51f1-48a3-b1e1-\
+2a333dd1691d"],
+
+Cell[BoxData[
+ StyleBox["\<\"Starting Feynman rule calculation.\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0.5, 0],
+  FrontFaceColor->RGBColor[1, 0.5, 0],
+  BackFaceColor->RGBColor[1, 0.5, 0],
+  GraphicsColor->RGBColor[1, 0.5, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0.5, 0]]], "Print",
+ CellChangeTimes->{
+  3.7238834806720037`*^9},ExpressionUUID->"97735f74-8302-442e-97cd-\
+03e01b77851b"],
+
+Cell[BoxData["\<\"Expanding the Lagrangian...\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883480674965*^9},ExpressionUUID->"6fe345d2-a190-4bc8-8382-\
+53e9072f968a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Expanding the indices over \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" cores\"\>"}],
+  SequenceForm["Expanding the indices over ", 2, " cores"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883480678235*^9},ExpressionUUID->"cb547696-a05c-4084-8df9-\
+56b0ad9c5a9e"],
+
+Cell[BoxData["\<\"Collecting the different structures that enter the \
+vertex.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883484731484*^9},ExpressionUUID->"a373c9f8-f09c-4feb-ad9a-\
+55a5ef9b3794"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "28", "\[InvisibleSpace]", "\<\" possible non-zero vertices have been found \
+-> starting the computation: \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[FeynRules`FR$FeynmanRules, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "28", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  28, " possible non-zero vertices have been found -> starting the \
+computation: ", 
+   Dynamic[FeynRules`FR$FeynmanRules], " / ", 28, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238834847557096`*^9},ExpressionUUID->"ee6456e4-515d-4fa1-a54d-\
+c7ad16b8d887"]
+}, Open  ]],
+
+Cell[BoxData[
+ TemplateBox[{
+  "QN","NonConserv",
+   "\"Warning: non quantum number conserving vertex encountered!\"",2,9,1,
+   33186103944023069241,"Local","FeynRules`QN"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.723883487066461*^9},ExpressionUUID->"aaf0cbf0-2d18-462d-b774-\
+e636b0b0978c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     OverscriptBox["l", "\<\"-\"\>"], ",", "Nu1star", ",", 
+     SuperscriptBox["Aux", "\[Dagger]"]}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`lbar, $CellContext`Nu1star, \
+$CellContext`Auxbar}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238834871004953`*^9},ExpressionUUID->"45e5c69c-4c55-4c6a-98f2-\
+f1c150ce24d1"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "QN","NonConserv",
+   "\"Warning: non quantum number conserving vertex encountered!\"",2,9,2,
+   33186103944023069241,"Local","FeynRules`QN"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.723883487141958*^9},ExpressionUUID->"59570d29-389a-4838-9bf6-\
+a67aae9fe120"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Nu1star", ",", "l", ",", "Aux"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Nu1star, 
+    FeynRules`l, $CellContext`Aux}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487159316*^9},ExpressionUUID->"73c6b4be-a824-40f4-ac0f-\
+1b06d5e5b3a7"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "QN","NonConserv",
+   "\"Warning: non quantum number conserving vertex encountered!\"",2,9,3,
+   33186103944023069241,"Local","FeynRules`QN"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7238834872026043`*^9},ExpressionUUID->"7950d7fd-72eb-47f9-8489-\
+d8f5c3787f57"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"QN\\\", \\\"::\\\", \
+\\\"NonConserv\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,9,4,33186103944023069241,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7238834872828836`*^9},ExpressionUUID->"b5f082af-bfc8-4934-9124-\
+180921f0fe13"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Nu1star", ",", "vl", ",", "Auxo"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Nu1star, $CellContext`vl, \
+$CellContext`Auxo}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388348730303*^9},ExpressionUUID->"305771bc-3ec7-480d-be1c-d0246d6f10d9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     OverscriptBox["vl", "\<\"-\"\>"], ",", "Nu1star", ",", "Auxo"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`vlbar, $CellContext`Nu1star, \
+$CellContext`Auxo}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238834873067427`*^9},ExpressionUUID->"5edab766-c7b0-457b-92d9-\
+3e333fff917e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     OverscriptBox["l", "\<\"-\"\>"], ",", "Nu2star", ",", 
+     SuperscriptBox["Aux", "\[Dagger]"]}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`lbar, $CellContext`Nu2star, \
+$CellContext`Auxbar}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388348731478*^9},ExpressionUUID->"89a8a737-57b3-4d95-9b4c-f30b2b2a890c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Nu2star", ",", "l", ",", "Aux"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Nu2star, 
+    FeynRules`l, $CellContext`Aux}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238834873183193`*^9},ExpressionUUID->"27d6af37-1444-45e0-a471-\
+c42138f70297"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Nu2star", ",", "vl", ",", "Auxo"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Nu2star, $CellContext`vl, \
+$CellContext`Auxo}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487321529*^9},ExpressionUUID->"7b898855-a4de-4db1-9edb-\
+ef11dd07e2fe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     OverscriptBox["vl", "\<\"-\"\>"], ",", "Nu2star", ",", "Auxo"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`vlbar, $CellContext`Nu2star, \
+$CellContext`Auxo}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487325111*^9},ExpressionUUID->"601a45fc-8a57-4b5f-a4d2-\
+19afa2096da3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Nu2star", ",", "l", ",", "W"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Nu2star, FeynRules`l, 
+    FeynRules`W}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487328685*^9},ExpressionUUID->"18a33e0b-ea5e-46ed-aa41-\
+d1e6e7e5aea3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Nu2star", ",", "vl", ",", "A"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Nu2star, $CellContext`vl, \
+$CellContext`A}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487332123*^9},ExpressionUUID->"bbeb2e34-3ee8-469c-8594-\
+b16d07aca418"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Nu2star", ",", "vl", ",", "Z"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Nu2star, $CellContext`vl, \
+$CellContext`Z}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238834873359222`*^9},ExpressionUUID->"a254f10b-51d6-44a4-bbd2-\
+a7d460318922"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Nu1star", ",", "l", ",", "W"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Nu1star, FeynRules`l, 
+    FeynRules`W}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487339285*^9},ExpressionUUID->"266be1d6-f25b-4f15-b9ac-\
+8d04ee80e2bf"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Nu1star", ",", "vl", ",", "A"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Nu1star, $CellContext`vl, \
+$CellContext`A}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487342664*^9},ExpressionUUID->"38d20576-cc5b-48b7-a5b1-\
+5cd621983476"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Nu1star", ",", "vl", ",", "Z"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Nu1star, $CellContext`vl, \
+$CellContext`Z}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487345879*^9},ExpressionUUID->"2b2d14dd-a179-453d-aac1-\
+b4f18a262915"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     OverscriptBox["l", "\<\"-\"\>"], ",", "Nu2star", ",", 
+     SuperscriptBox["W", "\[Dagger]"]}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`lbar, $CellContext`Nu2star, \
+$CellContext`Wbar}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487349104*^9},ExpressionUUID->"f6c21c9e-7bac-431f-8c9e-\
+ff45bc1b7e15"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     OverscriptBox["vl", "\<\"-\"\>"], ",", "Nu2star", ",", "A"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`vlbar, $CellContext`Nu2star, \
+$CellContext`A}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487352847*^9},ExpressionUUID->"33c9ad44-76c4-437c-a25a-\
+f0a988d626b0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     OverscriptBox["vl", "\<\"-\"\>"], ",", "Nu2star", ",", "Z"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`vlbar, $CellContext`Nu2star, \
+$CellContext`Z}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388348735618*^9},ExpressionUUID->"8a31352b-f262-4b45-ae9c-a116cb8d6dda"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     OverscriptBox["l", "\<\"-\"\>"], ",", "Nu1star", ",", 
+     SuperscriptBox["W", "\[Dagger]"]}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`lbar, $CellContext`Nu1star, \
+$CellContext`Wbar}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487359529*^9},ExpressionUUID->"d6414beb-ef70-4793-8aea-\
+9bf9c0b476ae"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     OverscriptBox["vl", "\<\"-\"\>"], ",", "Nu1star", ",", "A"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`vlbar, $CellContext`Nu1star, \
+$CellContext`A}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487362719*^9},ExpressionUUID->"2c258d32-b5b9-4259-8367-\
+faa85c09efc8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     OverscriptBox["vl", "\<\"-\"\>"], ",", "Nu1star", ",", "Z"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`vlbar, $CellContext`Nu1star, \
+$CellContext`Z}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238834873663387`*^9},ExpressionUUID->"4d5dbfc4-6f13-4da1-a9df-\
+c559e53b4a45"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"28", "\[InvisibleSpace]", "\<\" vertices obtained.\"\>"}],
+  SequenceForm[28, " vertices obtained."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883487369608*^9},ExpressionUUID->"7faf5901-05f2-4b9e-ab55-\
+abc026d6dac7"],
+
+Cell[BoxData["\<\" - - - FeynRules interface to CalcHep/CompHEP\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883490268929*^9},ExpressionUUID->"8063c712-0e6d-4251-9d43-\
+854f63a3aac5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\" - - - \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"Authors:\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" N. Christensen, C. Duhr\"\>"}],
+  SequenceForm[" - - - ", 
+   Style["Authors:", 
+    RGBColor[0, 0, 1]], " N. Christensen, C. Duhr"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883490273301*^9},ExpressionUUID->"28e6d6da-1716-4da8-a077-\
+69c414925a37"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\" - - - \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"Please cite:\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" arXiv:0906.2474\"\>"}],
+  SequenceForm[" - - - ", 
+   Style["Please cite:", 
+    RGBColor[0, 0, 1]], " arXiv:0906.2474"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883490278266*^9},ExpressionUUID->"222922e9-31fd-48fc-a8b9-\
+28fc728424d3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"\\nWriting\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" files to \
+/Users/matteo/Documents/feynrules-current/Models/HCMN/HCMN-18-CH.\"\>"}],
+  SequenceForm[
+   Style["\nWriting", 
+    RGBColor[0, 0, 1]], 
+   " files to \
+/Users/matteo/Documents/feynrules-current/Models/HCMN/HCMN-18-CH."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883490281966*^9},ExpressionUUID->"e85a0ee0-1ad1-4296-a8c3-\
+f9f246e2cef1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"\\nWriting\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" particles file 'prtcls1.mdl'.\"\>"}],
+  SequenceForm[
+   Style["\nWriting", 
+    RGBColor[0, 0, 1]], " particles file 'prtcls1.mdl'."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883490285387*^9},ExpressionUUID->"5557a659-f7d0-49b6-8714-\
+4aa1e05b9cb7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"\\nWriting\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" external parameter file 'vars1.mdl'.\"\>"}],
+  SequenceForm[
+   Style["\nWriting", 
+    RGBColor[0, 0, 1]], " external parameter file 'vars1.mdl'."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883490330571*^9},ExpressionUUID->"a37c23a9-3d44-4e8c-9b2c-\
+b18463300621"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"\\nWriting\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" internal parameter file 'func1.mdl'.\"\>"}],
+  SequenceForm[
+   Style["\nWriting", 
+    RGBColor[0, 0, 1]], " internal parameter file 'func1.mdl'."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883490343569*^9},ExpressionUUID->"1ec38f27-d90c-4d13-ba95-\
+1ff3a2eec6e6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"\\nWriting\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" external library file 'extlib1.mdl'.\"\>"}],
+  SequenceForm[
+   Style["\nWriting", 
+    RGBColor[0, 0, 1]], " external library file 'extlib1.mdl'."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883490366191*^9},ExpressionUUID->"64eea247-4f62-4449-8baf-\
+30bc6644c899"],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{
+  3.7238834903774567`*^9},ExpressionUUID->"556095de-840d-4268-bc00-\
+f6c5318ebafa"],
+
+Cell[BoxData[
+ StyleBox["\<\"Starting Feynman rule calculation.\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0.5, 0],
+  FrontFaceColor->RGBColor[1, 0.5, 0],
+  BackFaceColor->RGBColor[1, 0.5, 0],
+  GraphicsColor->RGBColor[1, 0.5, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0.5, 0]]], "Print",
+ CellChangeTimes->{
+  3.723883490560812*^9},ExpressionUUID->"2eb74c75-9231-4d16-8272-\
+855b602f5800"],
+
+Cell[BoxData["\<\"Expanding the Lagrangian...\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883490565009*^9},ExpressionUUID->"365c0b1a-bf8a-4ba8-af76-\
+b19e58f74211"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Expanding the indices over \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" cores\"\>"}],
+  SequenceForm["Expanding the indices over ", 2, " cores"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883490570139*^9},ExpressionUUID->"92632c00-6544-4c6c-8b1e-\
+958e7b463b84"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Neglecting all terms with more than \"\>", 
+   "\[InvisibleSpace]", "\<\"4\"\>", 
+   "\[InvisibleSpace]", "\<\" particles.\"\>"}],
+  SequenceForm["Neglecting all terms with more than ", "4", " particles."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883490636436*^9},ExpressionUUID->"a59d2b3a-a555-422b-a3cd-\
+d9395bcd26f4"],
+
+Cell[BoxData["\<\"Collecting the different structures that enter the \
+vertex.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883500323786*^9},ExpressionUUID->"1cbf89af-6284-47b5-9312-\
+e7a2dacdd7a5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "64", "\[InvisibleSpace]", "\<\" possible non-zero vertices have been found \
+-> starting the computation: \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[FeynRules`FR$FeynmanRules, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "64", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  64, " possible non-zero vertices have been found -> starting the \
+computation: ", 
+   Dynamic[FeynRules`FR$FeynmanRules], " / ", 64, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883500387817*^9},ExpressionUUID->"3981a584-35ff-456f-b9c6-\
+9f1fc3f25240"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"59", "\[InvisibleSpace]", "\<\" vertices obtained.\"\>"}],
+  SequenceForm[59, " vertices obtained."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883505566022*^9},ExpressionUUID->"406e1422-2166-4ded-a4ae-\
+ddcd7520f0e6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Flavor expansion of the vertices distributed over \"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "\<\" cores: \"\>", 
+   "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[FeynRules`FR$Count1, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "59"}],
+  SequenceForm[
+  "Flavor expansion of the vertices distributed over ", 2, " cores: ", 
+   Dynamic[FeynRules`FR$Count1], " / ", 59],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883507641438*^9},ExpressionUUID->"a9b0739f-5eb0-4470-9f14-\
+c45e75b4cc17"]
+}, Open  ]],
+
+Cell[BoxData[
+ TemplateBox[{
+  "QN","NonConserv",
+   "\"Warning: non quantum number conserving vertex encountered!\"",2,11,5,
+   33186103944023069241,"Local","FeynRules`QN"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.723883517907927*^9},ExpressionUUID->"0c41d2bc-baa6-4f20-a1e9-\
+0eebc4369812"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["e", "\<\"-\"\>"], ",", "N1Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`ebar, \
+$CellContext`N1Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883517930249*^9},ExpressionUUID->"5483c3e9-51b0-49ff-a5a8-\
+a27b57a0cdae"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "QN","NonConserv",
+   "\"Warning: non quantum number conserving vertex encountered!\"",2,11,6,
+   33186103944023069241,"Local","FeynRules`QN"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.723883517994031*^9},ExpressionUUID->"e8b66751-ab7c-4dd6-be6c-\
+6163e0822695"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["mu", "\<\"-\"\>"], ",", "N1Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`mubar, \
+$CellContext`N1Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835180120087`*^9},ExpressionUUID->"826ed523-1b8d-4127-bd34-\
+62badf6e51ea"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "QN","NonConserv",
+   "\"Warning: non quantum number conserving vertex encountered!\"",2,11,7,
+   33186103944023069241,"Local","FeynRules`QN"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.723883518079562*^9},ExpressionUUID->"6b907a2b-ac67-4f64-b417-\
+1a29f88afd0b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"QN\\\", \\\"::\\\", \
+\\\"NonConserv\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,11,8,33186103944023069241,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7238835181717873`*^9},ExpressionUUID->"6ce3cab1-cb4e-4f53-8718-\
+077abd95d3f2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["ta", "\<\"-\"\>"], ",", "N1Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`tabar, \
+$CellContext`N1Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835181913223`*^9},ExpressionUUID->"0af51cbf-5210-48ac-bd16-\
+834680be9567"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N1Es", "\<\"-\"\>"], ",", "e"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N1Esbar, 
+    FeynRules`e}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518195098*^9},ExpressionUUID->"3b56a572-bbec-46a4-ae44-\
+1b959dd16f71"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N1Mus", "\<\"-\"\>"], ",", "mu"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N1Musbar, 
+    FeynRules`mu}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518202683*^9},ExpressionUUID->"ebb63c47-0f4a-4932-869d-\
+ba09d0a27312"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N1Taus", "\<\"-\"\>"], ",", "ta"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N1Tausbar, \
+$CellContext`ta}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518208754*^9},ExpressionUUID->"32df63ab-b1fd-447c-8627-\
+06e00dae3daf"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N1Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N1Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518213231*^9},ExpressionUUID->"226dc8eb-0980-49e3-bf76-\
+5092bb3c21cc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N1Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N1Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518216537*^9},ExpressionUUID->"297d1e35-8727-463c-b8c8-\
+03e04fb00be5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N1Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N1Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518221241*^9},ExpressionUUID->"d1ad5d5e-2bfc-48ce-ac5a-\
+0e47eabb3fd3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N1Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vebar, \
+$CellContext`N1Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835182254963`*^9},ExpressionUUID->"80f675e5-22e3-455f-a3e7-\
+78b784a2523e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N1Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vmbar, \
+$CellContext`N1Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835182296047`*^9},ExpressionUUID->"007fac7a-881b-4f4c-90ce-\
+4841a5428000"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N1Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vtbar, \
+$CellContext`N1Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518233321*^9},ExpressionUUID->"21a72c19-00c9-4f5c-87ab-\
+c441e2b125c7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["e", "\<\"-\"\>"], ",", "N2Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`ebar, \
+$CellContext`N2Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835182385674`*^9},ExpressionUUID->"6dbb2794-9ba4-430b-a9d6-\
+353ae6cdba99"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["mu", "\<\"-\"\>"], ",", "N2Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`mubar, \
+$CellContext`N2Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835182435207`*^9},ExpressionUUID->"042c7ce6-e1f6-45c7-951b-\
+1a94b65a4546"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["ta", "\<\"-\"\>"], ",", "N2Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`tabar, \
+$CellContext`N2Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835182483673`*^9},ExpressionUUID->"7f6a0e8a-fcee-41f5-ac6d-\
+e47ffed5179c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N2Es", "\<\"-\"\>"], ",", "e"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N2Esbar, 
+    FeynRules`e}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518252756*^9},ExpressionUUID->"becc1676-5478-44be-9a1f-\
+15b2c77812ac"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N2Mus", "\<\"-\"\>"], ",", "mu"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N2Musbar, 
+    FeynRules`mu}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388351825856*^9},ExpressionUUID->"8ff23dd6-fbd5-4156-95d2-17fb47b73416"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N2Taus", "\<\"-\"\>"], ",", "ta"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N2Tausbar, \
+$CellContext`ta}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518262761*^9},ExpressionUUID->"9f4cb614-0fc8-4337-9f6e-\
+004bc87e449c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N2Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N2Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518266593*^9},ExpressionUUID->"2e34fad6-ea6f-4373-9de5-\
+500d2515e4d5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N2Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N2Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835182711363`*^9},ExpressionUUID->"eaa1cb69-9e85-44ad-911c-\
+55eb937be193"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N2Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N2Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518275243*^9},ExpressionUUID->"5b2ff5f3-c1a1-4c63-929a-\
+6bb1b725f97b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N2Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vebar, \
+$CellContext`N2Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388351827951*^9},ExpressionUUID->"436468fd-368c-4e25-8854-668039b85e14"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N2Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vmbar, \
+$CellContext`N2Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518283815*^9},ExpressionUUID->"3aaeaf3b-f651-4b78-a6a3-\
+3017d17a0493"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N2Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vtbar, \
+$CellContext`N2Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388351828754*^9},ExpressionUUID->"23432878-71b7-4c8b-9f3e-e8339b3ec161"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N2Es", "\<\"-\"\>"], ",", "e"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N2Esbar, FeynRules`e}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518291782*^9},ExpressionUUID->"702587fd-aef1-4cdc-b042-\
+511520bf318c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N2Mus", "\<\"-\"\>"], ",", "mu"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N2Musbar, FeynRules`mu}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518295884*^9},ExpressionUUID->"53542758-3844-4583-aa6d-\
+7615137a307f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N2Taus", "\<\"-\"\>"], ",", "ta"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N2Tausbar, $CellContext`ta}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518299954*^9},ExpressionUUID->"74d10458-e3b5-4a73-8467-\
+3422fbd9b94b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N2Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N2Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388351830367*^9},ExpressionUUID->"ee92ba52-14d0-413a-b51c-0618da1538ce"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N2Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N2Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518309346*^9},ExpressionUUID->"b37b2f53-e797-4668-9c44-\
+0a6432da4d64"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N2Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N2Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518313107*^9},ExpressionUUID->"d31e8e21-48ce-49e8-9899-\
+461ae6a65d81"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N2Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N2Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835183176813`*^9},ExpressionUUID->"af60ce3e-3655-4df5-9331-\
+92d978b150e0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N2Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N2Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518321734*^9},ExpressionUUID->"6dfd262f-7db4-488a-8476-\
+2175503c0db0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N2Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N2Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518326537*^9},ExpressionUUID->"873eba30-ade7-415d-9738-\
+beff008f02e8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N1Es", "\<\"-\"\>"], ",", "e"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N1Esbar, FeynRules`e}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835183302107`*^9},ExpressionUUID->"9b5433b0-1e80-4f6c-ad48-\
+b0b5e0f293ee"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N1Mus", "\<\"-\"\>"], ",", "mu"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N1Musbar, FeynRules`mu}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518334735*^9},ExpressionUUID->"10387cf5-e880-4132-b13f-\
+0ef1267019a2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N1Taus", "\<\"-\"\>"], ",", "ta"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N1Tausbar, $CellContext`ta}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835183398438`*^9},ExpressionUUID->"99670836-b71e-414c-b6fa-\
+58c3c45fb24b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N1Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N1Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518344269*^9},ExpressionUUID->"a1d2301a-cf98-4777-a159-\
+2131db592e6b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N1Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N1Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518348805*^9},ExpressionUUID->"99ab149f-c6a0-4699-8794-\
+b821d77f0576"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N1Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N1Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518353085*^9},ExpressionUUID->"59e577a2-d3fb-4942-95ff-\
+889552661592"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N1Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N1Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835183587503`*^9},ExpressionUUID->"614223c2-510b-4f03-8cd2-\
+94eb71deb03f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N1Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N1Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518362337*^9},ExpressionUUID->"773151cd-853f-4a1c-a6b5-\
+4f8b955aef60"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N1Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N1Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518366807*^9},ExpressionUUID->"c37cc9bf-4f21-49c5-b9c6-\
+6b6e5a92c0aa"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["e", "\<\"-\"\>"], ",", "N2Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`ebar, \
+$CellContext`N2Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835183708076`*^9},ExpressionUUID->"95e90088-af6b-4a81-b38f-\
+c14cce28d095"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["mu", "\<\"-\"\>"], ",", "N2Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`mubar, \
+$CellContext`N2Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518375689*^9},ExpressionUUID->"6911fa2b-74c7-4fe2-bc07-\
+e129909b2c92"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["ta", "\<\"-\"\>"], ",", "N2Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`tabar, \
+$CellContext`N2Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518380006*^9},ExpressionUUID->"9e121228-45f8-4edb-8522-\
+c097e2fb9f2a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N2Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vebar, \
+$CellContext`N2Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835183838263`*^9},ExpressionUUID->"66c2e6a8-ea5d-43ef-905c-\
+32dcc6f02e44"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N2Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vmbar, \
+$CellContext`N2Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518388212*^9},ExpressionUUID->"d9d3c4e0-48b7-4fdc-8ccc-\
+58bee2f2be7a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N2Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vtbar, \
+$CellContext`N2Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518392082*^9},ExpressionUUID->"f406fb45-37a7-4d49-954c-\
+f94d714fcad8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N2Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vebar, \
+$CellContext`N2Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518396689*^9},ExpressionUUID->"039c6eba-305d-43e7-98d6-\
+e328e54a5d9b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N2Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vmbar, \
+$CellContext`N2Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835184009457`*^9},ExpressionUUID->"420afe8b-9f30-46d1-9fba-\
+97177c8fac59"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N2Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vtbar, \
+$CellContext`N2Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835184070253`*^9},ExpressionUUID->"a4781691-9197-47b7-85f8-\
+1f6d073ca7e7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["e", "\<\"-\"\>"], ",", "N1Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`ebar, \
+$CellContext`N1Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835184108353`*^9},ExpressionUUID->"7392bac6-6e89-4715-9dd3-\
+651aede571d6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["mu", "\<\"-\"\>"], ",", "N1Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`mubar, \
+$CellContext`N1Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518415586*^9},ExpressionUUID->"4450caa5-31cc-4360-9142-\
+5ff59f8b8929"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["ta", "\<\"-\"\>"], ",", "N1Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`tabar, \
+$CellContext`N1Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518419141*^9},ExpressionUUID->"db118282-d65d-4811-b60e-\
+d915fabcb3e8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N1Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vebar, \
+$CellContext`N1Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835184237022`*^9},ExpressionUUID->"2a197368-7440-4d05-938b-\
+f514412ffd7f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N1Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vmbar, \
+$CellContext`N1Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518427897*^9},ExpressionUUID->"a3f46669-5d83-426c-8853-\
+f3feb5f66ce7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N1Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vtbar, \
+$CellContext`N1Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835184322863`*^9},ExpressionUUID->"140365eb-c37a-4407-86a3-\
+8c8b22050131"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N1Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vebar, \
+$CellContext`N1Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518436942*^9},ExpressionUUID->"4a6f2e9c-59b1-446a-9638-\
+afe9c73bcfbe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N1Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vmbar, \
+$CellContext`N1Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518440827*^9},ExpressionUUID->"0b5f1c55-503a-46f3-9d4b-\
+96fe24e73476"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N1Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vtbar, \
+$CellContext`N1Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518445215*^9},ExpressionUUID->"97381188-beca-4c92-b75d-\
+10c80958bffa"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"\\nWriting\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" vertices file 'lgrng1.mdl'\\nand appending \
+variable file 'func1.mdl', particle file 'prtcls1.mdl' and variable file \
+'vars1.mdl'.\"\>"}],
+  SequenceForm[
+   Style["\nWriting", 
+    RGBColor[0, 0, 1]], 
+   " vertices file 'lgrng1.mdl'\nand appending variable file 'func1.mdl', \
+particle file 'prtcls1.mdl' and variable file 'vars1.mdl'."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883518449304*^9},ExpressionUUID->"d7471a33-163f-416f-9cf8-\
+1fd7525393e6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"\\nFinishing\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" vertices file 'lgrng1.mdl'.\"\>"}],
+  SequenceForm[
+   Style["\nFinishing", 
+    RGBColor[0, 0, 1]], " vertices file 'lgrng1.mdl'."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835250189953`*^9},ExpressionUUID->"0319e5b5-2f04-4de2-8383-\
+d48c654d2191"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Finishing\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" internal parameter file 'func1.mdl'.\"\>"}],
+  SequenceForm[
+   Style["Finishing", 
+    RGBColor[0, 0, 1]], " internal parameter file 'func1.mdl'."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883525036385*^9},ExpressionUUID->"c0b3fabe-5c4d-49c6-955e-\
+8965143f6d63"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"\\nDone\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], 
+   "\[InvisibleSpace]", "\<\" in 0.58min!\"\>"}],
+  SequenceForm[
+   Style["\nDone", 
+    RGBColor[0, 0, 1]], " in 0.58min!"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835250572767`*^9},ExpressionUUID->"e2bb3a4b-828f-46cf-aeec-\
+36a6b497df8a"],
+
+Cell[BoxData["\<\" --- Universal FeynRules Output (UFO) v 1.1 ---\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.72388352822328*^9},ExpressionUUID->"0f52b088-2747-4d1c-ab48-8aea8e74c3f1"],
+
+Cell[BoxData[
+ StyleBox["\<\"Starting Feynman rule calculation.\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0.5, 0],
+  FrontFaceColor->RGBColor[1, 0.5, 0],
+  BackFaceColor->RGBColor[1, 0.5, 0],
+  GraphicsColor->RGBColor[1, 0.5, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0.5, 0]]], "Print",
+ CellChangeTimes->{
+  3.7238835284096317`*^9},ExpressionUUID->"5ab802c2-d216-4e35-b4fb-\
+03246f5179f1"],
+
+Cell[BoxData["\<\"Expanding the Lagrangian...\"\>"], "Print",
+ CellChangeTimes->{
+  3.7238835284149227`*^9},ExpressionUUID->"0011047f-26e1-4498-8c20-\
+d0ced27e7fd9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Expanding the indices over \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" cores\"\>"}],
+  SequenceForm["Expanding the indices over ", 2, " cores"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883528420219*^9},ExpressionUUID->"c8cffe58-5c7f-41a8-9164-\
+00d34f708e39"],
+
+Cell[BoxData["\<\"Collecting the different structures that enter the \
+vertex.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883530622138*^9},ExpressionUUID->"d8f679b7-a00f-493a-8f99-\
+1578921f42ea"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "8", "\[InvisibleSpace]", "\<\" possible non-zero vertices have been found \
+-> starting the computation: \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[FeynRules`FR$FeynmanRules, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "8", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  8, " possible non-zero vertices have been found -> starting the \
+computation: ", 
+   Dynamic[FeynRules`FR$FeynmanRules], " / ", 8, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883530643608*^9},ExpressionUUID->"cb6203bc-f732-46fb-a5e3-\
+502681c75b9d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"8", "\[InvisibleSpace]", "\<\" vertices obtained.\"\>"}],
+  SequenceForm[8, " vertices obtained."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883531871861*^9},ExpressionUUID->"a3284afe-6a81-43df-adea-\
+492ca35585ae"],
+
+Cell[BoxData[
+ StyleBox["\<\"Starting Feynman rule calculation.\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0.5, 0],
+  FrontFaceColor->RGBColor[1, 0.5, 0],
+  BackFaceColor->RGBColor[1, 0.5, 0],
+  GraphicsColor->RGBColor[1, 0.5, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0.5, 0]]], "Print",
+ CellChangeTimes->{
+  3.7238835319001513`*^9},ExpressionUUID->"ad374e35-7054-488d-b9ff-\
+4039450d8b95"],
+
+Cell[BoxData["\<\"Expanding the Lagrangian...\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883531904464*^9},ExpressionUUID->"357731e6-5117-49cd-9c98-\
+33efab670a16"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Expanding the indices over \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" cores\"\>"}],
+  SequenceForm["Expanding the indices over ", 2, " cores"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835319089117`*^9},ExpressionUUID->"3ad15c30-1753-43b1-aa1d-\
+7527a2dc8e4a"],
+
+Cell[BoxData["\<\"Collecting the different structures that enter the \
+vertex.\"\>"], "Print",
+ CellChangeTimes->{
+  3.72388353437807*^9},ExpressionUUID->"6535b1d9-a798-472d-b326-f209f889f40d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "18", "\[InvisibleSpace]", "\<\" possible non-zero vertices have been found \
+-> starting the computation: \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[FeynRules`FR$FeynmanRules, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "18", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  18, " possible non-zero vertices have been found -> starting the \
+computation: ", 
+   Dynamic[FeynRules`FR$FeynmanRules], " / ", 18, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883534392499*^9},ExpressionUUID->"6ec1e325-7d83-4e31-8d44-\
+3e86339fe95c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"13", "\[InvisibleSpace]", "\<\" vertices obtained.\"\>"}],
+  SequenceForm[13, " vertices obtained."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883535691177*^9},ExpressionUUID->"f2fcdf07-a687-4411-8f35-\
+30494bde0486"],
+
+Cell[BoxData[
+ StyleBox["\<\"Starting Feynman rule calculation.\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0.5, 0],
+  FrontFaceColor->RGBColor[1, 0.5, 0],
+  BackFaceColor->RGBColor[1, 0.5, 0],
+  GraphicsColor->RGBColor[1, 0.5, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0.5, 0]]], "Print",
+ CellChangeTimes->{
+  3.723883535695733*^9},ExpressionUUID->"63633eb1-377c-4aea-9984-\
+c8d1060dfba5"],
+
+Cell[BoxData["\<\"Expanding the Lagrangian...\"\>"], "Print",
+ CellChangeTimes->{
+  3.7238835356994543`*^9},ExpressionUUID->"a628676c-1ac5-4262-8275-\
+6dabf4635e2a"],
+
+Cell[BoxData["\<\"Collecting the different structures that enter the \
+vertex.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883535873304*^9},ExpressionUUID->"53aeea50-d6a2-4d9b-984b-\
+082d9088d269"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "6", "\[InvisibleSpace]", "\<\" possible non-zero vertices have been found \
+-> starting the computation: \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[FeynRules`FR$FeynmanRules, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "6", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  6, " possible non-zero vertices have been found -> starting the \
+computation: ", 
+   Dynamic[FeynRules`FR$FeynmanRules], " / ", 6, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883535876892*^9},ExpressionUUID->"4c156ad3-4c28-4e3c-a286-\
+ed6eafd2629d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"6", "\[InvisibleSpace]", "\<\" vertices obtained.\"\>"}],
+  SequenceForm[6, " vertices obtained."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883536008809*^9},ExpressionUUID->"fd5345d4-1d7a-440a-b686-\
+77097f161763"],
+
+Cell[BoxData[
+ StyleBox["\<\"Starting Feynman rule calculation.\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0.5, 0],
+  FrontFaceColor->RGBColor[1, 0.5, 0],
+  BackFaceColor->RGBColor[1, 0.5, 0],
+  GraphicsColor->RGBColor[1, 0.5, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0.5, 0]]], "Print",
+ CellChangeTimes->{
+  3.723883536021365*^9},ExpressionUUID->"7138069b-068f-4a9a-ac19-\
+98155570c47c"],
+
+Cell[BoxData["\<\"Expanding the Lagrangian...\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883536025352*^9},ExpressionUUID->"93f96f4f-490a-4197-b11a-\
+053a0beb0dfc"],
+
+Cell[BoxData["\<\"Collecting the different structures that enter the \
+vertex.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883536391447*^9},ExpressionUUID->"ec655084-3fdf-46d9-bb55-\
+9b8b1324372b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "3", "\[InvisibleSpace]", "\<\" possible non-zero vertices have been found \
+-> starting the computation: \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[FeynRules`FR$FeynmanRules, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "3", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  3, " possible non-zero vertices have been found -> starting the \
+computation: ", 
+   Dynamic[FeynRules`FR$FeynmanRules], " / ", 3, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883536395595*^9},ExpressionUUID->"3af3f5a0-26ad-48d1-a24e-\
+160e4b43b0ad"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"3", "\[InvisibleSpace]", "\<\" vertices obtained.\"\>"}],
+  SequenceForm[3, " vertices obtained."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883536558936*^9},ExpressionUUID->"aecf8cb2-b34c-4ee7-bc4a-\
+6576fc03a729"],
+
+Cell[BoxData[
+ StyleBox["\<\"Starting Feynman rule calculation.\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0.5, 0],
+  FrontFaceColor->RGBColor[1, 0.5, 0],
+  BackFaceColor->RGBColor[1, 0.5, 0],
+  GraphicsColor->RGBColor[1, 0.5, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0.5, 0]]], "Print",
+ CellChangeTimes->{
+  3.723883536563656*^9},ExpressionUUID->"7769debb-04db-460c-b898-\
+bcc5ed1afc43"],
+
+Cell[BoxData["\<\"Expanding the Lagrangian...\"\>"], "Print",
+ CellChangeTimes->{
+  3.72388353656676*^9},ExpressionUUID->"e635ee90-1562-44f1-bfe9-7b4dfcd6f935"],
+
+Cell[BoxData["\<\"Collecting the different structures that enter the \
+vertex.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883536628951*^9},ExpressionUUID->"d948c58e-3095-4f55-9767-\
+f48e60c24594"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "1", "\[InvisibleSpace]", "\<\" possible non-zero vertices have been found \
+-> starting the computation: \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[FeynRules`FR$FeynmanRules, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  1, " possible non-zero vertices have been found -> starting the \
+computation: ", 
+   Dynamic[FeynRules`FR$FeynmanRules], " / ", 1, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883536632793*^9},ExpressionUUID->"ff82f530-a784-4c3b-bb54-\
+4e33df973c70"],
+
+Cell[BoxData["\<\"1 vertex obtained.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883536661304*^9},ExpressionUUID->"84f02f4f-6d7f-47cd-ad07-\
+0ed905ac2247"],
+
+Cell[BoxData[
+ StyleBox["\<\"Starting Feynman rule calculation.\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0.5, 0],
+  FrontFaceColor->RGBColor[1, 0.5, 0],
+  BackFaceColor->RGBColor[1, 0.5, 0],
+  GraphicsColor->RGBColor[1, 0.5, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0.5, 0]]], "Print",
+ CellChangeTimes->{
+  3.72388353682666*^9},ExpressionUUID->"746a74ab-5e29-495b-8516-7240bfd07df6"],
+
+Cell[BoxData["\<\"Expanding the Lagrangian...\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883536830612*^9},ExpressionUUID->"f5939260-f35c-4678-b499-\
+cc9cb09f2b88"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Expanding the indices over \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" cores\"\>"}],
+  SequenceForm["Expanding the indices over ", 2, " cores"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883536834516*^9},ExpressionUUID->"f8d748ca-d17e-434b-9360-\
+74913962847f"],
+
+Cell[BoxData["\<\"Collecting the different structures that enter the \
+vertex.\"\>"], "Print",
+ CellChangeTimes->{
+  3.72388354095542*^9},ExpressionUUID->"816c045a-539a-428a-8ae4-47e0c825ab0b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "28", "\[InvisibleSpace]", "\<\" possible non-zero vertices have been found \
+-> starting the computation: \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[FeynRules`FR$FeynmanRules, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "28", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  28, " possible non-zero vertices have been found -> starting the \
+computation: ", 
+   Dynamic[FeynRules`FR$FeynmanRules], " / ", 28, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835409799147`*^9},ExpressionUUID->"1d1e96d6-8f8f-4d49-a9d8-\
+7398486fb3a4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"28", "\[InvisibleSpace]", "\<\" vertices obtained.\"\>"}],
+  SequenceForm[28, " vertices obtained."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388354327621*^9},ExpressionUUID->"1c8a43fe-6af6-4333-aedc-9d85728cda4f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Flavor expansion of the vertices distributed over \"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "\<\" cores: \"\>", 
+   "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[FeynRules`FR$Count1, StandardForm],
+    ImageSizeCache->{18., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "59"}],
+  SequenceForm[
+  "Flavor expansion of the vertices distributed over ", 2, " cores: ", 
+   Dynamic[FeynRules`FR$Count1], " / ", 59],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388354557618*^9},ExpressionUUID->"110233e8-1b23-4f02-9d4c-897ffe497a75"],
+
+Cell[BoxData["\<\"   - Saved vertices in InterfaceRun[ 1 ].\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883555646327*^9},ExpressionUUID->"4d402575-c03a-4dec-b89f-\
+42550342720c"]
+}, Open  ]],
+
+Cell[BoxData[
+ TemplateBox[{
+  "QN","NonConserv",
+   "\"Warning: non quantum number conserving vertex encountered!\"",2,12,9,
+   33186103944023069241,"Local","FeynRules`QN"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.72388355570198*^9},ExpressionUUID->"94362a5d-a6a6-4062-bf3e-faed6e0a42d4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["e", "\<\"-\"\>"], ",", "N1Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`ebar, \
+$CellContext`N1Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555724934*^9},ExpressionUUID->"c47a21d9-44e6-49a4-af28-\
+95883c911d8d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "QN","NonConserv",
+   "\"Warning: non quantum number conserving vertex encountered!\"",2,12,10,
+   33186103944023069241,"Local","FeynRules`QN"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7238835557583237`*^9},ExpressionUUID->"ae08cdf8-fff9-4281-937b-\
+76b547c4f067"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["mu", "\<\"-\"\>"], ",", "N1Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`mubar, \
+$CellContext`N1Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388355577647*^9},ExpressionUUID->"0f82f060-0413-4c55-b980-479e3f7ffa93"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "QN","NonConserv",
+   "\"Warning: non quantum number conserving vertex encountered!\"",2,12,11,
+   33186103944023069241,"Local","FeynRules`QN"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7238835557976847`*^9},ExpressionUUID->"92bf861d-9bc1-46de-a020-\
+286a1baab75b"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"QN\\\", \\\"::\\\", \
+\\\"NonConserv\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,12,12,33186103944023069241,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.723883555843182*^9},ExpressionUUID->"9f3aca88-1be3-42fb-b468-\
+67c53bdd9e25"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["ta", "\<\"-\"\>"], ",", "N1Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`tabar, \
+$CellContext`N1Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835558619204`*^9},ExpressionUUID->"c679566d-34d2-4ade-a353-\
+e7c090cc0f7a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N1Es", "\<\"-\"\>"], ",", "e"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N1Esbar, 
+    FeynRules`e}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555865666*^9},ExpressionUUID->"f0e8ca68-7300-4ebe-8acc-\
+23eec52431a9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N1Mus", "\<\"-\"\>"], ",", "mu"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N1Musbar, 
+    FeynRules`mu}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555874181*^9},ExpressionUUID->"170ef79b-f0a1-40de-8cb5-\
+e7b7a3229356"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N1Taus", "\<\"-\"\>"], ",", "ta"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N1Tausbar, \
+$CellContext`ta}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555879031*^9},ExpressionUUID->"daf4931c-abd1-4e3f-bc3f-\
+2d383b9f0a50"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N1Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N1Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835558824797`*^9},ExpressionUUID->"c26ad7af-9309-41fc-a939-\
+993bdc17ac17"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N1Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N1Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835558859367`*^9},ExpressionUUID->"76120d2d-c537-4fd2-b773-\
+efe3727e3a2b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N1Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N1Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835558895807`*^9},ExpressionUUID->"b8606af0-dd1e-4ed7-988f-\
+e49c1fe196b1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N1Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vebar, \
+$CellContext`N1Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555893126*^9},ExpressionUUID->"2b9a9895-98f4-40d2-b5dc-\
+c0abc3bd5a13"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N1Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vmbar, \
+$CellContext`N1Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835558967237`*^9},ExpressionUUID->"5f268be8-5a28-4efa-961d-\
+580cbb443dce"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N1Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vtbar, \
+$CellContext`N1Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555900522*^9},ExpressionUUID->"5038bf45-493b-4789-8ecf-\
+af79adf9f158"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N2Es", "\<\"-\"\>"], ",", "e"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N2Esbar, 
+    FeynRules`e}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835559043016`*^9},ExpressionUUID->"85f5b220-8492-4326-bca2-\
+c905961c6c74"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N2Mus", "\<\"-\"\>"], ",", "mu"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N2Musbar, 
+    FeynRules`mu}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835559083242`*^9},ExpressionUUID->"b9349ff4-7e60-4a11-a908-\
+300095c2642c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Aux", ",", 
+     OverscriptBox["N2Taus", "\<\"-\"\>"], ",", "ta"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Aux, $CellContext`N2Tausbar, \
+$CellContext`ta}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555912155*^9},ExpressionUUID->"19612e82-a486-4e10-aeb6-\
+49471418103d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["e", "\<\"-\"\>"], ",", "N2Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`ebar, \
+$CellContext`N2Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555915559*^9},ExpressionUUID->"15919935-5586-4770-aa93-\
+c050f28e29ec"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["mu", "\<\"-\"\>"], ",", "N2Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`mubar, \
+$CellContext`N2Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835559189253`*^9},ExpressionUUID->"dd423b71-99f3-4793-bb28-\
+2082f847b64b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["Aux", "\[Dagger]"], ",", 
+     OverscriptBox["ta", "\<\"-\"\>"], ",", "N2Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxbar, $CellContext`tabar, \
+$CellContext`N2Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835559237347`*^9},ExpressionUUID->"38dca4f6-5313-473b-833c-\
+a7d56bdd1fa1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N2Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N2Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835559283867`*^9},ExpressionUUID->"bed5851d-f0f5-4c9a-a1b2-\
+0793d02c0598"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N2Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N2Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835559317703`*^9},ExpressionUUID->"ad351b09-3bd4-495e-af12-\
+0998fee0b8ab"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["N2Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`N2Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555935281*^9},ExpressionUUID->"57ff7eb2-85ad-4be3-83be-\
+37a996bba2f7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N2Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vebar, \
+$CellContext`N2Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555939494*^9},ExpressionUUID->"c0506a41-252e-4ff4-a9ea-\
+be3f1affdf36"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N2Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vmbar, \
+$CellContext`N2Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555943103*^9},ExpressionUUID->"a2615cbf-1726-4a87-832a-\
+5471515dd600"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Auxo", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N2Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Auxo, $CellContext`vtbar, \
+$CellContext`N2Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555946703*^9},ExpressionUUID->"736c14a4-42c9-4334-bfbc-\
+ff1be5e9905d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N2Es", "\<\"-\"\>"], ",", "e"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N2Esbar, FeynRules`e}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555950735*^9},ExpressionUUID->"dde8cff2-c279-46a9-82ad-\
+eca0a6368fac"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N2Mus", "\<\"-\"\>"], ",", "mu"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N2Musbar, FeynRules`mu}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835559551697`*^9},ExpressionUUID->"3769f563-6ee2-4f26-aa74-\
+bc375f64a303"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N2Taus", "\<\"-\"\>"], ",", "ta"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N2Tausbar, $CellContext`ta}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835559604177`*^9},ExpressionUUID->"9650f844-a255-433c-86ca-\
+eed90fc57fd4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N2Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N2Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555964171*^9},ExpressionUUID->"d96fa437-2a81-414b-9de4-\
+e0798531febb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N2Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N2Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555969009*^9},ExpressionUUID->"3013e8ca-35ac-4ee9-add3-\
+5a7b40d6c7d0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N2Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N2Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835559730453`*^9},ExpressionUUID->"007598ea-fed9-45b8-9e4e-\
+79315258cabb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N2Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N2Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555977268*^9},ExpressionUUID->"90e7166d-76dd-4d8c-9eb9-\
+ca2ac147d252"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N2Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N2Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835559810038`*^9},ExpressionUUID->"8db2043b-c083-4c8f-a9d0-\
+de285f3f6071"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N2Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N2Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555985026*^9},ExpressionUUID->"38a6256a-e335-48d3-bd5d-\
+fc292e667a13"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N1Es", "\<\"-\"\>"], ",", "e"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N1Esbar, FeynRules`e}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388355598903*^9},ExpressionUUID->"f8aa2508-bf7a-405e-a5eb-5a6a28a7fd60"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N1Mus", "\<\"-\"\>"], ",", "mu"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N1Musbar, FeynRules`mu}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555993247*^9},ExpressionUUID->"a6c4ef2f-22f0-4753-b5e7-\
+421470ddb552"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"W", ",", 
+     OverscriptBox["N1Taus", "\<\"-\"\>"], ",", "ta"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, " not conserved in vertex ", {
+   FeynRules`W, $CellContext`N1Tausbar, $CellContext`ta}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883555997809*^9},ExpressionUUID->"06fc210c-36fe-4706-bb1a-\
+b06817cc728f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N1Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N1Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556001684*^9},ExpressionUUID->"6f908dc8-08b3-42c8-9cb5-\
+d56e546e4406"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N1Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N1Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556005651*^9},ExpressionUUID->"f621b7e0-24d4-458a-9948-\
+ef8e4b3c8109"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["N1Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`N1Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388355600996*^9},ExpressionUUID->"1693c357-e938-4eea-ac0a-6d0af1019cc1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N1Es", "\<\"-\"\>"], ",", "ve"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N1Esbar, \
+$CellContext`ve}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835560144653`*^9},ExpressionUUID->"dd9b2cc6-2b8d-482b-b7f0-\
+d35bcb27236a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N1Mus", "\<\"-\"\>"], ",", "vm"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N1Musbar, \
+$CellContext`vm}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556018548*^9},ExpressionUUID->"90b39160-c25d-4e01-8564-\
+6109f09f5f53"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["N1Taus", "\<\"-\"\>"], ",", "vt"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`N1Tausbar, \
+$CellContext`vt}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556024118*^9},ExpressionUUID->"864c3c80-aa2f-4b11-998d-\
+f9089b5456f3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["e", "\<\"-\"\>"], ",", "N2Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`ebar, \
+$CellContext`N2Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556029389*^9},ExpressionUUID->"d0ce94bb-fc5a-42b3-898e-\
+28b3bc8a2921"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["mu", "\<\"-\"\>"], ",", "N2Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`mubar, \
+$CellContext`N2Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556034588*^9},ExpressionUUID->"f2e9b90b-03e2-4906-aa7f-\
+8ef294c50259"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["ta", "\<\"-\"\>"], ",", "N2Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`tabar, \
+$CellContext`N2Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556039008*^9},ExpressionUUID->"ebb1f52d-756c-4848-aa59-\
+e0bbb29c0339"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N2Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vebar, \
+$CellContext`N2Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556042821*^9},ExpressionUUID->"b3a8f318-5cc2-4445-994d-\
+61267e7bd270"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N2Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vmbar, \
+$CellContext`N2Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.72388355604669*^9},ExpressionUUID->"adda09a2-a235-425a-9ac6-4c194561648c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N2Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vtbar, \
+$CellContext`N2Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556050922*^9},ExpressionUUID->"3167f062-3ad1-4c04-85e9-\
+859161fa4dc5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N2Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vebar, \
+$CellContext`N2Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556054584*^9},ExpressionUUID->"f3ff0ffa-f1bf-4eef-b2ba-\
+24be36d10020"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N2Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vmbar, \
+$CellContext`N2Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556058207*^9},ExpressionUUID->"70f73494-2b2d-46ef-bb23-\
+cb50bbe34fa3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N2Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vtbar, \
+$CellContext`N2Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835560634003`*^9},ExpressionUUID->"035d1276-c293-4740-876a-\
+f56b9b72f108"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["e", "\<\"-\"\>"], ",", "N1Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`ebar, \
+$CellContext`N1Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556067078*^9},ExpressionUUID->"a81f0c88-e13d-4444-8f85-\
+5756e0acc3b0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["mu", "\<\"-\"\>"], ",", "N1Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`mubar, \
+$CellContext`N1Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556070978*^9},ExpressionUUID->"95097c44-5ed4-4b8f-b573-\
+95b5477171ad"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["W", "\[Dagger]"], ",", 
+     OverscriptBox["ta", "\<\"-\"\>"], ",", "N1Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Wbar, $CellContext`tabar, \
+$CellContext`N1Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835560753593`*^9},ExpressionUUID->"93f0d3f9-ffbc-4293-89af-\
+93ba5066d47c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N1Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vebar, \
+$CellContext`N1Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556079322*^9},ExpressionUUID->"36f8cecf-8a48-4ddf-a402-\
+f06a4490b2b1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N1Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vmbar, \
+$CellContext`N1Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556083477*^9},ExpressionUUID->"50577a8c-e770-4bb3-b4bf-\
+4d12e8831f7c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N1Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`A, $CellContext`vtbar, \
+$CellContext`N1Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556087872*^9},ExpressionUUID->"6266f2cc-6214-4c3b-8486-\
+fa212c59c892"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["ve", "\<\"-\"\>"], ",", "N1Es"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vebar, \
+$CellContext`N1Es}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556091587*^9},ExpressionUUID->"b5a5d887-4bb4-47d1-88c2-\
+cbf45642d31d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["vm", "\<\"-\"\>"], ",", "N1Mus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vmbar, \
+$CellContext`N1Mus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238835560951157`*^9},ExpressionUUID->"3176d6e0-dcc7-4f3f-a310-\
+90ff30c3bbb4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quantum number \"\>", "\[InvisibleSpace]", "LeptonNumber", 
+   "\[InvisibleSpace]", "\<\" not conserved in vertex \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"Z", ",", 
+     OverscriptBox["vt", "\<\"-\"\>"], ",", "N1Taus"}], "}"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Quantum number ", $CellContext`LeptonNumber, 
+   " not conserved in vertex ", {$CellContext`Z, $CellContext`vtbar, \
+$CellContext`N1Taus}, "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556098701*^9},ExpressionUUID->"5cdb7ca0-a7db-4242-88f2-\
+ff85f3ad97a4"],
+
+Cell[BoxData[
+ StyleBox["\<\"Computing the squared matrix elements relevant for the 1->2 \
+decays: \"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0.5, 0],
+  FrontFaceColor->RGBColor[1, 0.5, 0],
+  BackFaceColor->RGBColor[1, 0.5, 0],
+  GraphicsColor->RGBColor[1, 0.5, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0.5, 0]]], "Print",
+ CellChangeTimes->{
+  3.7238835561022453`*^9},ExpressionUUID->"09f9c57d-deab-44bc-acad-\
+7aef547f51e3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   DynamicBox[ToBoxes[PRIVATE`mycounter, StandardForm],
+    ImageSizeCache->{27., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "152"}],
+  SequenceForm[
+   Dynamic[PRIVATE`mycounter], " / ", 152],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883556105616*^9},ExpressionUUID->"a2bdc825-69ba-46ca-a786-\
+9351878b6fa3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Squared matrix elent compute in \"\>", "\[InvisibleSpace]", 
+   "102.552817`", "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
+  SequenceForm["Squared matrix elent compute in ", 102.552817, " seconds."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883736299403*^9},ExpressionUUID->"278daaa3-c726-4dfe-a6e9-\
+b7967aa8b7ee"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   DynamicBox[ToBoxes[PRIVATE`mycounter, StandardForm],
+    ImageSizeCache->{27., {1., 10.}}], "\[InvisibleSpace]", "\<\" / \"\>", 
+   "\[InvisibleSpace]", "176"}],
+  SequenceForm[
+   Dynamic[PRIVATE`mycounter], " / ", 176],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238837363054132`*^9},ExpressionUUID->"4621b447-de24-4a72-be10-\
+b2ef678c78b6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Decay widths computed in \"\>", "\[InvisibleSpace]", 
+   "2.446205`", "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
+  SequenceForm["Decay widths computed in ", 2.446205, " seconds."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.723883740614917*^9},ExpressionUUID->"0103cda3-dacb-42d3-8273-\
+4e0d5c6fc239"],
+
+Cell[BoxData["\<\"Preparing Python output.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883740634087*^9},ExpressionUUID->"7819312e-be0e-4dcb-8655-\
+caf63353ba65"],
+
+Cell[BoxData["\<\"    - Splitting vertices into building blocks.\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.7238837409007673`*^9},ExpressionUUID->"bf61e43e-7e81-4191-9644-\
+8bd3e45caf2b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Splitting of vertices distributed over \"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "\<\" kernels.\"\>"}],
+  SequenceForm["Splitting of vertices distributed over ", 2, " kernels."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238837409501762`*^9},ExpressionUUID->"cc084130-7eeb-44eb-8b01-\
+d1e1489df899"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"    - Optimizing: \"\>", "\[InvisibleSpace]", 
+   DynamicBox[ToBoxes[PRIVATE`PY$SplitVertexCounter, StandardForm],
+    ImageSizeCache->{27., {1., 10.}}], "\[InvisibleSpace]", "\<\"/\"\>", 
+   "\[InvisibleSpace]", "169", "\[InvisibleSpace]", "\<\" .\"\>"}],
+  SequenceForm["    - Optimizing: ", 
+   Dynamic[PRIVATE`PY$SplitVertexCounter], "/", 169, " ."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.7238837436485357`*^9},ExpressionUUID->"9261eef8-5749-4857-afae-\
+d23397b317e8"],
+
+Cell[BoxData["\<\"    - Writing files.\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883743892467*^9},ExpressionUUID->"82be26f8-35f7-4b7a-8f0f-\
+18d6e29b5868"],
+
+Cell[BoxData["\<\"Done!\"\>"], "Print",
+ CellChangeTimes->{
+  3.723883744304779*^9},ExpressionUUID->"2772e428-69bc-43c9-9955-\
+cd164252552f"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1364, 712},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 27, \
+2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 12829, 206, 535, "Input", "ExpressionUUID" -> \
+"046d0d15-3b18-4386-839d-c29a985b25e7"],
+Cell[CellGroupData[{
+Cell[13421, 232, 151, 3, 29, "Print", "ExpressionUUID" -> \
+"62e0d4b5-2632-4d44-b991-799de568ecf9"],
+Cell[13575, 237, 424, 10, 29, "Print", "ExpressionUUID" -> \
+"00b374fd-5468-4339-9cfc-c5ae8170816c"],
+Cell[14002, 249, 205, 4, 29, "Print", "ExpressionUUID" -> \
+"533c6410-db91-4a51-940a-2453b173fbad"],
+Cell[14210, 255, 132, 2, 29, "Print", "ExpressionUUID" -> \
+"97e14b29-8a5e-4b25-a161-e60add3132c8"],
+Cell[14345, 259, 148, 3, 29, "Print", "ExpressionUUID" -> \
+"160c5468-8747-48da-b679-865b98f73888"],
+Cell[14496, 264, 200, 4, 29, "Print", "ExpressionUUID" -> \
+"347cfd0c-8544-40d8-924a-a935f73d1c5e"],
+Cell[14699, 270, 200, 4, 29, "Print", "ExpressionUUID" -> \
+"417844ef-1903-418a-a637-6c201d43084f"],
+Cell[14902, 276, 137, 3, 29, "Print", "ExpressionUUID" -> \
+"396c3745-d6b3-4b09-98bd-2b80b6a1c204"],
+Cell[15042, 281, 167, 3, 29, "Print", "ExpressionUUID" -> \
+"6d85baeb-78fc-404a-8ab8-e9e1b0d0ebde"],
+Cell[15212, 286, 137, 3, 29, "Print", "ExpressionUUID" -> \
+"09bf0e4a-e49c-4e0d-823a-fd8a3a99da42"],
+Cell[15352, 291, 206, 4, 29, "Print", "ExpressionUUID" -> \
+"54868250-d64e-4ede-89c7-bfeeb8e93309"],
+Cell[15561, 297, 158, 3, 29, "Print", "ExpressionUUID" -> \
+"e1232c35-ec13-4c77-95ed-4cd32808b40c"],
+Cell[15722, 302, 178, 3, 29, "Print", "ExpressionUUID" -> \
+"a459038d-ff3d-41b7-871b-4c16429c86c7"],
+Cell[15903, 307, 146, 3, 29, "Print", "ExpressionUUID" -> \
+"502e559e-ce75-4d96-841d-af1f38e02947"],
+Cell[16052, 312, 149, 3, 29, "Print", "ExpressionUUID" -> \
+"d3052e4d-db65-4500-aeb7-3840fa30a770"],
+Cell[16204, 317, 279, 6, 29, "Print", "ExpressionUUID" -> \
+"cc1cb238-6940-4d43-b9b5-46b6892615f7"],
+Cell[16486, 325, 184, 4, 29, "Print", "ExpressionUUID" -> \
+"8c442d16-5f1c-451d-bc6a-cb81c4d9af2b"],
+Cell[16673, 331, 136, 3, 29, "Print", "ExpressionUUID" -> \
+"89517006-2d0d-4e51-80ca-58dcae7893fe"],
+Cell[16812, 336, 168, 3, 29, "Print", "ExpressionUUID" -> \
+"19301bb5-d558-49ae-b436-9dfd514e951a"],
+Cell[16983, 341, 169, 3, 29, "Print", "ExpressionUUID" -> \
+"a96d25f2-8af6-4dd9-b3c7-77ca922d7d24"],
+Cell[17155, 346, 163, 2, 29, "Print", "ExpressionUUID" -> \
+"ce3ed11c-4618-4366-97de-dace36536696"],
+Cell[17321, 350, 334, 8, 54, "Print", "ExpressionUUID" -> \
+"3a7021f4-2975-4fa0-a9ef-09a1368d72d0"],
+Cell[17658, 360, 622, 13, 29, "Print", "ExpressionUUID" -> \
+"1e34005d-a79d-47a2-8995-dfbcae70743f"],
+Cell[18283, 375, 624, 13, 29, "Print", "ExpressionUUID" -> \
+"2b6473cd-1924-4e5d-81ac-86dc974c139d"],
+Cell[18910, 390, 156, 3, 36, "Print", "ExpressionUUID" -> \
+"66777924-b82a-459d-acf3-bbf8ea346623"],
+Cell[19069, 395, 284, 7, 36, "Print", "ExpressionUUID" -> \
+"6393f4e7-1f9a-4a15-9956-ae0377fe42c1"],
+Cell[19356, 404, 282, 7, 36, "Print", "ExpressionUUID" -> \
+"a619b223-c46d-41c4-a69e-5801f03d6bc1"],
+Cell[19641, 413, 276, 7, 36, "Print", "ExpressionUUID" -> \
+"703db3a0-85ba-40cb-a516-ecee43213e9b"],
+Cell[19920, 422, 147, 3, 36, "Print", "ExpressionUUID" -> \
+"ebdb72bb-6c22-4d2d-bbaa-0131c80ebb4e"],
+Cell[20070, 427, 149, 3, 36, "Print", "ExpressionUUID" -> \
+"4de61c53-8842-4d9b-9695-4d11d90719be"],
+Cell[20222, 432, 150, 3, 36, "Print", "ExpressionUUID" -> \
+"55d29d5f-fcc6-4bca-ab7f-b3718acf831a"],
+Cell[20375, 437, 146, 3, 36, "Print", "ExpressionUUID" -> \
+"a08bca92-aa46-4c6a-bf4b-d84f4510034a"],
+Cell[20524, 442, 165, 3, 36, "Print", "ExpressionUUID" -> \
+"c529f9b1-1f8e-4d81-8fb4-68a611d6b1fc"],
+Cell[20692, 447, 165, 3, 36, "Print", "ExpressionUUID" -> \
+"4b538b4f-c637-47ad-8ead-c85829425f34"],
+Cell[20860, 452, 217, 4, 36, "Print", "ExpressionUUID" -> \
+"2ed89755-e986-4fd4-af69-edb8cb25c164"],
+Cell[21080, 458, 213, 4, 36, "Print", "ExpressionUUID" -> \
+"ae5a955e-572a-42e2-8b25-eac6cb845d9f"],
+Cell[21296, 464, 408, 11, 36, "Print", "ExpressionUUID" -> \
+"4058dc76-ea88-48f9-80d4-578b87e50ef5"],
+Cell[21707, 477, 163, 3, 36, "Print", "ExpressionUUID" -> \
+"333edfee-105c-4768-99d5-df37bb170f47"],
+Cell[21873, 482, 196, 4, 36, "Print", "ExpressionUUID" -> \
+"b07eb295-6d89-45b7-a7d1-361efbb860f1"],
+Cell[22072, 488, 156, 3, 36, "Print", "ExpressionUUID" -> \
+"b20a22bb-c2f5-4df7-a33a-1a3e664135a2"],
+Cell[22231, 493, 276, 7, 36, "Print", "ExpressionUUID" -> \
+"cf750dfe-60f0-4ce1-9baf-d99bced64172"],
+Cell[22510, 502, 164, 3, 36, "Print", "ExpressionUUID" -> \
+"8258dd1d-51f1-48a3-b1e1-2a333dd1691d"],
+Cell[22677, 507, 410, 11, 36, "Print", "ExpressionUUID" -> \
+"97735f74-8302-442e-97cd-03e01b77851b"],
+Cell[23090, 520, 163, 3, 36, "Print", "ExpressionUUID" -> \
+"6fe345d2-a190-4bc8-8382-53e9072f968a"],
+Cell[23256, 525, 345, 8, 36, "Print", "ExpressionUUID" -> \
+"cb547696-a05c-4084-8df9-56b0ad9c5a9e"],
+Cell[23604, 535, 196, 4, 36, "Print", "ExpressionUUID" -> \
+"a373c9f8-f09c-4feb-ad9a-55a5ef9b3794"],
+Cell[23803, 541, 680, 15, 36, "Print", "ExpressionUUID" -> \
+"ee6456e4-515d-4fa1-a54d-c7ad16b8d887"]
+}, Open  ]],
+Cell[24498, 559, 317, 8, 36, "Message", "ExpressionUUID" -> \
+"aaf0cbf0-2d18-462d-b774-e636b0b0978c"],
+Cell[24818, 569, 678, 17, 55, "Print", "ExpressionUUID" -> \
+"45e5c69c-4c55-4c6a-98f2-f1c150ce24d1"],
+Cell[25499, 588, 317, 8, 36, "Message", "ExpressionUUID" -> \
+"59570d29-389a-4838-9bf6-a67aae9fe120"],
+Cell[25819, 598, 601, 15, 36, "Print", "ExpressionUUID" -> \
+"73c6b4be-a824-40f4-ac0f-1b06d5e5b3a7"],
+Cell[26423, 615, 319, 8, 36, "Message", "ExpressionUUID" -> \
+"7950d7fd-72eb-47f9-8489-d8f5c3787f57"],
+Cell[26745, 625, 401, 9, 36, "Message", "ExpressionUUID" -> \
+"b5f082af-bfc8-4934-9124-180921f0fe13"],
+Cell[CellGroupData[{
+Cell[27171, 638, 602, 14, 36, "Print", "ExpressionUUID" -> \
+"305771bc-3ec7-480d-be1c-d0246d6f10d9"],
+Cell[27776, 654, 644, 16, 55, "Print", "ExpressionUUID" -> \
+"5edab766-c7b0-457b-92d9-3e333fff917e"],
+Cell[28423, 672, 673, 16, 55, "Print", "ExpressionUUID" -> \
+"89a8a737-57b3-4d95-9b4c-f30b2b2a890c"],
+Cell[29099, 690, 603, 15, 36, "Print", "ExpressionUUID" -> \
+"27d6af37-1444-45e0-a471-c42138f70297"],
+Cell[29705, 707, 605, 15, 36, "Print", "ExpressionUUID" -> \
+"7b898855-a4de-4db1-9edb-ef11dd07e2fe"],
+Cell[30313, 724, 642, 16, 55, "Print", "ExpressionUUID" -> \
+"601a45fc-8a57-4b5f-a4d2-19afa2096da3"],
+Cell[30958, 742, 594, 15, 36, "Print", "ExpressionUUID" -> \
+"18a33e0b-ea5e-46ed-aa41-d1e6e7e5aea3"],
+Cell[31555, 759, 599, 15, 36, "Print", "ExpressionUUID" -> \
+"bbeb2e34-3ee8-469c-8594-b16d07aca418"],
+Cell[32157, 776, 601, 15, 36, "Print", "ExpressionUUID" -> \
+"a254f10b-51d6-44a4-bbd2-a7d460318922"],
+Cell[32761, 793, 594, 15, 36, "Print", "ExpressionUUID" -> \
+"266be1d6-f25b-4f15-b9ac-8d04ee80e2bf"],
+Cell[33358, 810, 599, 15, 36, "Print", "ExpressionUUID" -> \
+"38d20576-cc5b-48b7-a5b1-5cd621983476"],
+Cell[33960, 827, 599, 15, 36, "Print", "ExpressionUUID" -> \
+"2b2d14dd-a179-453d-aac1-b4f18a262915"],
+Cell[34562, 844, 672, 17, 55, "Print", "ExpressionUUID" -> \
+"f6c21c9e-7bac-431f-8c9e-ff45bc1b7e15"],
+Cell[35237, 863, 636, 16, 55, "Print", "ExpressionUUID" -> \
+"33c9ad44-76c4-437c-a25a-f0a988d626b0"],
+Cell[35876, 881, 633, 15, 55, "Print", "ExpressionUUID" -> \
+"8a31352b-f262-4b45-ae9c-a116cb8d6dda"],
+Cell[36512, 898, 672, 17, 55, "Print", "ExpressionUUID" -> \
+"d6414beb-ef70-4793-8aea-9bf9c0b476ae"],
+Cell[37187, 917, 636, 16, 55, "Print", "ExpressionUUID" -> \
+"2c258d32-b5b9-4259-8367-faa85c09efc8"],
+Cell[37826, 935, 638, 16, 55, "Print", "ExpressionUUID" -> \
+"4d5dbfc4-6f13-4da1-a9df-c559e53b4a45"],
+Cell[38467, 953, 278, 7, 36, "Print", "ExpressionUUID" -> \
+"7faf5901-05f2-4b9e-ab55-abc026d6dac7"],
+Cell[38748, 962, 181, 3, 36, "Print", "ExpressionUUID" -> \
+"8063c712-0e6d-4251-9d43-854f63a3aac5"],
+Cell[38932, 967, 622, 17, 36, "Print", "ExpressionUUID" -> \
+"28e6d6da-1716-4da8-a077-69c414925a37"],
+Cell[39557, 986, 614, 17, 36, "Print", "ExpressionUUID" -> \
+"222922e9-31fd-48fc-a8b9-28fc728424d3"],
+Cell[40174, 1005, 684, 20, 67, "Print", "ExpressionUUID" -> \
+"e85a0ee0-1ad1-4296-a8c3-f9f246e2cef1"],
+Cell[40861, 1027, 586, 17, 67, "Print", "ExpressionUUID" -> \
+"5557a659-f7d0-49b6-8714-4aa1e05b9cb7"],
+Cell[41450, 1046, 600, 17, 67, "Print", "ExpressionUUID" -> \
+"a37c23a9-3d44-4e8c-9b2c-b18463300621"],
+Cell[42053, 1065, 600, 17, 67, "Print", "ExpressionUUID" -> \
+"1ec38f27-d90c-4d13-ba95-1ff3a2eec6e6"],
+Cell[42656, 1084, 600, 17, 67, "Print", "ExpressionUUID" -> \
+"64eea247-4f62-4449-8baf-30bc6644c899"],
+Cell[43259, 1103, 138, 3, 36, "Print", "ExpressionUUID" -> \
+"556095de-840d-4268-bc00-f6c5318ebafa"],
+Cell[43400, 1108, 408, 11, 36, "Print", "ExpressionUUID" -> \
+"2eb74c75-9231-4d16-8272-855b602f5800"],
+Cell[43811, 1121, 163, 3, 36, "Print", "ExpressionUUID" -> \
+"365c0b1a-bf8a-4ba8-af76-b19e58f74211"],
+Cell[43977, 1126, 345, 8, 36, "Print", "ExpressionUUID" -> \
+"92632c00-6544-4c6c-8b1e-958e7b463b84"],
+Cell[44325, 1136, 387, 9, 36, "Print", "ExpressionUUID" -> \
+"a59d2b3a-a555-422b-a3cd-d9395bcd26f4"],
+Cell[44715, 1147, 196, 4, 36, "Print", "ExpressionUUID" -> \
+"1cbf89af-6284-47b5-9312-e7a2dacdd7a5"],
+Cell[44914, 1153, 678, 15, 36, "Print", "ExpressionUUID" -> \
+"3981a584-35ff-456f-b9c6-9f1fc3f25240"],
+Cell[45595, 1170, 278, 7, 36, "Print", "ExpressionUUID" -> \
+"406e1422-2166-4ded-a4ae-ddcd7520f0e6"],
+Cell[45876, 1179, 633, 14, 36, "Print", "ExpressionUUID" -> \
+"a9b0739f-5eb0-4470-9f14-c45e75b4cc17"]
+}, Open  ]],
+Cell[46524, 1196, 318, 8, 36, "Message", "ExpressionUUID" -> \
+"0c41d2bc-baa6-4f20-a1e9-0eebc4369812"],
+Cell[46845, 1206, 670, 17, 51, "Print", "ExpressionUUID" -> \
+"5483c3e9-51b0-49ff-a5a8-a27b57a0cdae"],
+Cell[47518, 1225, 318, 8, 36, "Message", "ExpressionUUID" -> \
+"e8b66751-ab7c-4dd6-be6c-6163e0822695"],
+Cell[47839, 1235, 676, 17, 51, "Print", "ExpressionUUID" -> \
+"826ed523-1b8d-4127-bd34-62badf6e51ea"],
+Cell[48518, 1254, 318, 8, 36, "Message", "ExpressionUUID" -> \
+"6b907a2b-ac67-4f64-b417-1a29f88afd0b"],
+Cell[48839, 1264, 402, 9, 36, "Message", "ExpressionUUID" -> \
+"6ce3cab1-cb4e-4f53-8718-077abd95d3f2"],
+Cell[CellGroupData[{
+Cell[49266, 1277, 678, 17, 53, "Print", "ExpressionUUID" -> \
+"0af51cbf-5210-48ac-bd16-834680be9567"],
+Cell[49947, 1296, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"3b56a572-bbec-46a4-ae44-1b959dd16f71"],
+Cell[50582, 1314, 636, 16, 53, "Print", "ExpressionUUID" -> \
+"ebb63c47-0f4a-4932-869d-ba09d0a27312"],
+Cell[51221, 1332, 638, 16, 53, "Print", "ExpressionUUID" -> \
+"32df63ab-b1fd-447c-8627-06e00dae3daf"],
+Cell[51862, 1350, 636, 16, 53, "Print", "ExpressionUUID" -> \
+"226dc8eb-0980-49e3-bf76-5092bb3c21cc"],
+Cell[52501, 1368, 638, 16, 53, "Print", "ExpressionUUID" -> \
+"297d1e35-8727-463c-b8c8-03e04fb00be5"],
+Cell[53142, 1386, 640, 16, 53, "Print", "ExpressionUUID" -> \
+"d1ad5d5e-2bfc-48ce-ac5a-0e47eabb3fd3"],
+Cell[53785, 1404, 638, 16, 51, "Print", "ExpressionUUID" -> \
+"80f675e5-22e3-455f-a3e7-78b784a2523e"],
+Cell[54426, 1422, 640, 16, 51, "Print", "ExpressionUUID" -> \
+"007fac7a-881b-4f4c-90ce-4841a5428000"],
+Cell[55069, 1440, 640, 16, 53, "Print", "ExpressionUUID" -> \
+"21a72c19-00c9-4f5c-87ab-c441e2b125c7"],
+Cell[55712, 1458, 672, 17, 51, "Print", "ExpressionUUID" -> \
+"6dbb2794-9ba4-430b-a9d6-353ae6cdba99"],
+Cell[56387, 1477, 676, 17, 51, "Print", "ExpressionUUID" -> \
+"042c7ce6-e1f6-45c7-951b-1a94b65a4546"],
+Cell[57066, 1496, 678, 17, 53, "Print", "ExpressionUUID" -> \
+"7f6a0e8a-fcee-41f5-ac6d-e47ffed5179c"],
+Cell[57747, 1515, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"becc1676-5478-44be-9a1f-15b2c77812ac"],
+Cell[58382, 1533, 633, 15, 53, "Print", "ExpressionUUID" -> \
+"8ff23dd6-fbd5-4156-95d2-17fb47b73416"],
+Cell[59018, 1550, 638, 16, 53, "Print", "ExpressionUUID" -> \
+"9f4cb614-0fc8-4337-9f6e-004bc87e449c"],
+Cell[59659, 1568, 636, 16, 53, "Print", "ExpressionUUID" -> \
+"2e34fad6-ea6f-4373-9de5-500d2515e4d5"],
+Cell[60298, 1586, 640, 16, 53, "Print", "ExpressionUUID" -> \
+"eaa1cb69-9e85-44ad-911c-55eb937be193"],
+Cell[60941, 1604, 640, 16, 53, "Print", "ExpressionUUID" -> \
+"5b2ff5f3-c1a1-4c63-929a-6bb1b725f97b"],
+Cell[61584, 1622, 633, 15, 51, "Print", "ExpressionUUID" -> \
+"436468fd-368c-4e25-8854-668039b85e14"],
+Cell[62220, 1639, 638, 16, 51, "Print", "ExpressionUUID" -> \
+"3aaeaf3b-f651-4b78-a6a3-3017d17a0493"],
+Cell[62861, 1657, 637, 15, 53, "Print", "ExpressionUUID" -> \
+"23432878-71b7-4c8b-9f3e-e8339b3ec161"],
+Cell[63501, 1674, 620, 15, 53, "Print", "ExpressionUUID" -> \
+"702587fd-aef1-4cdc-b042-511520bf318c"],
+Cell[64124, 1691, 624, 15, 53, "Print", "ExpressionUUID" -> \
+"53542758-3844-4583-aa6d-7615137a307f"],
+Cell[64751, 1708, 629, 15, 53, "Print", "ExpressionUUID" -> \
+"74d10458-e3b5-4a73-8467-3422fbd9b94b"],
+Cell[65383, 1725, 627, 15, 53, "Print", "ExpressionUUID" -> \
+"ee92ba52-14d0-413a-b51c-0618da1538ce"],
+Cell[66013, 1742, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"b37b2f53-e797-4668-9c44-0a6432da4d64"],
+Cell[66648, 1760, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"d31e8e21-48ce-49e8-9899-461ae6a65d81"],
+Cell[67285, 1778, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"af60ce3e-3655-4df5-9331-92d978b150e0"],
+Cell[67920, 1796, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"6dfd262f-7db4-488a-8476-2175503c0db0"],
+Cell[68555, 1814, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"873eba30-ade7-415d-9738-beff008f02e8"],
+Cell[69192, 1832, 622, 15, 53, "Print", "ExpressionUUID" -> \
+"9b5433b0-1e80-4f6c-ad48-b0b5e0f293ee"],
+Cell[69817, 1849, 624, 15, 53, "Print", "ExpressionUUID" -> \
+"10387cf5-e880-4132-b13f-0ef1267019a2"],
+Cell[70444, 1866, 631, 15, 53, "Print", "ExpressionUUID" -> \
+"99670836-b71e-414c-b6fa-58c3c45fb24b"],
+Cell[71078, 1883, 630, 16, 53, "Print", "ExpressionUUID" -> \
+"a1d2301a-cf98-4777-a159-2131db592e6b"],
+Cell[71711, 1901, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"99ab149f-c6a0-4699-8794-b821d77f0576"],
+Cell[72346, 1919, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"59e577a2-d3fb-4942-95ff-889552661592"],
+Cell[72983, 1937, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"614223c2-510b-4f03-8cd2-94eb71deb03f"],
+Cell[73618, 1955, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"773151cd-853f-4a1c-a6b5-4f8b955aef60"],
+Cell[74253, 1973, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"c37cc9bf-4f21-49c5-b9c6-6b6e5a92c0aa"],
+Cell[74890, 1991, 668, 17, 51, "Print", "ExpressionUUID" -> \
+"95e90088-af6b-4a81-b38f-c14cce28d095"],
+Cell[75561, 2010, 670, 17, 51, "Print", "ExpressionUUID" -> \
+"6911fa2b-74c7-4fe2-bc07-e129909b2c92"],
+Cell[76234, 2029, 672, 17, 53, "Print", "ExpressionUUID" -> \
+"9e121228-45f8-4edb-8522-c097e2fb9f2a"],
+Cell[76909, 2048, 632, 16, 51, "Print", "ExpressionUUID" -> \
+"66c2e6a8-ea5d-43ef-905c-32dcc6f02e44"],
+Cell[77544, 2066, 632, 16, 51, "Print", "ExpressionUUID" -> \
+"d9d3c4e0-48b7-4fdc-8ccc-58bee2f2be7a"],
+Cell[78179, 2084, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"f406fb45-37a7-4d49-954c-f94d714fcad8"],
+Cell[78816, 2102, 630, 16, 51, "Print", "ExpressionUUID" -> \
+"039c6eba-305d-43e7-98d6-e328e54a5d9b"],
+Cell[79449, 2120, 634, 16, 51, "Print", "ExpressionUUID" -> \
+"420afe8b-9f30-46d1-9fba-97177c8fac59"],
+Cell[80086, 2138, 636, 16, 53, "Print", "ExpressionUUID" -> \
+"a4781691-9197-47b7-85f8-1f6d073ca7e7"],
+Cell[80725, 2156, 668, 17, 51, "Print", "ExpressionUUID" -> \
+"7392bac6-6e89-4715-9dd3-651aede571d6"],
+Cell[81396, 2175, 670, 17, 51, "Print", "ExpressionUUID" -> \
+"4450caa5-31cc-4360-9142-5ff59f8b8929"],
+Cell[82069, 2194, 672, 17, 53, "Print", "ExpressionUUID" -> \
+"db118282-d65d-4811-b60e-d915fabcb3e8"],
+Cell[82744, 2213, 632, 16, 51, "Print", "ExpressionUUID" -> \
+"2a197368-7440-4d05-938b-f514412ffd7f"],
+Cell[83379, 2231, 632, 16, 51, "Print", "ExpressionUUID" -> \
+"a3f46669-5d83-426c-8853-f3feb5f66ce7"],
+Cell[84014, 2249, 636, 16, 53, "Print", "ExpressionUUID" -> \
+"140365eb-c37a-4407-86a3-8c8b22050131"],
+Cell[84653, 2267, 630, 16, 51, "Print", "ExpressionUUID" -> \
+"4a6f2e9c-59b1-446a-9638-afe9c73bcfbe"],
+Cell[85286, 2285, 632, 16, 51, "Print", "ExpressionUUID" -> \
+"0b5f1c55-503a-46f3-9d4b-96fe24e73476"],
+Cell[85921, 2303, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"97381188-beca-4c92-b75d-10c80958bffa"],
+Cell[86558, 2321, 793, 21, 97, "Print", "ExpressionUUID" -> \
+"d7471a33-163f-416f-9cf8-1fd7525393e6"],
+Cell[87354, 2344, 588, 17, 67, "Print", "ExpressionUUID" -> \
+"0319e5b5-2f04-4de2-8383-d48c654d2191"],
+Cell[87945, 2363, 599, 17, 36, "Print", "ExpressionUUID" -> \
+"c0b3fabe-5c4d-49c6-955e-8965143f6d63"],
+Cell[88547, 2382, 546, 17, 67, "Print", "ExpressionUUID" -> \
+"e2bb3a4b-828f-46cf-aeec-36a6b497df8a"],
+Cell[89096, 2401, 182, 3, 36, "Print", "ExpressionUUID" -> \
+"0f52b088-2747-4d1c-ab48-8aea8e74c3f1"],
+Cell[89281, 2406, 410, 11, 36, "Print", "ExpressionUUID" -> \
+"5ab802c2-d216-4e35-b4fb-03246f5179f1"],
+Cell[89694, 2419, 165, 3, 36, "Print", "ExpressionUUID" -> \
+"0011047f-26e1-4498-8c20-d0ced27e7fd9"],
+Cell[89862, 2424, 345, 8, 36, "Print", "ExpressionUUID" -> \
+"c8cffe58-5c7f-41a8-9164-00d34f708e39"],
+Cell[90210, 2434, 196, 4, 36, "Print", "ExpressionUUID" -> \
+"d8f679b7-a00f-493a-8f99-1578921f42ea"],
+Cell[90409, 2440, 674, 15, 36, "Print", "ExpressionUUID" -> \
+"cb6203bc-f732-46fb-a5e3-502681c75b9d"],
+Cell[91086, 2457, 276, 7, 36, "Print", "ExpressionUUID" -> \
+"a3284afe-6a81-43df-adea-492ca35585ae"],
+Cell[91365, 2466, 410, 11, 36, "Print", "ExpressionUUID" -> \
+"ad374e35-7054-488d-b9ff-4039450d8b95"],
+Cell[91778, 2479, 163, 3, 36, "Print", "ExpressionUUID" -> \
+"357731e6-5117-49cd-9c98-33efab670a16"],
+Cell[91944, 2484, 347, 8, 36, "Print", "ExpressionUUID" -> \
+"3ad15c30-1753-43b1-aa1d-7527a2dc8e4a"],
+Cell[92294, 2494, 193, 3, 36, "Print", "ExpressionUUID" -> \
+"6535b1d9-a798-472d-b326-f209f889f40d"],
+Cell[92490, 2499, 678, 15, 36, "Print", "ExpressionUUID" -> \
+"6ec1e325-7d83-4e31-8d44-3e86339fe95c"],
+Cell[93171, 2516, 278, 7, 36, "Print", "ExpressionUUID" -> \
+"f2fcdf07-a687-4411-8f35-30494bde0486"],
+Cell[93452, 2525, 408, 11, 36, "Print", "ExpressionUUID" -> \
+"63633eb1-377c-4aea-9984-c8d1060dfba5"],
+Cell[93863, 2538, 165, 3, 36, "Print", "ExpressionUUID" -> \
+"a628676c-1ac5-4262-8275-6dabf4635e2a"],
+Cell[94031, 2543, 196, 4, 36, "Print", "ExpressionUUID" -> \
+"53aeea50-d6a2-4d9b-984b-082d9088d269"],
+Cell[94230, 2549, 674, 15, 36, "Print", "ExpressionUUID" -> \
+"4c156ad3-4c28-4e3c-a286-ed6eafd2629d"],
+Cell[94907, 2566, 276, 7, 36, "Print", "ExpressionUUID" -> \
+"fd5345d4-1d7a-440a-b686-77097f161763"],
+Cell[95186, 2575, 408, 11, 36, "Print", "ExpressionUUID" -> \
+"7138069b-068f-4a9a-ac19-98155570c47c"],
+Cell[95597, 2588, 163, 3, 36, "Print", "ExpressionUUID" -> \
+"93f96f4f-490a-4197-b11a-053a0beb0dfc"],
+Cell[95763, 2593, 196, 4, 36, "Print", "ExpressionUUID" -> \
+"ec655084-3fdf-46d9-bb55-9b8b1324372b"],
+Cell[95962, 2599, 674, 15, 36, "Print", "ExpressionUUID" -> \
+"3af3f5a0-26ad-48d1-a24e-160e4b43b0ad"],
+Cell[96639, 2616, 276, 7, 36, "Print", "ExpressionUUID" -> \
+"aecf8cb2-b34c-4ee7-bc4a-6576fc03a729"],
+Cell[96918, 2625, 408, 11, 36, "Print", "ExpressionUUID" -> \
+"7769debb-04db-460c-b898-bcc5ed1afc43"],
+Cell[97329, 2638, 160, 2, 36, "Print", "ExpressionUUID" -> \
+"e635ee90-1562-44f1-bfe9-7b4dfcd6f935"],
+Cell[97492, 2642, 196, 4, 36, "Print", "ExpressionUUID" -> \
+"d948c58e-3095-4f55-9767-f48e60c24594"],
+Cell[97691, 2648, 674, 15, 36, "Print", "ExpressionUUID" -> \
+"ff82f530-a784-4c3b-bb54-4e33df973c70"],
+Cell[98368, 2665, 154, 3, 36, "Print", "ExpressionUUID" -> \
+"84f02f4f-6d7f-47cd-ad07-0ed905ac2247"],
+Cell[98525, 2670, 405, 10, 36, "Print", "ExpressionUUID" -> \
+"746a74ab-5e29-495b-8516-7240bfd07df6"],
+Cell[98933, 2682, 163, 3, 36, "Print", "ExpressionUUID" -> \
+"f5939260-f35c-4678-b499-cc9cb09f2b88"],
+Cell[99099, 2687, 345, 8, 36, "Print", "ExpressionUUID" -> \
+"f8d748ca-d17e-434b-9360-74913962847f"],
+Cell[99447, 2697, 193, 3, 36, "Print", "ExpressionUUID" -> \
+"816c045a-539a-428a-8ae4-47e0c825ab0b"],
+Cell[99643, 2702, 680, 15, 36, "Print", "ExpressionUUID" -> \
+"1d1e96d6-8f8f-4d49-a9d8-7398486fb3a4"],
+Cell[100326, 2719, 275, 6, 36, "Print", "ExpressionUUID" -> \
+"1c8a43fe-6af6-4333-aedc-9d85728cda4f"],
+Cell[100604, 2727, 630, 13, 36, "Print", "ExpressionUUID" -> \
+"110233e8-1b23-4f02-9d4c-897ffe497a75"],
+Cell[101237, 2742, 177, 3, 36, "Print", "ExpressionUUID" -> \
+"4d402575-c03a-4dec-b89f-42550342720c"]
+}, Open  ]],
+Cell[101429, 2748, 315, 7, 36, "Message", "ExpressionUUID" -> \
+"94362a5d-a6a6-4062-bf3e-faed6e0a42d4"],
+Cell[101747, 2757, 670, 17, 51, "Print", "ExpressionUUID" -> \
+"c47a21d9-44e6-49a4-af28-95883c911d8d"],
+Cell[102420, 2776, 321, 8, 36, "Message", "ExpressionUUID" -> \
+"ae08cdf8-fff9-4281-937b-76b547c4f067"],
+Cell[102744, 2786, 671, 16, 51, "Print", "ExpressionUUID" -> \
+"0f82f060-0413-4c55-b980-479e3f7ffa93"],
+Cell[103418, 2804, 321, 8, 36, "Message", "ExpressionUUID" -> \
+"92bf861d-9bc1-46de-a020-286a1baab75b"],
+Cell[103742, 2814, 401, 9, 36, "Message", "ExpressionUUID" -> \
+"9f3aca88-1be3-42fb-b468-67c53bdd9e25"],
+Cell[CellGroupData[{
+Cell[104168, 2827, 678, 17, 53, "Print", "ExpressionUUID" -> \
+"c679566d-34d2-4ade-a353-e7c090cc0f7a"],
+Cell[104849, 2846, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"f0e8ca68-7300-4ebe-8acc-23eec52431a9"],
+Cell[105484, 2864, 636, 16, 53, "Print", "ExpressionUUID" -> \
+"170ef79b-f0a1-40de-8cb5-e7b7a3229356"],
+Cell[106123, 2882, 638, 16, 53, "Print", "ExpressionUUID" -> \
+"daf4931c-abd1-4e3f-bc3f-2d383b9f0a50"],
+Cell[106764, 2900, 638, 16, 53, "Print", "ExpressionUUID" -> \
+"c26ad7af-9309-41fc-a939-993bdc17ac17"],
+Cell[107405, 2918, 640, 16, 53, "Print", "ExpressionUUID" -> \
+"76120d2d-c537-4fd2-b773-efe3727e3a2b"],
+Cell[108048, 2936, 642, 16, 53, "Print", "ExpressionUUID" -> \
+"b8606af0-dd1e-4ed7-988f-e49c1fe196b1"],
+Cell[108693, 2954, 636, 16, 51, "Print", "ExpressionUUID" -> \
+"2b9a9895-98f4-40d2-b5dc-c0abc3bd5a13"],
+Cell[109332, 2972, 640, 16, 51, "Print", "ExpressionUUID" -> \
+"5f268be8-5a28-4efa-961d-580cbb443dce"],
+Cell[109975, 2990, 640, 16, 53, "Print", "ExpressionUUID" -> \
+"5038bf45-493b-4789-8ecf-af79adf9f158"],
+Cell[110618, 3008, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"85f5b220-8492-4326-bca2-c905961c6c74"],
+Cell[111255, 3026, 638, 16, 53, "Print", "ExpressionUUID" -> \
+"b9349ff4-7e60-4a11-a908-300095c2642c"],
+Cell[111896, 3044, 638, 16, 53, "Print", "ExpressionUUID" -> \
+"19612e82-a486-4e10-aeb6-49471418103d"],
+Cell[112537, 3062, 670, 17, 51, "Print", "ExpressionUUID" -> \
+"15919935-5586-4770-aa93-c050f28e29ec"],
+Cell[113210, 3081, 676, 17, 51, "Print", "ExpressionUUID" -> \
+"dd423b71-99f3-4793-bb28-2082f847b64b"],
+Cell[113889, 3100, 678, 17, 53, "Print", "ExpressionUUID" -> \
+"38dca4f6-5313-473b-833c-a7d56bdd1fa1"],
+Cell[114570, 3119, 638, 16, 53, "Print", "ExpressionUUID" -> \
+"bed5851d-f0f5-4c9a-a1b2-0793d02c0598"],
+Cell[115211, 3137, 640, 16, 53, "Print", "ExpressionUUID" -> \
+"ad351b09-3bd4-495e-af12-0998fee0b8ab"],
+Cell[115854, 3155, 640, 16, 53, "Print", "ExpressionUUID" -> \
+"57ff7eb2-85ad-4be3-83be-37a996bba2f7"],
+Cell[116497, 3173, 636, 16, 51, "Print", "ExpressionUUID" -> \
+"c0506a41-252e-4ff4-a9ea-be3f1affdf36"],
+Cell[117136, 3191, 638, 16, 51, "Print", "ExpressionUUID" -> \
+"a2615cbf-1726-4a87-832a-5471515dd600"],
+Cell[117777, 3209, 640, 16, 53, "Print", "ExpressionUUID" -> \
+"736c14a4-42c9-4334-bfbc-ff1be5e9905d"],
+Cell[118420, 3227, 620, 15, 53, "Print", "ExpressionUUID" -> \
+"dde8cff2-c279-46a9-82ad-eca0a6368fac"],
+Cell[119043, 3244, 626, 15, 53, "Print", "ExpressionUUID" -> \
+"3769f563-6ee2-4f26-aa74-bc375f64a303"],
+Cell[119672, 3261, 631, 15, 53, "Print", "ExpressionUUID" -> \
+"9650f844-a255-433c-86ca-eed90fc57fd4"],
+Cell[120306, 3278, 630, 16, 53, "Print", "ExpressionUUID" -> \
+"d96fa437-2a81-414b-9de4-e0798531febb"],
+Cell[120939, 3296, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"3013e8ca-35ac-4ee9-add3-5a7b40d6c7d0"],
+Cell[121574, 3314, 636, 16, 53, "Print", "ExpressionUUID" -> \
+"007598ea-fed9-45b8-9e4e-79315258cabb"],
+Cell[122213, 3332, 630, 16, 53, "Print", "ExpressionUUID" -> \
+"90e7166d-76dd-4d8c-9eb9-ca2ac147d252"],
+Cell[122846, 3350, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"8db2043b-c083-4c8f-a9d0-de285f3f6071"],
+Cell[123483, 3368, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"38a6256a-e335-48d3-bd5d-fc292e667a13"],
+Cell[124120, 3386, 617, 14, 53, "Print", "ExpressionUUID" -> \
+"f8aa2508-bf7a-405e-a5eb-5a6a28a7fd60"],
+Cell[124740, 3402, 624, 15, 53, "Print", "ExpressionUUID" -> \
+"a6c4ef2f-22f0-4753-b5e7-421470ddb552"],
+Cell[125367, 3419, 629, 15, 53, "Print", "ExpressionUUID" -> \
+"06fc210c-36fe-4706-bb1a-b06817cc728f"],
+Cell[125999, 3436, 630, 16, 53, "Print", "ExpressionUUID" -> \
+"6f908dc8-08b3-42c8-9cb5-d56e546e4406"],
+Cell[126632, 3454, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"f621b7e0-24d4-458a-9948-ef8e4b3c8109"],
+Cell[127267, 3472, 631, 15, 53, "Print", "ExpressionUUID" -> \
+"1693c357-e938-4eea-ac0a-6d0af1019cc1"],
+Cell[127901, 3489, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"dd9b2cc6-2b8d-482b-b7f0-d35bcb27236a"],
+Cell[128536, 3507, 632, 16, 53, "Print", "ExpressionUUID" -> \
+"90b39160-c25d-4e01-8564-6109f09f5f53"],
+Cell[129171, 3525, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"864c3c80-aa2f-4b11-998d-f9089b5456f3"],
+Cell[129808, 3543, 666, 17, 51, "Print", "ExpressionUUID" -> \
+"d0ce94bb-fc5a-42b3-898e-28b3bc8a2921"],
+Cell[130477, 3562, 670, 17, 51, "Print", "ExpressionUUID" -> \
+"f2e9b90b-03e2-4906-aa7f-8ef294c50259"],
+Cell[131150, 3581, 672, 17, 53, "Print", "ExpressionUUID" -> \
+"ebb1f52d-756c-4848-aa59-e0bbb29c0339"],
+Cell[131825, 3600, 630, 16, 51, "Print", "ExpressionUUID" -> \
+"b3a8f318-5cc2-4445-994d-61267e7bd270"],
+Cell[132458, 3618, 629, 15, 51, "Print", "ExpressionUUID" -> \
+"adda09a2-a235-425a-9ac6-4c194561648c"],
+Cell[133090, 3635, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"3167f062-3ad1-4c04-85e9-859161fa4dc5"],
+Cell[133727, 3653, 630, 16, 51, "Print", "ExpressionUUID" -> \
+"f3ff0ffa-f1bf-4eef-b2ba-24be36d10020"],
+Cell[134360, 3671, 632, 16, 51, "Print", "ExpressionUUID" -> \
+"70f73494-2b2d-46ef-bb23-cb50bbe34fa3"],
+Cell[134995, 3689, 636, 16, 53, "Print", "ExpressionUUID" -> \
+"035d1276-c293-4740-876a-f56b9b72f108"],
+Cell[135634, 3707, 666, 17, 51, "Print", "ExpressionUUID" -> \
+"a81f0c88-e13d-4444-8f85-5756e0acc3b0"],
+Cell[136303, 3726, 670, 17, 51, "Print", "ExpressionUUID" -> \
+"95097c44-5ed4-4b8f-b573-95b5477171ad"],
+Cell[136976, 3745, 674, 17, 53, "Print", "ExpressionUUID" -> \
+"93f0d3f9-ffbc-4293-89af-93ba5066d47c"],
+Cell[137653, 3764, 630, 16, 51, "Print", "ExpressionUUID" -> \
+"36f8cecf-8a48-4ddf-a402-f06a4490b2b1"],
+Cell[138286, 3782, 632, 16, 51, "Print", "ExpressionUUID" -> \
+"50577a8c-e770-4bb3-b4bf-4d12e8831f7c"],
+Cell[138921, 3800, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"6266f2cc-6214-4c3b-8486-fa212c59c892"],
+Cell[139558, 3818, 630, 16, 51, "Print", "ExpressionUUID" -> \
+"b5a5d887-4bb4-47d1-88c2-cbf45642d31d"],
+Cell[140191, 3836, 634, 16, 51, "Print", "ExpressionUUID" -> \
+"3176d6e0-dcc7-4f3f-a310-90ff30c3bbb4"],
+Cell[140828, 3854, 634, 16, 53, "Print", "ExpressionUUID" -> \
+"5cdb7ca0-a7db-4242-88f2-ff85f3ad97a4"],
+Cell[141465, 3872, 446, 12, 36, "Print", "ExpressionUUID" -> \
+"09f9c57d-deab-44bc-acad-7aef547f51e3"],
+Cell[141914, 3886, 401, 11, 36, "Print", "ExpressionUUID" -> \
+"a2bdc825-69ba-46ca-a786-9351878b6fa3"],
+Cell[142318, 3899, 380, 8, 36, "Print", "ExpressionUUID" -> \
+"278daaa3-c726-4dfe-a6e9-b7967aa8b7ee"],
+Cell[142701, 3909, 403, 11, 36, "Print", "ExpressionUUID" -> \
+"4621b447-de24-4a72-be10-b2ef678c78b6"],
+Cell[143107, 3922, 362, 8, 36, "Print", "ExpressionUUID" -> \
+"0103cda3-dacb-42d3-8273-4e0d5c6fc239"],
+Cell[143472, 3932, 160, 3, 36, "Print", "ExpressionUUID" -> \
+"7819312e-be0e-4dcb-8655-caf63353ba65"],
+Cell[143635, 3937, 186, 4, 36, "Print", "ExpressionUUID" -> \
+"bf61e43e-7e81-4191-9644-8bd3e45caf2b"],
+Cell[143824, 3943, 377, 8, 36, "Print", "ExpressionUUID" -> \
+"cc084130-7eeb-44eb-8b01-d1e1489df899"],
+Cell[144204, 3953, 537, 11, 36, "Print", "ExpressionUUID" -> \
+"9261eef8-5749-4857-afae-d23397b317e8"],
+Cell[144744, 3966, 156, 3, 36, "Print", "ExpressionUUID" -> \
+"82be26f8-35f7-4b7a-8f0f-18d6e29b5868"],
+Cell[144903, 3971, 141, 3, 36, "Print", "ExpressionUUID" -> \
+"2772e428-69bc-43c9-9955-cd164252552f"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

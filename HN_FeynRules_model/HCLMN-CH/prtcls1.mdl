@@ -1,0 +1,37 @@
+HCMN
+ Particles
+ Full  name  |A          |A+         | number |2*spin| mass          |width          |color|aux|>LaTex(A)<|>LaTeX(A+)   <|
+Photon       |a          |a          |22      |2     |0              |0              |1    |G  |a         |a             |
+Z            |Z          |Z          |23      |2     |MZ             |!WZ            |1    |G  |Z         |Z             |
+W            |W+         |W-         |24      |2     |MW             |!WW            |1    |G  |W+        |W-            |
+G            |g          |g          |21      |2     |0              |0              |8    |G  |g         |g             |
+Electron-neut|ve         |ve~        |12      |1     |0              |0              |1    |0  |ve        |ve~           |
+Mu-neutrino  |vm         |vm~        |14      |1     |0              |0              |1    |0  |vm        |vm~           |
+Tau-neutrino |vt         |vt~        |16      |1     |0              |0              |1    |0  |vt        |vt~           |
+Electron     |e-         |e+         |11      |1     |0              |0              |1    |-3 |e-        |e+            |
+Muon         |mu-        |mu+        |13      |1     |0              |0              |1    |-3 |mu-       |mu+           |
+Tau          |ta-        |ta+        |15      |1     |MTA            |0              |1    |-3 |ta-       |ta+           |
+u-quark      |u          |u~         |2       |1     |0              |0              |3    |2  |u         |u~            |
+c-quark      |c          |c~         |4       |1     |0              |0              |3    |2  |c         |c~            |
+t-quark      |t          |t~         |6       |1     |MT             |!WT            |3    |2  |t         |t~            |
+d-quark      |d          |d~         |1       |1     |0              |0              |3    |-1 |d         |d~            |
+s-quark      |s          |s~         |3       |1     |0              |0              |3    |-1 |s         |s~            |
+b-quark      |b          |b~         |5       |1     |MB             |0              |3    |-1 |b         |b~            |
+H            |H          |H          |25      |0     |MH             |!WH            |1    |0  |H         |H             |
+u*-quark     |Us         |Us~        |4000002 |1     |MUs            |!WUs           |3    |5  |Us        |Us~           |
+c*-quark     |Cs         |Cs~        |4000004 |1     |MCs            |!WCs           |3    |5  |Cs        |Cs~           |
+t*-quark     |Ts         |Ts~        |4000006 |1     |MTs            |!WTs           |3    |5  |Ts        |Ts~           |
+d*-quark     |Ds         |Ds~        |4000008 |1     |MDs            |!WDs           |3    |-4 |Ds        |Ds~           |
+c*-quark     |Ss         |Ss~        |4000010 |1     |MSs            |!WSs           |3    |-4 |Ss        |Ss~           |
+b*-quark     |Bs         |Bs~        |4000011 |1     |MBs            |!WBs           |3    |-4 |Bs        |Bs~           |
+Nu1E*        |N1Es       |N1Es       |4000012 |1     |M1s            |!WN1Es         |1    |0  |N1Es      |N1Es          |
+Nu1Mu*       |N1Mus      |N1Mus      |4000014 |1     |M1s            |!WN1Mus        |1    |0  |N1Mus     |N1Mus         |
+Nu1Tau*      |N1Taus     |N1Taus     |4000016 |1     |M1s            |!WN1Taus       |1    |0  |N1Taus    |N1Taus        |
+Nu2E*        |N2Es       |N2Es       |4000013 |1     |M2s            |!WN2Es         |1    |0  |N2Es      |N2Es          |
+Nu2Mu*       |N2Mus      |N2Mus      |4000015 |1     |M2s            |!WN2Mus        |1    |0  |N2Mus     |N2Mus         |
+Nu2Tau*      |N2Taus     |N2Taus     |4000017 |1     |M2s            |!WN2Taus       |1    |0  |N2Taus    |N2Taus        |
+E*-lepton    |Es         |Es~        |4000018 |1     |MEs            |!WEs           |1    |-6 |Es        |Es~           |
+Mu*-lepton   |Mus        |Mus~       |4000020 |1     |MMus           |!WMus          |1    |-6 |Mus       |Mus~          |
+Tau*-lepton  |Taus       |Taus~      |4000022 |1     |MTaus          |!WTaus         |1    |-6 |Taus      |Taus~         |
+Auxiliary    |Aux+       |Aux-       |9000005 |2     |Maux           |0              |1    |3  |Aux+      |Aux-          |
+AuxiliaryO   |Auxo       |Auxo       |9000006 |2     |Mauxo          |0              |1    |0  |Auxo      |Auxo          |

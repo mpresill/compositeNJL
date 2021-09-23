@@ -59,7 +59,7 @@ GC_12 = Coupling(name = 'GC_12',
 
 GC_13 = Coupling(name = 'GC_13',
                  value = '(FPi**2*complex(0,1))/lc**2',
-                 order = {'1':1})
+                 order = {'NP':1})
 
 GC_14 = Coupling(name = 'GC_14',
                  value = '(6*ee**2*complex(0,1))/(FPi*cmath.pi)',

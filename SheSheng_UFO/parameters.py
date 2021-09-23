@@ -161,29 +161,29 @@ MH = Parameter(name = 'MH',
                lhablock = 'MASS',
                lhacode = [ 25 ])
 
-MUU = Parameter(name = 'MUU',
-                nature = 'external',
-                type = 'real',
-                value = External,
-                texname = '\\text{MUU}',
-                lhablock = 'MASS',
-                lhacode = [ 4000024 ])
+#MUU = Parameter(name = 'MUU',
+#                nature = 'external',
+#                type = 'real',
+#                value = External,
+#                texname = '\\text{MUU}',
+#                lhablock = 'MASS',
+#                lhacode = [ 4000024 ])
 
-lc = Parameter(name = 'lc',
-               nature = 'external',
-               type = 'real',
-               value = External,
-               texname = '\\text{lc}',
-               lhablock = 'MASS',
-               lhacode = [ 9000017 ])
+#lc = Parameter(name = 'lc',
+#               nature = 'external',
+#               type = 'real',
+#               value = External,
+#               texname = '\\text{lc}',
+#               lhablock = 'MASS',
+#               lhacode = [ 9000017 ])
 
-MPi = Parameter(name = 'MPi',
-                nature = 'external',
-                type = 'real',
-                value = External,
-                texname = '\\text{MPi}',
-                lhablock = 'MASS',
-                lhacode = [ 9000020 ])
+#MPi = Parameter(name = 'MPi',
+#                nature = 'external',
+#                type = 'real',
+#                value = External,
+#                texname = '\\text{MPi}',
+#                lhablock = 'MASS',
+#                lhacode = [ 9000020 ])
 
 WZ = Parameter(name = 'WZ',
                nature = 'external',

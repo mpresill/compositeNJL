@@ -4,7 +4,7 @@ This repository is meant to collect the FeynRules and CalcHEP/UFO models for the
 
 ''HN_FeynRules_model'' contains the implementation of a dim-6 contact interaction in FeynRules for both CalcHEP and Madgraph (https://arxiv.org/pdf/1811.00374.pdf) to be used as a guideline for this new model with NJL interactions.
 
-# Changes to be made in the UFO files
+# Changes to be made in the UFO files after creating UFO from feynrules
 1) After evaluating the notebook you will get UFO files but to implement these files into Madgraph you need to change somethings otherwise you will get below mentioned errors.
 2) To resolve the error regarding External parameters you need to comment the lines 164-186 in parameters.py file.
 3) To resolve the error regarding couplings you need to edit the coupling in couplings.py
@@ -18,10 +18,12 @@ order = {'NP':1})
 
 4) Next thing is to add the auxiliary propagators for contact interactions. add the following lines to propagators.py file
 #AUX
-V0 = Propagator(name = "V0",
-                numerator = "complex(0,-1) * Metric(1, 2)",
+# AUX
+S0 = Propagator(name = "S0",
+                numerator = "complex(0,1)",
                 denominator =  "Mass(id) * Mass(id)"
                )
+
                
 5)  Lastly, you need to add this propagator to all the auxiliary particles present in the particles.py file.
 add it like this 
@@ -32,7 +34,7 @@ AL01__plus__ = Particle(pdg_code = 9000006,
                         color = 1,
                         mass = Param.lc,
                         width = Param.ZERO,
-                        propagator = Prop.V0,
+                        propagator = Prop.S0,
                         texname = 'AL01+',
                         antitexname = 'AL01~',
                         charge = 1,

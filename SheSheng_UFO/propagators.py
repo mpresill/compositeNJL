@@ -33,8 +33,8 @@ V2 = Propagator(name = "V2",
                )
 
 # AUX
-V0 = Propagator(name = "V0",
-                numerator = "complex(0,-1) * Metric(1, 2)",
+S0 = Propagator(name = "S0",
+                numerator = "complex(0,1)",
                 denominator =  "Mass(id) * Mass(id)"
                )
 

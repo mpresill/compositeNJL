@@ -1,6 +1,6 @@
 # This file was automatically created by FeynRules 2.3.48
 # Mathematica version: 12.3.1 for Mac OS X ARM (64-bit) (July 8, 2021)
-# Date: Wed 22 Sep 2021 11:32:10
+# Date: Tue 11 Jan 2022 11:16:58
 
 
 from object_library import all_lorentz, Lorentz
@@ -54,13 +54,17 @@ FFV4 = Lorentz(name = 'FFV4',
 
 VVS1 = Lorentz(name = 'VVS1',
                spins = [ 3, 3, 1 ],
-               structure = 'Epsilon(1,2,-1,-2)*P(-2,2)*P(-1,1)')
+               structure = 'Epsilon(1,2,-1,-2)*P(-2,1)*P(-1,2)')
 
 VVS2 = Lorentz(name = 'VVS2',
                spins = [ 3, 3, 1 ],
-               structure = '-(Epsilon(1,2,-1,-2)*P(-2,2)*P(-1,1)) + Epsilon(1,2,-1,-2)*P(-2,1)*P(-1,2)')
+               structure = 'Epsilon(1,2,-1,-2)*P(-2,2)*P(-1,1)')
 
 VVS3 = Lorentz(name = 'VVS3',
+               spins = [ 3, 3, 1 ],
+               structure = '-(Epsilon(1,2,-1,-2)*P(-2,2)*P(-1,1)) + Epsilon(1,2,-1,-2)*P(-2,1)*P(-1,2)')
+
+VVS4 = Lorentz(name = 'VVS4',
                spins = [ 3, 3, 1 ],
                structure = 'Metric(1,2)')
 
@@ -71,6 +75,10 @@ VVV1 = Lorentz(name = 'VVV1',
 SSSS1 = Lorentz(name = 'SSSS1',
                 spins = [ 1, 1, 1, 1 ],
                 structure = '1')
+
+FFFF1 = Lorentz(name = 'FFFF1',
+                spins = [ 2, 2, 2, 2 ],
+                structure = 'ProjM(2,1)*ProjP(4,3)')
 
 VVSS1 = Lorentz(name = 'VVSS1',
                 spins = [ 3, 3, 1, 1 ],

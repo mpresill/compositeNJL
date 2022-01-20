@@ -1,6 +1,6 @@
 # This file was automatically created by FeynRules 2.3.48
 # Mathematica version: 12.3.1 for Mac OS X ARM (64-bit) (July 8, 2021)
-# Date: Wed 22 Sep 2021 11:32:10
+# Date: Tue 11 Jan 2022 11:16:58
 
 
 from __future__ import division
@@ -577,204 +577,12 @@ N03 = Particle(pdg_code = 4000024,
 
 N03__tilde__ = N03.anti()
 
-AL01__plus__ = Particle(pdg_code = 9000006,
-                        name = 'AL01+',
-                        antiname = 'AL01~',
-                        spin = 1,
-                        color = 1,
-                        mass = Param.lc,
-                        width = Param.ZERO,
-                        propagator = Prop.S0,
-                        texname = 'AL01+',
-                        antitexname = 'AL01~',
-                        charge = 1,
-                        GhostNumber = 0,
-                        LeptonNumber = 0,
-                        Y = 0)
-
-AL01__tilde__ = AL01__plus__.anti()
-
-AL02__plus__ = Particle(pdg_code = 9000007,
-                        name = 'AL02+',
-                        antiname = 'AL02~',
-                        spin = 1,
-                        color = 1,
-                        mass = Param.lc,
-                        width = Param.ZERO,
-                        propagator = Prop.S0,
-                        texname = 'AL02+',
-                        antitexname = 'AL02~',
-                        charge = 1,
-                        GhostNumber = 0,
-                        LeptonNumber = 0,
-                        Y = 0)
-
-AL02__tilde__ = AL02__plus__.anti()
-
-AL03__plus__ = Particle(pdg_code = 9000008,
-                        name = 'AL03+',
-                        antiname = 'AL03~',
-                        spin = 1,
-                        color = 1,
-                        mass = Param.lc,
-                        width = Param.ZERO,
-                        propagator = Prop.S0,
-                        texname = 'AL03+',
-                        antitexname = 'AL03~',
-                        charge = 1,
-                        GhostNumber = 0,
-                        LeptonNumber = 0,
-                        Y = 0)
-
-AL03__tilde__ = AL03__plus__.anti()
-
-ANc1__plus__ = Particle(pdg_code = 9000009,
-                        name = 'ANc1+',
-                        antiname = 'ANc1~',
-                        spin = 1,
-                        color = 1,
-                        mass = Param.lc,
-                        width = Param.ZERO,
-                        propagator = Prop.S0,
-                        texname = 'ANc1+',
-                        antitexname = 'ANc1~',
-                        charge = 1,
-                        GhostNumber = 0,
-                        LeptonNumber = 0,
-                        Y = 0)
-
-ANc1__tilde__ = ANc1__plus__.anti()
-
-ANc2__plus__ = Particle(pdg_code = 9000010,
-                        name = 'ANc2+',
-                        antiname = 'ANc2~',
-                        spin = 1,
-                        color = 1,
-                        mass = Param.lc,
-                        width = Param.ZERO,
-                        propagator = Prop.S0,
-                        texname = 'ANc2+',
-                        antitexname = 'ANc2~',
-                        charge = 1,
-                        GhostNumber = 0,
-                        LeptonNumber = 0,
-                        Y = 0)
-
-ANc2__tilde__ = ANc2__plus__.anti()
-
-ANc3__plus__ = Particle(pdg_code = 9000011,
-                        name = 'ANc3+',
-                        antiname = 'ANc3~',
-                        spin = 1,
-                        color = 1,
-                        mass = Param.lc,
-                        width = Param.ZERO,
-                        propagator = Prop.S0,
-                        texname = 'ANc3+',
-                        antitexname = 'ANc3~',
-                        charge = 1,
-                        GhostNumber = 0,
-                        LeptonNumber = 0,
-                        Y = 0)
-
-ANc3__tilde__ = ANc3__plus__.anti()
-
-ALc1 = Particle(pdg_code = 9000012,
-                name = 'ALc1',
-                antiname = 'ALc1',
-                spin = 1,
-                color = 1,
-                mass = Param.lc,
-                width = Param.ZERO,
-                propagator = Prop.S0,
-                texname = 'ALc1',
-                antitexname = 'ALc1',
-                charge = 0,
-                GhostNumber = 0,
-                LeptonNumber = 0,
-                Y = 0)
-
-ALc2 = Particle(pdg_code = 9000013,
-                name = 'ALc2',
-                antiname = 'ALc2',
-                spin = 1,
-                color = 1,
-                mass = Param.lc,
-                width = Param.ZERO,
-                propagator = Prop.S0,
-                texname = 'ALc2',
-                antitexname = 'ALc2',
-                charge = 0,
-                GhostNumber = 0,
-                LeptonNumber = 0,
-                Y = 0)
-
-ALc3 = Particle(pdg_code = 9000014,
-                name = 'ALc3',
-                antiname = 'ALc3',
-                spin = 1,
-                color = 1,
-                mass = Param.lc,
-                width = Param.ZERO,
-                propagator = Prop.S0,
-                texname = 'ALc3',
-                antitexname = 'ALc3',
-                charge = 0,
-                GhostNumber = 0,
-                LeptonNumber = 0,
-                Y = 0)
-
-AN01 = Particle(pdg_code = 9000015,
-                name = 'AN01',
-                antiname = 'AN01',
-                spin = 1,
-                color = 1,
-                mass = Param.lc,
-                width = Param.ZERO,
-                propagator = Prop.S0,
-                texname = 'AN01',
-                antitexname = 'AN01',
-                charge = 0,
-                GhostNumber = 0,
-                LeptonNumber = 0,
-                Y = 0)
-
-AN02 = Particle(pdg_code = 9000016,
-                name = 'AN02',
-                antiname = 'AN02',
-                spin = 1,
-                color = 1,
-                mass = Param.lc,
-                width = Param.ZERO,
-                propagator = Prop.S0,
-                texname = 'AN02',
-                antitexname = 'AN02',
-                charge = 0,
-                GhostNumber = 0,
-                LeptonNumber = 0,
-                Y = 0)
-
-AN03 = Particle(pdg_code = 9000017,
-                name = 'AN03',
-                antiname = 'AN03',
-                spin = 1,
-                color = 1,
-                mass = Param.lc,
-                width = Param.ZERO,
-                propagator = Prop.S0,
-                texname = 'AN03',
-                antitexname = 'AN03',
-                charge = 0,
-                GhostNumber = 0,
-                LeptonNumber = 0,
-                Y = 0)
-
-Pic1__plus__ = Particle(pdg_code = 9000018,
+Pic1__plus__ = Particle(pdg_code = 9000006,
                         name = 'Pic1+',
                         antiname = 'Pic1~',
                         spin = 1,
                         color = 1,
-                        mass = Param.MPi,
+                        mass = Param.MPic1,
                         width = Param.WPic1,
                         texname = 'Pic1+',
                         antitexname = 'Pic1~',
@@ -785,12 +593,12 @@ Pic1__plus__ = Particle(pdg_code = 9000018,
 
 Pic1__tilde__ = Pic1__plus__.anti()
 
-Pi0u = Particle(pdg_code = 9000019,
+Pi0u = Particle(pdg_code = 9000007,
                 name = 'Pi0u',
                 antiname = 'Pi0u',
                 spin = 1,
                 color = 1,
-                mass = Param.MPi,
+                mass = Param.MPi0u,
                 width = Param.WPi0u,
                 texname = 'Pi0u',
                 antitexname = 'Pi0u',
@@ -799,12 +607,12 @@ Pi0u = Particle(pdg_code = 9000019,
                 LeptonNumber = 0,
                 Y = 0)
 
-Pi0d = Particle(pdg_code = 9000020,
+Pi0d = Particle(pdg_code = 9000008,
                 name = 'Pi0d',
                 antiname = 'Pi0d',
                 spin = 1,
                 color = 1,
-                mass = Param.MPi,
+                mass = Param.MPi0d,
                 width = Param.WPi0d,
                 texname = 'Pi0d',
                 antitexname = 'Pi0d',
@@ -812,4 +620,68 @@ Pi0d = Particle(pdg_code = 9000020,
                 GhostNumber = 0,
                 LeptonNumber = 0,
                 Y = 0)
+
+Pi53 = Particle(pdg_code = 9000009,
+                name = 'Pi53',
+                antiname = 'Pi53~',
+                spin = 1,
+                color = 3,
+                mass = Param.MPi53,
+                width = Param.WPi53,
+                texname = 'Pi53',
+                antitexname = 'Pi53~',
+                charge = 5/3,
+                GhostNumber = 0,
+                LeptonNumber = -1,
+                Y = 0)
+
+Pi53__tilde__ = Pi53.anti()
+
+Pi13 = Particle(pdg_code = 9000010,
+                name = 'Pi13',
+                antiname = 'Pi13~',
+                spin = 1,
+                color = 3,
+                mass = Param.MPi13,
+                width = Param.WPi13,
+                texname = 'Pi13',
+                antitexname = 'Pi13~',
+                charge = -1/3,
+                GhostNumber = 0,
+                LeptonNumber = -1,
+                Y = 0)
+
+Pi13__tilde__ = Pi13.anti()
+
+Piu23 = Particle(pdg_code = 9000011,
+                 name = 'Piu23',
+                 antiname = 'Piu23~',
+                 spin = 1,
+                 color = 3,
+                 mass = Param.MPiu23,
+                 width = Param.WPiu23,
+                 texname = 'Piu23',
+                 antitexname = 'Piu23~',
+                 charge = 2/3,
+                 GhostNumber = 0,
+                 LeptonNumber = -1,
+                 Y = 0)
+
+Piu23__tilde__ = Piu23.anti()
+
+Pid23 = Particle(pdg_code = 9000012,
+                 name = 'Pid23',
+                 antiname = 'Pid23~',
+                 spin = 1,
+                 color = 3,
+                 mass = Param.MPid23,
+                 width = Param.WPid23,
+                 texname = 'Pid23',
+                 antitexname = 'Pid23~',
+                 charge = 2/3,
+                 GhostNumber = 0,
+                 LeptonNumber = -1,
+                 Y = 0)
+
+Pid23__tilde__ = Pid23.anti()
 

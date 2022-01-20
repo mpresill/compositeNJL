@@ -32,10 +32,4 @@ V2 = Propagator(name = "V2",
                 denominator =  "P('mu', id) * P('mu', id)"
                )
 
-# AUX
-S0 = Propagator(name = "S0",
-                numerator = "complex(0,1)",
-                denominator =  "Mass(id) * Mass(id)"
-               )
-
 

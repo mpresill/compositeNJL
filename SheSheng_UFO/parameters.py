@@ -1,6 +1,6 @@
 # This file was automatically created by FeynRules 2.3.48
 # Mathematica version: 12.3.1 for Mac OS X ARM (64-bit) (July 8, 2021)
-# Date: Wed 22 Sep 2021 11:32:10
+# Date: Tue 11 Jan 2022 11:16:58
 
 
 
@@ -81,19 +81,19 @@ lc = Parameter(name = 'lc',
                lhablock = 'FRBlock',
                lhacode = [ 1 ])
 
-MUU = Parameter(name = 'MUU',
+muu = Parameter(name = 'muu',
                 nature = 'external',
                 type = 'real',
                 value = 5400.,
-                texname = '\\text{MUU}',
+                texname = '\\text{muu}',
                 lhablock = 'FRBlock',
                 lhacode = [ 2 ])
 
-MPi = Parameter(name = 'MPi',
+mpi = Parameter(name = 'mpi',
                 nature = 'external',
                 type = 'real',
                 value = 1000.,
-                texname = '\\text{MPi}',
+                texname = '\\text{mpi}',
                 lhablock = 'FRBlock',
                 lhacode = [ 3 ])
 
@@ -161,29 +161,61 @@ MH = Parameter(name = 'MH',
                lhablock = 'MASS',
                lhacode = [ 25 ])
 
-#MUU = Parameter(name = 'MUU',
-#                nature = 'external',
-#                type = 'real',
-#                value = External,
-#                texname = '\\text{MUU}',
-#                lhablock = 'MASS',
-#                lhacode = [ 4000024 ])
+MPic1 = Parameter(name = 'MPic1',
+                  nature = 'external',
+                  type = 'real',
+                  value = 1,
+                  texname = '\\text{MPic1}',
+                  lhablock = 'MASS',
+                  lhacode = [ 9000006 ])
 
-#lc = Parameter(name = 'lc',
-#               nature = 'external',
-#               type = 'real',
-#               value = External,
-#               texname = '\\text{lc}',
-#               lhablock = 'MASS',
-#               lhacode = [ 9000017 ])
+MPi0u = Parameter(name = 'MPi0u',
+                  nature = 'external',
+                  type = 'real',
+                  value = 1,
+                  texname = '\\text{MPi0u}',
+                  lhablock = 'MASS',
+                  lhacode = [ 9000007 ])
 
-#MPi = Parameter(name = 'MPi',
-#                nature = 'external',
-#                type = 'real',
-#                value = External,
-#                texname = '\\text{MPi}',
-#                lhablock = 'MASS',
-#                lhacode = [ 9000020 ])
+MPi0d = Parameter(name = 'MPi0d',
+                  nature = 'external',
+                  type = 'real',
+                  value = 1,
+                  texname = '\\text{MPi0d}',
+                  lhablock = 'MASS',
+                  lhacode = [ 9000008 ])
+
+MPi53 = Parameter(name = 'MPi53',
+                  nature = 'external',
+                  type = 'real',
+                  value = 1,
+                  texname = '\\text{MPi53}',
+                  lhablock = 'MASS',
+                  lhacode = [ 9000009 ])
+
+MPi13 = Parameter(name = 'MPi13',
+                  nature = 'external',
+                  type = 'real',
+                  value = 1,
+                  texname = '\\text{MPi13}',
+                  lhablock = 'MASS',
+                  lhacode = [ 9000010 ])
+
+MPiu23 = Parameter(name = 'MPiu23',
+                   nature = 'external',
+                   type = 'real',
+                   value = 1,
+                   texname = '\\text{MPiu23}',
+                   lhablock = 'MASS',
+                   lhacode = [ 9000011 ])
+
+MPid23 = Parameter(name = 'MPid23',
+                   nature = 'external',
+                   type = 'real',
+                   value = 1,
+                   texname = '\\text{MPid23}',
+                   lhablock = 'MASS',
+                   lhacode = [ 9000012 ])
 
 WZ = Parameter(name = 'WZ',
                nature = 'external',
@@ -319,7 +351,7 @@ WPic1 = Parameter(name = 'WPic1',
                   value = 30,
                   texname = '\\text{WPic1}',
                   lhablock = 'DECAY',
-                  lhacode = [ 9000018 ])
+                  lhacode = [ 9000006 ])
 
 WPi0u = Parameter(name = 'WPi0u',
                   nature = 'external',
@@ -327,7 +359,7 @@ WPi0u = Parameter(name = 'WPi0u',
                   value = 30,
                   texname = '\\text{WPi0u}',
                   lhablock = 'DECAY',
-                  lhacode = [ 9000019 ])
+                  lhacode = [ 9000007 ])
 
 WPi0d = Parameter(name = 'WPi0d',
                   nature = 'external',
@@ -335,7 +367,39 @@ WPi0d = Parameter(name = 'WPi0d',
                   value = 30,
                   texname = '\\text{WPi0d}',
                   lhablock = 'DECAY',
-                  lhacode = [ 9000020 ])
+                  lhacode = [ 9000008 ])
+
+WPi53 = Parameter(name = 'WPi53',
+                  nature = 'external',
+                  type = 'real',
+                  value = 30,
+                  texname = '\\text{WPi53}',
+                  lhablock = 'DECAY',
+                  lhacode = [ 9000009 ])
+
+WPi13 = Parameter(name = 'WPi13',
+                  nature = 'external',
+                  type = 'real',
+                  value = 30,
+                  texname = '\\text{WPi13}',
+                  lhablock = 'DECAY',
+                  lhacode = [ 9000010 ])
+
+WPiu23 = Parameter(name = 'WPiu23',
+                   nature = 'external',
+                   type = 'real',
+                   value = 30,
+                   texname = '\\text{WPiu23}',
+                   lhablock = 'DECAY',
+                   lhacode = [ 9000011 ])
+
+WPid23 = Parameter(name = 'WPid23',
+                   nature = 'external',
+                   type = 'real',
+                   value = 30,
+                   texname = '\\text{WPid23}',
+                   lhablock = 'DECAY',
+                   lhacode = [ 9000012 ])
 
 CKM1x1 = Parameter(name = 'CKM1x1',
                    nature = 'internal',
@@ -360,6 +424,18 @@ CKM2x2 = Parameter(name = 'CKM2x2',
                    type = 'complex',
                    value = 'cmath.cos(cabi)',
                    texname = '\\text{CKM2x2}')
+
+MPi = Parameter(name = 'MPi',
+                nature = 'internal',
+                type = 'real',
+                value = 'mpi',
+                texname = '\\text{MPi}')
+
+MUU = Parameter(name = 'MUU',
+                nature = 'internal',
+                type = 'real',
+                value = 'muu',
+                texname = '\\text{MUU}')
 
 ONE1x1 = Parameter(name = 'ONE1x1',
                    nature = 'internal',

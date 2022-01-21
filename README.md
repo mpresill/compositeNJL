@@ -44,7 +44,7 @@ AL01__plus__ = Particle(pdg_code = 9000006,
 6) Lastly, implement the UFO files in Madgraph.
 
 #January 2022 version
-
+Files name (SM.fr, SheSheng.fr, SheSheng_UFO, NJL-LQ-CI.nb, Massless.rst, Cabibbo.rst)
 Model contains 
 1) Contact interaction (so now no auxiliary propagator is needed)
 2) Leptoquark interactions (with first generation)

@@ -42,3 +42,11 @@ AL01__plus__ = Particle(pdg_code = 9000006,
                         LeptonNumber = 0,
                         Y = 0)
 6) Lastly, implement the UFO files in Madgraph.
+
+#January 2022 version
+
+Model contains 
+1) Contact interaction (so now no auxiliary propagator is needed)
+2) Leptoquark interactions (with first generation)
+3) Gauge interactions with composite bosons (charged and neutral)
+In order to run the UFO files you just need to import the model in the Madgraph and you are good to go.. 

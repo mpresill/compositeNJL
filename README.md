@@ -50,3 +50,13 @@ Model contains
 2) Leptoquark interactions (with first generation)
 3) Gauge interactions with composite bosons (charged and neutral)
 In order to run the UFO files you just need to import the model in the Madgraph and you are good to go.. 
+
+
+
+#Feb2022 update 
+Folder= NJL-Model_version_3.1
+New update contains the g g -> LQ LQ interactions.
+Import the UFO files in Madgraph you are all set to go.. 
+
+
+

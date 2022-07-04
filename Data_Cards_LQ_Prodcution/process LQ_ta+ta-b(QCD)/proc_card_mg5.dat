@@ -1,0 +1,7 @@
+
+import model SheSheng_UFO
+define p = g u c d s u~ c~ d~ s~ b b~
+generate p p  > ta+ ta- b
+
+
+output LQ_ta+ta-b(QCD) 

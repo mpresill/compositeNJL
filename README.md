@@ -46,9 +46,10 @@ AL01__plus__ = Particle(pdg_code = 9000006,
 6) Lastly, implement the UFO files in Madgraph.
 
 #January 2022 version
+Folder= Old version of the model
 Files name (SM.fr, SheSheng.fr, SheSheng_UFO, NJL-LQ-CI.nb, Massless.rst, Cabibbo.rst)
 Model contains 
-1) Contact interaction (so now no auxiliary propagator is needed)
+1) Contact interaction (so now auxiliary propagator is not needed)
 2) Leptoquark interactions (with first generation)
 3) Gauge interactions with composite bosons (charged and neutral)
 In order to run the UFO files you just need to import the model in the Madgraph and you are good to go.. 
@@ -57,8 +58,19 @@ In order to run the UFO files you just need to import the model in the Madgraph 
 
 #Feb2022 update 
 Folder= NJL-Model_version_3.1
-New update contains the g g -> LQ LQ interactions.
+New update contains the g g -> LQ LQ interactions, where LQ are the composite bosons Leptoquarks. 
 Import the UFO files in Madgraph you are all set to go.. 
 
 
+#April2022 update
+Folder= NJL-Model_version_3.2
+This version contains the following updates
+1) All the Gauge interactions of the composite bosons and composite bosons LQ and the interactions are implemented via Kinetic terms.
+2) Leptoquark interactions with all the generations, also we took care of the fact that LQ decay into one channel only, so that we can have BR=1.  
+Import the UFO files in Madgraph you are all set to go.. 
+
+#July2022 update
+Folder= NJL-Model_version_3.3
+In this update we implemented the mass of the b quark equals to zero because we are using PDF sets which have 5F scheme so to be coherent with that it is needed. 
+Import the UFO files in Madgraph you are all set to go.. 
 

@@ -74,3 +74,5 @@ Folder= NJL-Model_version_3.3
 In this update we implemented the mass of the b quark equals to zero because we are using PDF sets which have 5F scheme so to be coherent with that it is needed. 
 Import the UFO files in Madgraph you are all set to go.. 
 
+#For further information visit https://www.overleaf.com/project/6225f42f7d8f6ce5abbe33ab
+

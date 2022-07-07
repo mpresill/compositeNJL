@@ -1,0 +1,13 @@
+import model SheSheng_UFO
+
+generate p p  > pid23tre pid23tre~ 
+display diagrams ./
+output
+launch
+set lhc 13
+set fpi 500
+set lc 500
+set mpi 500
+set WPid23tre Auto
+set pdlabel lhapdf
+set lhaid 324900

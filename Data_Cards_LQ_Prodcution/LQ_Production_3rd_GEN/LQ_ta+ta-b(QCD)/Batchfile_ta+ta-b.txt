@@ -1,6 +1,7 @@
 import model SheSheng_UFO
 
 generate p p  > ta+ ta- b 
+add process p p  > ta+ ta- b~
 display diagrams ./
 output
 launch

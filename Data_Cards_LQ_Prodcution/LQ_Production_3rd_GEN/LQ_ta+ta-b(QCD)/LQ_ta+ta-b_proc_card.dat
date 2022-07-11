@@ -43,4 +43,5 @@ define vl~ = ve~ vm~ vt~
 define p = 21 2 4 1 3 -2 -4 -1 -3 5 -5 # pass to 5 flavors
 define j = p
 generate p p  > ta+ ta- b
+add process p p  > ta+ ta- b~
 output

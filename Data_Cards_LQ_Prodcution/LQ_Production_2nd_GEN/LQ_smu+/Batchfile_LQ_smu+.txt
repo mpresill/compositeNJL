@@ -1,0 +1,21 @@
+import model SheSheng_UFO
+  
+define p = a g u c d s u~ c~ d~ s~ b~ b e+ e- mu+ mu- ta+ ta-
+generate p p  > mu+ s
+
+display diagrams ./
+output
+launch
+set lhc 13
+
+set fpi 500
+
+set lc 500
+
+set mpi 500
+
+set WPid23due Auto
+
+set pdlabel lhapdf
+
+set lhaid 82400

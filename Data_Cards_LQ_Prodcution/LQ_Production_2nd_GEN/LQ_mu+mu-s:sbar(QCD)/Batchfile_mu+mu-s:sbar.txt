@@ -7,7 +7,7 @@ output
 launch
 set lhc 13
 
-set fpi 500
+set fpi 353.55339059327
 
 set lc 500
 

@@ -1,6 +1,8 @@
 import model SheSheng_UFO
 
 generate p p  > pid23due mu- , pid23due > s mu+
+add process p p  > pid23due~  mu+ , pid23due~  > s~  mu-
+
 display diagrams ./
 output
 launch

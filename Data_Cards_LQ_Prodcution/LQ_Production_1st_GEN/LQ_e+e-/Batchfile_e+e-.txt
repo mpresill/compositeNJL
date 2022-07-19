@@ -1,0 +1,14 @@
+import model SheSheng_UFO
+
+generate p p  > e+ e- /pi53uno
+check p p  > e+ e- /pi53uno
+display diagrams ./
+output
+launch
+set lhc 13
+set fpi 500
+set lc 500
+set mpi 500
+set WPid23uno Auto
+set pdlabel lhapdf
+set lhaid 324900

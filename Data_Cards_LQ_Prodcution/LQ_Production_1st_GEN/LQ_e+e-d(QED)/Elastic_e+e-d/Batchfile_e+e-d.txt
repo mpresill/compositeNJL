@@ -1,0 +1,26 @@
+import model SheSheng_UFO
+
+define p = a u c d s u~ c~ d~ s~ b~ b
+generate p p  > e+ e- d 
+add process p p  > e+ e- d~
+
+display diagrams ./
+output
+launch
+#for elastic photon we need to set one beam value equals to 2
+
+set lpp1 2
+set lpp2 1
+set ebeam1 6500.0
+set ebeam2 6500.0
+set fpi 500
+
+set lc 500
+
+set mpi 500
+
+set WPid23uno Auto
+
+set pdlabel lhapdf
+
+set lhaid 324900
